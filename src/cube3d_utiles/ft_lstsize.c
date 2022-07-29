@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:21:10 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/28 18:50:01 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/07/29 12:12:32 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "../../includes/cube3d.h"
 
 
-int	ft_lstsize(t_map_lines *lst)
+int	ft_lstsize(t_map *lst)
 {
 	int		i;
-	t_map_lines	*new;
+	t_map	*new;
 
 	new = lst;
 	i = 0;

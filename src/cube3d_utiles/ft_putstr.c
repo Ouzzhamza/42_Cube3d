@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:56:35 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/28 18:49:20 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/07/29 15:21:22 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str[i++])
+	i = -1;
+	while (str[++i])
 		write(1, &str[i], 1);
 }
