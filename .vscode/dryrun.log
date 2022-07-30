@@ -1,0 +1,8 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/houazzan/Desktop/42_Cube3d'
+cc -Wall -Wextra -Werror -c src/parcing_utiles.c -o src/parcing_utiles.o
+cc -Wall -Wextra -Werror -c src/cube3d_utiles/free.c -o src/cube3d_utiles/free.o
+cc -Wall -Wextra -Werror -c src/cube3d_utiles/ft_atoi.c -o src/cube3d_utiles/ft_atoi.o
+cc -Wall -Wextra -Werror src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o -o cube3d
+make: Leaving directory `/Users/houazzan/Desktop/42_Cube3d'
+ 

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/30 12:47:49 by houazzan         ###   ########.fr       */
+/*   Created: 2022/07/30 15:52:07 by houazzan          #+#    #+#             */
+/*   Updated: 2022/07/30 18:33:10 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
 
-typedef struct map
+void	free_table(char **table)
 {
-	char		*line;
-	int			identifier;
-	int			ceiling;
-	int			floor;
-	struct map	*next;
+	int i;
 
-} t_map;
-
-#endif
+	i = -1;
+	while (table[++i])
+		free(table[i]);
+	free(table);
+}

@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/29 08:18:28 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/29 08:20:12 by houazzan         ###   ########.fr       */
+/*   Created: 2022/07/30 17:08:36 by houazzan          #+#    #+#             */
+/*   Updated: 2022/07/30 17:09:39 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	int 			i;
-	unsigned char	*c_s1;
-	unsigned char	*c_s2;
+	int	i;
+	int	res;
+	int	signe;
 
 	i = 0;
-	c_s1 = (unsigned char *)s1;
-	c_s2 = (unsigned char *)s2;
-	while (c_s1[i] && c_s2[i])
+	res = 0;
+	signe = 1;
+	while (str[i] == ' ' || str[i] == '\f' || \
+	str[i] == '\n' || str[i] == '\r' || \
+	str[i] == '\t' || str[i] == '\v')
 	{
-		if (c_s1[i] != c_s2[i])
-			return (c_s1[i] - c_s2[i]);
 		i++;
 	}
-	return (c_s1[i] - c_s2[i]);
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			signe *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * signe);
 }
