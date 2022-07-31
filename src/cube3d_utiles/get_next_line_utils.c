@@ -6,14 +6,14 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:13:34 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/07/28 20:06:48 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/07/31 10:02:57 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-char	*ft_strdup(char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	i;
 	size_t	len;

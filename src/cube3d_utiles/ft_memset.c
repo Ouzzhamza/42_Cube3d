@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 16:00:22 by houazzan         ###   ########.fr       */
+/*   Created: 2022/07/31 16:27:17 by houazzan          #+#    #+#             */
+/*   Updated: 2022/07/31 16:28:45 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-typedef struct map
+void	*ft_memset(void *b, int c, size_t n)
 {
-	char		*line;
-	int			identifier;
-	int			ceiling;
-	int			floor;
-	int			ground_plan;
-	int			building;
-	struct map	*next;
-	
+	unsigned char	*a;
+	size_t			i;
 
-} t_map;
-
-#endif
+	a = (unsigned char *)b;
+	i = 0;
+	while (i < n)
+	{
+		a[i] = (unsigned char)c;
+		i++;
+	}
+	return (a);
+}

@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/30 18:33:20 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:19:34 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 int         ft_atoi(const char *str);
 char	    *get_next_line(int fd);
 int	        ft_strlen(const char *str);
-char	    *ft_strdup(char *str);
+char	    *ft_strdup(const char *str);
 char	    *ft_strchr(char *s, int c);
 char	    *ft_strjoin(char *s1, char *s2);
 void	    ft_error(char *str);
@@ -52,10 +52,14 @@ int	        ft_strncmp(const char *s1, const char *s2, size_t n);
 t_map       *ft_lstlast(t_map *lst);
 t_map	    *ft_lstnew(void *content);
 size_t	    ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char        *ft_strtrim(char *s, char const *set);
+void	    *ft_memset(void *b, int c, size_t n);
 
 //^ PARCING_UTILES
 int         is_identifire(char *str, t_map *map);
+int         a_wall(char *str, t_map *map);
 void	    free_table(char **table);
+
 
 
 #endif
