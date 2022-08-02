@@ -6,7 +6,8 @@ src/cube3d_utiles/get_next_line_utils.c src/cube3d_utiles/ft_putstr.c \
 		src/cube3d_utiles/ft_split.c src/cube3d_utiles/ft_strlcpy.c \
 		src/cube3d_utiles/ft_strlen.c src/cube3d_utiles/ft_strncmp.c \
 		src/parcing_utiles.c src/cube3d_utiles/free.c src/cube3d_utiles/ft_atoi.c \
-		src/cube3d_utiles/ft_strtrim.c src/cube3d_utiles/ft_memset.c 
+		src/cube3d_utiles/ft_strtrim.c src/cube3d_utiles/ft_memset.c \
+		src/cube3d_utiles/ft_strnstr.c src/cube3d_utiles/ft_isprint.c 
 
 OBJ = $(SRCS:.c=.o)
  

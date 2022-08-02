@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 21:47:55 by houazzan         ###   ########.fr       */
+/*   Created: 2022/08/02 21:25:27 by houazzan          #+#    #+#             */
+/*   Updated: 2022/08/02 21:25:43 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-typedef struct map
+int	ft_isprint(int c)
 {
-	char		*line;
-	char 		*wall[4];
-	int			ceiling;
-	int			floor;
-	char		player;
-	int			identifier;
-	int			building;
-	struct map	*next;
-} t_map;
-
-#endif
+	return (c >= 32 && c <= 126);
+}

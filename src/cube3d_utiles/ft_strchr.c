@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 21:47:55 by houazzan         ###   ########.fr       */
+/*   Created: 2022/08/02 17:02:42 by houazzan          #+#    #+#             */
+/*   Updated: 2022/08/02 17:03:00 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+#include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
 
-typedef struct map
+char	*ft_strchr(const char *s, int c)
 {
-	char		*line;
-	char 		*wall[4];
-	int			ceiling;
-	int			floor;
-	char		player;
-	int			identifier;
-	int			building;
-	struct map	*next;
-} t_map;
+	int		i;
+	char	a;
+	char	*b;
 
-#endif
+	b = ((char *) s);
+	i = 0;
+	a = (char) c;
+	if (c == 0)
+		return (b + ft_strlen(b));
+	while (b[i])
+	{
+		if (b[i] == a)
+			return (&b[i]);
+		i++;
+	}
+	return (NULL);
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/01 19:00:49 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/02 21:40:58 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,9 @@ int	cheack_line(char *line, t_map *map)
 {
 	int i;
 	i = 0;
-
-	line = ft_strtrim(ft_strtrim(line, " "), "\t");
-	if (!is_identifire(line, map))	
-	{
-		//printf("%s", line);
-		// if(!a_wall(line, map))
-		//  	ft_error(MAP);
-		// else
-		// 	map->building = 1;	
-	}
+	line = ft_strtrim(ft_strtrim(line, " "), "\n");
+	if(!is_identifire(line, map))
+		ft_error(MAP);
 	return (1);	
 }
 
@@ -49,8 +42,8 @@ int	read_map(int ac, char **av)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break;
-		if (!cheack_line(line, map))
-			ft_error(MAP);
+		if (line[0] != '\n')
+			cheack_line(line, map);
 		free(line);
 	}
 	free(map); // ! need to free the map struct
@@ -60,6 +53,7 @@ void checkLeaks()
 {
 	system("leaks cube3d");
 }
+
 int	main(int ac, char **av)
 {
 	read_map(ac, av);

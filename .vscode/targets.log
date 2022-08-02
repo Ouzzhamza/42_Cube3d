@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Sun Jul 31 18:44:55 2022
+# Make data base, printed on Tue Aug  2 21:28:22 2022
 
 # Variables
 
@@ -15,7 +16,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 11)
+# makefile (from `Makefile', line 12)
 OBJ = $(SRCS:.c=.o)
 # environment
 VSCODE_LOG_NATIVE = false
@@ -38,13 +39,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00006dr0001lf/T/vscode-ipc-cbba3427-1d07-4544-abf7-c72248ec79d7.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00006dr0001lf/T/vscode-ipc-f69bb7a3-03c1-4e03-9ebf-8b50b90ad127.sock
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Users/houazzan/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -52,7 +51,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AsOa6XCElq/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.dkgK6TLKqE/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -73,10 +72,8 @@ VSCODE_CODE_CACHE_PATH = /Users/houazzan/Library/Application Support/Code/Cached
 LOGNAME = houazzan
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# makefile (from `Makefile', line 15)
+# makefile (from `Makefile', line 16)
 HEADERS = includes/cube3d.h includes/structs.h
-# environment
-ZSH = /Users/houazzan/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -88,10 +85,10 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 2)
-SRCS = src/cube3d.c src/error.c src/cube3d_utiles/get_next_line.c src/cube3d_utiles/get_next_line_utils.c src/cube3d_utiles/ft_putstr.c src/cube3d_utiles/ft_lstnew.c src/cube3d_utiles/ft_lstsize.c src/cube3d_utiles/ft_lstadd_back.c src/cube3d_utiles/ft_lstlast.c src/cube3d_utiles/ft_split.c src/cube3d_utiles/ft_strlcpy.c src/cube3d_utiles/ft_strlen.c src/cube3d_utiles/ft_strncmp.c src/parcing_utiles.c src/cube3d_utiles/free.c src/cube3d_utiles/ft_atoi.c src/cube3d_utiles/ft_strtrim.c src/cube3d_utiles/ft_memset.c 
+SRCS = src/cube3d.c src/error.c src/cube3d_utiles/get_next_line.c src/cube3d_utiles/get_next_line_utils.c src/cube3d_utiles/ft_putstr.c src/cube3d_utiles/ft_lstnew.c src/cube3d_utiles/ft_lstsize.c src/cube3d_utiles/ft_lstadd_back.c src/cube3d_utiles/ft_lstlast.c src/cube3d_utiles/ft_split.c src/cube3d_utiles/ft_strlcpy.c src/cube3d_utiles/ft_strlen.c src/cube3d_utiles/ft_strncmp.c src/parcing_utiles.c src/cube3d_utiles/free.c src/cube3d_utiles/ft_atoi.c src/cube3d_utiles/ft_strtrim.c src/cube3d_utiles/ft_memset.c src/cube3d_utiles/ft_strnstr.c src/cube3d_utiles/ft_isprint.c 
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 17)
+# makefile (from `Makefile', line 18)
 CC = cc
 # default
 MAKE_VERSION := 3.81
@@ -99,10 +96,8 @@ MAKE_VERSION := 3.81
 USER = houazzan
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from `Makefile', line 13)
+# makefile (from `Makefile', line 14)
 NAME = cube3d
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -122,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2116
+XPC_SERVICE_NAME = com.microsoft.VSCode.2152
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -131,19 +126,15 @@ XPC_SERVICE_NAME = com.microsoft.VSCode.2116
 __CF_USER_TEXT_ENCODING = 0x66E:0x0:0x0
 # default
 MAKEFILES := 
-# environment
-HOMEBREW_NO_AUTO_UPDATE = 1
 # automatic
 <F = $(notdir $<)
-# environment
-PAGER = less
 # environment
 LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 19)
+# makefile (from `Makefile', line 20)
 FLAGS = -Wall -Wextra -Werror
 # default
 .INCLUDE_DIRS = /usr/local/include
@@ -152,9 +143,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 71767
+VSCODE_PID = 2686
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=3/104=3%
+# Load=66/1024=6%, Rehash=0, Collisions=3/99=3%
 
 # Pattern-specific Variable Values
 
@@ -162,16 +153,16 @@ VSCODE_PID = 71767
 
 # Directories
 
-# . (device 16777225, inode 550229): 14 files, no impossibilities.
-# includes (device 16777225, inode 578357): 4 files, no impossibilities so far.
-# src (device 16777225, inode 573202): 4 files, no impossibilities so far.
+# . (device 16777225, inode 40676): 14 files, no impossibilities.
+# includes (device 16777225, inode 40755): 4 files, no impossibilities so far.
+# src (device 16777225, inode 40781): 4 files, no impossibilities so far.
 
 # 22 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 %.o: %.c includes/cube3d.h includes/structs.h
-#  commands to execute (from `Makefile', line 24):
+#  commands to execute (from `Makefile', line 25):
 	@$(CC) $(FLAGS) -c $< -o $@
 	
 
@@ -209,7 +200,7 @@ src/cube3d.o: src/cube3d.c includes/cube3d.h includes/structs.h
 # ? := src/cube3d.c includes/cube3d.h includes/structs.h
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 24):
+#  commands to execute (from `Makefile', line 25):
 	@$(CC) $(FLAGS) -c $< -o $@
 	
 
@@ -221,6 +212,12 @@ src/cube3d_utiles/free.o:
 
 # Not a target:
 src/cube3d_utiles/ft_putstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/cube3d_utiles/ft_isprint.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -238,7 +235,7 @@ all: cube3d
 # Not a target:
 includes/structs.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 16:00:22
+#  Last modified 2022-08-02 20:41:27
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -252,7 +249,7 @@ includes/structs.h:
 # Not a target:
 includes/cube3d.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:19:34
+#  Last modified 2022-08-02 21:27:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -285,7 +282,7 @@ src/cube3d_utiles/ft_lstnew.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 16:28:25
+#  Last modified 2022-08-02 21:28:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -298,21 +295,21 @@ src/cube3d_utiles/get_next_line_utils.o:
 #  File has not been updated.
 
  
-cube3d: src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/ft_memset.o
+cube3d: src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/ft_isprint.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-31 18:44:01
+#  Last modified 2022-08-02 21:27:08
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  commands to execute (from `Makefile', line 27):
+#  commands to execute (from `Makefile', line 28):
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	
 
 # Not a target:
 src/cube3d.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:54:33
+#  Last modified 2022-08-02 21:24:38
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -341,12 +338,18 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 34):
+#  commands to execute (from `Makefile', line 35):
 	rm -f $(NAME)
 	
 
 # Not a target:
 .DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/cube3d_utiles/ft_strnstr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -368,7 +371,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 32):
 	@rm -f $(OBJ)
 	
 
@@ -409,7 +412,7 @@ src/cube3d_utiles/ft_memset.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=30/1024=3%, Rehash=0, Collisions=0/76=0%
+# Load=32/1024=3%, Rehash=0, Collisions=0/80=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -421,6 +424,6 @@ src/cube3d_utiles/ft_memset.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jul 31 18:44:55 2022
+# Finished Make data base on Tue Aug  2 21:28:22 2022
 
  
