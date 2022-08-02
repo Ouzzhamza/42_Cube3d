@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 17:19:34 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:47:26 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	    *ft_memset(void *b, int c, size_t n);
 int         is_identifire(char *str, t_map *map);
 int         a_wall(char *str, t_map *map);
 void	    free_table(char **table);
-
-
+int         ft_strcmp(char *s1, char *s2);
 
 #endif

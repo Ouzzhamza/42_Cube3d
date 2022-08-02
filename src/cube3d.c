@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 20:41:05 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:00:49 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	cheack_line(char *line, t_map *map)
 	line = ft_strtrim(ft_strtrim(line, " "), "\t");
 	if (!is_identifire(line, map))	
 	{
-		printf("%s", line);
+		//printf("%s", line);
 		// if(!a_wall(line, map))
 		//  	ft_error(MAP);
 		// else
@@ -35,7 +35,8 @@ int	read_map(int ac, char **av)
 {
 	char		*line;
 	int			fd;
-	t_map *map;
+	t_map		*map;
+	
 	map = (t_map *) malloc (sizeof(t_map));
 	ft_memset(map, 0, sizeof(t_map));
 	if (ac != 2)
@@ -61,6 +62,5 @@ void checkLeaks()
 }
 int	main(int ac, char **av)
 {
-	//atexit(checkLeaks);
 	read_map(ac, av);
 }

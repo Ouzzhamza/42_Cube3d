@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 20:40:30 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/01 18:59:31 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,18 @@ int is_identifire(char *str, t_map *map)
 	char **line;
 
 	line = ft_split(str, ' ');
-	if(!ft_strncmp(NORTH, line[0], 2) || !ft_strncmp(EAST, line[0], 2) || \
-	!ft_strncmp(WEST, line[0], 2) || !ft_strncmp(SOUTH, line[0], 2))
+	if(!ft_strcmp(NORTH, line[0]) || !ft_strcmp(EAST, line[0]) || \
+	!ft_strcmp(WEST, line[0]) || !ft_strcmp(SOUTH, line[0]))
 	{
 		if (open(ft_strtrim(line[1], "\n"), O_RDONLY) == -1)
+			ft_error(MAP);
+		else
 			map->identifier++;
 		free_table(line);
 	}
-	else if (!ft_strncmp(FLOOR, line[0], 1))
+	else if (!ft_strcmp(FLOOR, line[0]))
 		rgb_to_int(map->floor, str, map);
-	else if (!ft_strncmp(CEILING, line[0], 1)) 
+	else if (!ft_strcmp(CEILING, line[0])) 
 		rgb_to_int(map->ceiling, str, map);
 	else
 		return(0);
