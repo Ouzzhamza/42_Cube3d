@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 19:43:51 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/03 15:14:37 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 typedef struct map
 {
 	char		*line;
-	int			identifier;
+	char 		*wall[4];
 	int			ceiling;
 	int			floor;
-	int			ground_plan;
+	char		player;
+	int			identifier;
 	int			building;
 	struct map	*next;
 } t_map;

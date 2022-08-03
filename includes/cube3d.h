@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/03 15:04:21 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/03 15:14:33 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@
 
 
 //^ MACROS 
-# define ARG "Wrong number of arguments"
-# define MAP "Invalid map"
-# define RGB "Invalid color value"
+# define ARG "Wrong number of arguments\n"
+# define MAP "Invalid map\n"
+# define RGB "Invalid color value\n"
 # define NORTH "NO"
 # define EAST  "EA"
 # define WEST  "SO"
@@ -57,11 +57,13 @@ t_map	    *ft_lstnew(void *content);
 size_t	    ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char        *ft_strtrim(char *s, char const *set);
 void	    *ft_memset(void *b, int c, size_t n);
+int         ft_strcmp(char *s1, char *s2);
+char	    *ft_strnstr(const char *haystack, const char *needle, size_t len);
+int	        ft_isprint(int c);
 
 //^ PARCING_UTILES
 int         is_identifire(char *str, t_map *map);
 int         a_wall(char *str, t_map *map);
 void	    free_table(char **table);
-int         ft_strcmp(char *s1, char *s2);
 
 #endif
