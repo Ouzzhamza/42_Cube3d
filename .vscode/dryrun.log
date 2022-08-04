@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/houazzan/Desktop/42_Cube3d'
 cc -Wall -Wextra -Werror -c src/cube3d.c -o src/cube3d.o
  
@@ -21,6 +21,7 @@ cc -Wall -Wextra -Werror -c src/cube3d_utiles/ft_strtrim.c -o src/cube3d_utiles/
 cc -Wall -Wextra -Werror -c src/cube3d_utiles/ft_memset.c -o src/cube3d_utiles/ft_memset.o
 cc -Wall -Wextra -Werror -c src/cube3d_utiles/ft_strnstr.c -o src/cube3d_utiles/ft_strnstr.o
 cc -Wall -Wextra -Werror -c src/cube3d_utiles/ft_isprint.c -o src/cube3d_utiles/ft_isprint.o
-cc -Wall -Wextra -Werror src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/ft_isprint.o -o cube3d
+cc -Wall -Wextra -Werror -c src/parcing_utiles1.c -o src/parcing_utiles1.o
+cc -Wall -Wextra -Werror src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/ft_isprint.o src/parcing_utiles1.o -o cube3d
 make: Leaving directory `/Users/houazzan/Desktop/42_Cube3d'
  

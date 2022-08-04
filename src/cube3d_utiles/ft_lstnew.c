@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:15:18 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/29 12:12:23 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/03 16:53:25 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include "../../includes/cube3d.h"
 
 
-t_map	*ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_map	*ptr;
+	t_list	*ptr;
 
-	ptr = (t_map *)malloc (sizeof(t_map));
+	ptr = (t_list *)malloc (sizeof(t_list));
 	if (ptr == NULL)
 		return (NULL);
 	ptr ->line = content;

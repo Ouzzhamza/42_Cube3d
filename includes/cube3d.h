@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 21:27:05 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:08:57 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # define RGB "Invalid color value\n"
 # define NORTH "NO"
 # define EAST  "EA"
-# define WEST  "SO"
-# define SOUTH "WE"
+# define WEST  "WE"
+# define SOUTH "SO"
 # define FLOOR "F"
 # define CEILING "C"
 
@@ -46,11 +46,12 @@ char	    *ft_strchr(char *s, int c);
 char	    *ft_strjoin(char *s1, char *s2);
 void	    ft_error(char *str);
 void	    ft_putstr(char *str);
-char	    **ft_split(char const *s, char c);
-int	        ft_lstsize(t_map *lst);
+char	    **ft_split(char *s, char c);
+int	        ft_lstsize(t_list *lst);
 int	        ft_strncmp(const char *s1, const char *s2, size_t n);
-t_map       *ft_lstlast(t_map *lst);
-t_map	    *ft_lstnew(void *content);
+t_list      *ft_lstlast(t_list *lst);
+t_list	    *ft_lstnew(void *content);
+void	    ft_lstadd_back(t_list **lst, t_list *new);
 size_t	    ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char        *ft_strtrim(char *s, char const *set);
 void	    *ft_memset(void *b, int c, size_t n);
@@ -62,5 +63,10 @@ int	        ft_isprint(int c);
 int         is_identifire(char *str, t_map *map);
 int         a_wall(char *str, t_map *map);
 void	    free_table(char **table);
+void        set_to_zero(t_map *map);
+int         empty_line(char *str);
+int         special_strlen(char *str);
+void        list_to_array(t_map *map);
+char        *special_dupe(char *s1, int size);
 
 #endif

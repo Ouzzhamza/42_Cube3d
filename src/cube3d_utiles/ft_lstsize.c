@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:21:10 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/29 12:12:32 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:12:26 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "../../includes/cube3d.h"
 
 
-int	ft_lstsize(t_map *lst)
+int	ft_lstsize(t_list   *lst)
 {
 	int		i;
-	t_map	*new;
+	t_list  	*new;
 
 	new = lst;
 	i = 0;

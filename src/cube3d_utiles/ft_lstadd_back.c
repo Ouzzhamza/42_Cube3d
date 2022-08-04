@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:24:02 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/29 12:11:49 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/03 16:53:04 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "../../includes/cube3d.h"
 
 
-void	ft_lstadd_back(t_map **lst, t_map *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_map	*last_node;
+	t_list	*last_node;
 
 	if (*lst == NULL)
 		*lst = new;

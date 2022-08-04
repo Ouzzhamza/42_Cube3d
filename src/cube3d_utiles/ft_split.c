@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:47:35 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 09:50:11 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:09:24 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	**ft_freetab(char **str, int tofree)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char  *s, char c)
 {
 	int		i;
 	char	**str;

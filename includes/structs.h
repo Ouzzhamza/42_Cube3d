@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 21:47:55 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/04 15:41:26 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,23 @@
 #  define BUFFER_SIZE 1
 # endif
 
+
+typedef struct s_list
+{
+	char 	*line;
+	struct 	s_list *next; 
+} t_list;
+
 typedef struct map
 {
-	char		*line;
-	char 		*wall[4];
+	char 		**map;
+	char 		*wall[5];
+	char		player;
 	int			ceiling;
 	int			floor;
-	char		player;
 	int			identifier;
-	int			building;
-	struct map	*next;
+	int 		longest;
+	t_list 		*list;
 } t_map;
 
 #endif

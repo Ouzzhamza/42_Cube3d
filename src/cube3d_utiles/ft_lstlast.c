@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:25:09 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/29 12:12:01 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/04 09:12:03 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 #include "../../includes/cube3d.h"
 
 
-t_map	*ft_lstlast(t_map *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
+	t_list *ptr;
+
+	ptr = lst;
 	if (!lst)
 		return (NULL);
-	while (lst->next != NULL)
+	while (ptr->next != NULL)
 	{
-		lst = lst->next;
+		ptr = ptr->next;
 	}
-	return (lst);
+	return (ptr);
 }
