@@ -6,52 +6,12 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/02 11:58:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/02 21:13:45 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
-
-# define COL 20
-# define ROW 5
-// void	draw_square(int *start, int size)
-// {
-// 	unsigned int	i;
-// 	unsigned int	j;
-	
-// 	i = 0;
-// 	j = 0;
-// 	while (i < size)
-// 	{
-// 		j = 0;
-// 		while (j < size)
-// 		{
-// 			j++;
-// 		}
-// 		i++;
-// 	}	
-// }
-
-// void	put_minimap(char **map, unsigned int size)
-// {
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	unsigned int	start;
-
-// 	start = 0;
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		j = 0;
-// 		while (j < size)
-// 		{
-// 			draw_square(&start, size);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 
 int	check_vertical(char **map, int x, int y)
 {
@@ -140,18 +100,18 @@ int	parse_map(char **map)
 	return (0);
 }
 
-// int	main(void)
-// {
-// 	char	*tab[6] = {  "  111111   111111111"
-// 						," 100000E111111     1"
-// 						,"101110 1     1111111"
-// 						,"1001 111111111000001"
-// 						,"111111 11 111 11111 ", NULL};
-// 	if (parse_map(tab) == 0)
-// 		printf("The Map Is Good\n");
-// 	for (int i = 0; i < 5; i++)
-// 	{
-// 		printf("%s\n",tab[i]);
-// 	}
-// 	return (0);
-// }
+int	main(void)
+{
+	char	*tab[6] = {  "  111111   111111111"
+						," 100000E111111     1"
+						,"11111011     1111111"
+						,"1001 111111111000001"
+						,"111111 11 111 11111 ", NULL};
+	if (parse_map(tab) == 0)
+		printf("The Map Is Good\n");
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%s\n",tab[i]);
+	}
+	return (0);
+}

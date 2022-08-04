@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 18:08:57 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:57:07 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <fcntl.h>
 # include "structs.h"
 # include <stdio.h>
+# include <mlx.h>
 
 
 //^ MACROS 
@@ -36,6 +37,8 @@
 # define SOUTH "SO"
 # define FLOOR "F"
 # define CEILING "C"
+# define WIN_WIDTH 1500
+# define WIN_HEIGHT 400
 
 //^ CUBE3D_UTILES
 int         ft_atoi(const char *str);
