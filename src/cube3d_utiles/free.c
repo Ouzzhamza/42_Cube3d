@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:52:07 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/30 18:33:10 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:14:03 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,14 @@ void	free_table(char **table)
 	while (table[++i])
 		free(table[i]);
 	free(table);
+}
+
+void free_all(t_map *map)
+{
+	int i = 0;
+	while(map->wall[i])
+	{
+		free(map->wall[i]);
+		i++;
+	}
 }

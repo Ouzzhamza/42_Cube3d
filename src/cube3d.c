@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 19:26:29 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:16:04 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ int	cheack_line(char *line, t_map *map)
 int	read_map(int ac, char **av)
 {
 	char		*line;
-	int			fd;
 	t_map		*map;
-	
+	int			fd;
+
 	map = (t_map *) malloc (sizeof(t_map));
 	map->list = (t_list *) malloc (sizeof(t_list));
-	set_to_zero(map);
+	set_to_zero(map, map->list);
 	if (ac != 2)
 		ft_error(ARG);
 	fd = open(av[1], O_RDONLY);
@@ -58,7 +58,7 @@ int	read_map(int ac, char **av)
 			cheack_line(ft_strdup(line), map);
 		free(line);
 	}
-	if (!map->identifier)
+	if (map->identifier != 6)
 		ft_error(MAP);
 	list_to_array(map);
 	int i = 0;
@@ -67,7 +67,7 @@ int	read_map(int ac, char **av)
 		printf("%s\n", map->map[i]);
 		i++;
 	}
-	free(map); // ! need to free the map struct
+	free_all(map);
 	return (0);
 }
 
@@ -78,6 +78,6 @@ int	read_map(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	//atexit(checkLeaks);
+	// atexit(checkLeaks);
 	read_map(ac, av);
 }

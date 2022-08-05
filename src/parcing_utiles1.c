@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:04:14 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 15:50:57 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/05 12:10:17 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int special_strlen(char *str)
     return(i);
 }
 
-void set_to_zero(t_map *map)
+void set_to_zero(t_map *map, t_list *list)
 {
     ft_memset(map, 0, sizeof(t_map));
+    ft_memset(list, 0, sizeof(t_list));
     map->ceiling = -1;
     map->floor = -1;
 }

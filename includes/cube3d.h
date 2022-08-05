@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 19:57:07 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:14:27 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ int	        ft_isprint(int c);
 int         is_identifire(char *str, t_map *map);
 int         a_wall(char *str, t_map *map);
 void	    free_table(char **table);
-void        set_to_zero(t_map *map);
+void        free_all(t_map *map);
+void        set_to_zero(t_map *map, t_list *list);
 int         empty_line(char *str);
 int         special_strlen(char *str);
 void        list_to_array(t_map *map);
