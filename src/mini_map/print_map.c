@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/03 15:13:33 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/07 11:03:21 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,6 @@ void	draw_minimap(t_data *data, char **map, int width, int height)
 // int	main(void)
 // {
 // 	t_data	data;
-// 	char	*tab[6] = {  "  111111   111111111"
-// 						," 100000E111111     1"
-// 						,"11111011     1111111"
-// 						,"1001 111111111000001"
-// 						,"111111 11 111 1     ", NULL};
 
 // 	data.mlx_ptr= mlx_init();
 // 	if (data.mlx_ptr == NULL)

@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 19:57:00 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:11:46 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct map
 	char		player;
 	int			ceiling;
 	int			floor;
+	void		*mlx;
 	int			identifier;
 	int 		longest;
 	t_list 		*list;
