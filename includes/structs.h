@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 09:47:23 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 11:50:25 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define WIN_WIDTH 1500
 # define WIN_HEIGHT 400
+# define CUB_SIZE	64
 
 typedef struct s_list
 {
@@ -33,6 +34,7 @@ typedef struct map
 	char		player;
 	int			ceiling;
 	int			floor;
+	void		*mlx;
 	int			identifier;
 	int 		longest;
 	t_list 		*list;

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/08 09:36:36 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 11:51:00 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	draw_minimap(t_data *data, char **map, int width, int height)
 	int y_start;
 
 	i = 0;
-	y_start = 0;
 	while (map[i])
 	{
 		j = 0;
-		x_start = 0;
 		while (map[i][j])
 		{
+			x_start = j * CUB_SIZE;
+			y_start = i * CUB_SIZE;
 			if (map[i][j] == ' ')
 			{
 				render(data, x_start, y_start, 0x000000);
@@ -82,10 +82,8 @@ void	draw_minimap(t_data *data, char **map, int width, int height)
 				render(data, x_start, y_start, 0xFF0000);
 			else
 				render(data, x_start, y_start, 0x00FF00);
-			x_start += 64;
 			j++;
 		}
-		y_start += 64;
 		i++;
 	}
 }
@@ -93,11 +91,6 @@ void	draw_minimap(t_data *data, char **map, int width, int height)
 // int	main(void)
 // {
 // 	t_data	data;
-// 	char	*tab[6] = {  "  111111   111111111"
-// 						," 100000E111111     1"
-// 						,"11111011     1111111"
-// 						,"1001 111111111000001"
-// 						,"111111 11 111 1     ", NULL};
 
 // 	data.mlx_ptr= mlx_init();
 // 	if (data.mlx_ptr == NULL)

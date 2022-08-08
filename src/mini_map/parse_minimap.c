@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_minimap.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/02 21:13:45 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/07 11:52:31 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,18 +100,14 @@ int	parse_map(char **map)
 	return (0);
 }
 
-int	main(void)
+int	parse_minimape(t_map *map)
 {
-	char	*tab[6] = {  "  111111   111111111"
-						," 100000E111111     1"
-						,"11111011     1111111"
-						,"1001 111111111000001"
-						,"111111 11 111 11111 ", NULL};
-	if (parse_map(tab) == 0)
+	if (parse_map(map->map) == 0)
 		printf("The Map Is Good\n");
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%s\n",tab[i]);
-	}
+	
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 	printf("%s\n",map->map[i]);
+	// }
 	return (0);
 }

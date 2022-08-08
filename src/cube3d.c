@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/05 13:16:04 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/06 11:40:57 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,8 @@ int	read_map(int ac, char **av)
 	if (map->identifier != 6)
 		ft_error(MAP);
 	list_to_array(map);
-	int i = 0;
-	while(map->map[i])
-	{
-		printf("%s\n", map->map[i]);
-		i++;
-	}
-	free_all(map);
+	parse_minimape(map);
+	// free_all(map);
 	return (0);
 }
 

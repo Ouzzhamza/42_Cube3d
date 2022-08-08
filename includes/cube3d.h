@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 09:53:13 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 11:47:19 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ int         empty_line(char *str);
 int         special_strlen(char *str);
 void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
+
+//^ MINIMAP PARSING
+int check_vertical(char **map, int x, int y);
+int check_horizontal(char **map, int x, int y);
+int check_item_valid(char **map, int x, int y);
+int parse_map(char **map);
+int parse_minimape(t_map *map);
 
 //^ RAYCASTING
 t_raycast   *raycast_init(void);

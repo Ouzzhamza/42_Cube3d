@@ -1,13 +1,10 @@
-SRCS  = src/cube3d.c src/error.c src/cube3d_utiles/get_next_line.c \
-		src/cube3d_utiles/get_next_line_utils.c src/cube3d_utiles/ft_putstr.c \
-		src/cube3d_utiles/ft_lstnew.c src/cube3d_utiles/ft_lstsize.c \
-		src/cube3d_utiles/ft_lstadd_back.c src/cube3d_utiles/ft_lstlast.c \
-		src/cube3d_utiles/ft_split.c src/cube3d_utiles/ft_strlcpy.c \
-		src/cube3d_utiles/ft_strlen.c src/cube3d_utiles/ft_strncmp.c \
-		src/parcing_utiles.c src/cube3d_utiles/free.c src/cube3d_utiles/ft_atoi.c \
-		src/cube3d_utiles/ft_strtrim.c src/cube3d_utiles/ft_memset.c \
-		src/cube3d_utiles/ft_strnstr.c src/cube3d_utiles/ft_isprint.c \
-		src/parcing_utiles1.c 
+SRCS  = ./src/cube3d_utiles/free.c ./src/cube3d_utiles/ft_isprint.c ./src/cube3d_utiles/ft_lstlast.c ./src/cube3d_utiles/ft_lstsize.c \
+		./src/cube3d_utiles/ft_putstr.c ./src/cube3d_utiles/ft_strchr.c ./src/cube3d_utiles/ft_strlen.c ./src/cube3d_utiles/ft_strnstr.c \
+		./src/cube3d_utiles/get_next_line.c ./src/cube3d_utiles/ft_atoi.c ./src/cube3d_utiles/ft_lstadd_back.c ./src/cube3d_utiles/ft_lstnew.c \
+		./src/cube3d_utiles/ft_memset.c ./src/cube3d_utiles/ft_split.c ./src/cube3d_utiles/ft_strlcpy.c ./src/cube3d_utiles/ft_strncmp.c \
+		./src/cube3d_utiles/ft_strtrim.c ./src/cube3d_utiles/get_next_line_utils.c ./src/mini_map/move_inmap.c ./src/mini_map/parse_minimap.c \
+		./src/mini_map/print_map.c ./src/parsing_map/parcing_utiles.c ./src/parsing_map/parcing_utiles1.c ./src/raycasting/raycasting.c \
+		./src/raycasting/raycasting_utils.c ./src/cube3d.c ./src/errors/error.c
 
 OBJ = $(SRCS:.c=.o)
  
@@ -18,6 +15,7 @@ HEADERS = includes/cube3d.h includes/structs.h
 CC = cc
 
 FLAGS = -Wall -Wextra -Werror
+MFLAGS = -Lminilibx -framework OpenGL -framework AppKit 
 
 all: $(NAME)
 
@@ -25,16 +23,17 @@ all: $(NAME)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	make -C ./minilibx
+	@$(CC) $(FLAGS) $(OBJ) $(MFLAGS) -o $(NAME)
 
 
 clean:
 	@rm -f $(OBJ)
 
 fclean: clean
+	make clean -C ./minilibx
 	rm -f $(NAME)
 
 re: clean all
 
 .PHONY : all clean fclean re 
-
