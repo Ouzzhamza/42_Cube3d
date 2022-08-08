@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:04:14 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 11:44:54 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 18:19:47 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,16 @@ char *special_dupe(char *s1, int size)
 	str = (char *)malloc(size + 1);
 	if (!str)
 		return (NULL);
-	while (i < size)
-	{
-        if(!s1[i] && i < size)
-        {
-            while(i < size)
-            {
-                str[i] = ' ';
-                i++;
-            }
-        }
-		else 
-            str[i] = s1[i];
-		i++;
-	}
+	while(s1[i])
+    {
+        str[i] = s1[i];
+        i++;
+    }
+    while (i < size)
+    {
+        str[i] = ' ';
+        i++;
+    }
 	str[i] = '\0';
 	return (str);
 }
