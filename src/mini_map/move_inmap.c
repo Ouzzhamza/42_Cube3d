@@ -6,14 +6,9 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 11:58:17 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/04 11:58:57 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 13:35:43 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
-
-int	handle_move(int key, void *param)
-{
-	if ()
-}

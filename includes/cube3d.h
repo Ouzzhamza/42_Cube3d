@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 11:47:19 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 14:37:12 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "structs.h"
 # include <stdio.h>
 # include <mlx.h>
+# include <math.h>
 
 
 //^ MACROS 
@@ -72,11 +73,13 @@ void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
 
 //^ MINIMAP PARSING
-int check_vertical(char **map, int x, int y);
-int check_horizontal(char **map, int x, int y);
-int check_item_valid(char **map, int x, int y);
-int parse_map(char **map);
-int parse_minimape(t_map *map);
+int     check_vertical(char **map, int x, int y);
+int     check_horizontal(char **map, int x, int y);
+int     check_item_valid(char **map, int x, int y);
+int     parse_map(char **map);
+int     render_player(t_data *data, int x, int y, int color);
+int     parse_minimap(t_map *map);
+void    draw_minimap(t_data *data, char **map);
 
 //^ RAYCASTING
 t_raycast   *raycast_init(void);

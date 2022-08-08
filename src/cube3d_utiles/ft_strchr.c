@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:02:42 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 17:03:00 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:36:52 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	int		i;
-	char	a;
-	char	*b;
+	int	i;
 
-	b = ((char *) s);
 	i = 0;
-	a = (char) c;
-	if (c == 0)
-		return (b + ft_strlen(b));
-	while (b[i])
+	if (!s)
+		return (NULL);
+	while (s[i])
 	{
-		if (b[i] == a)
-			return (&b[i]);
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
 		i++;
 	}
+	if (s[i] == c)
+		return ((char *)(s + i));
 	return (NULL);
 }

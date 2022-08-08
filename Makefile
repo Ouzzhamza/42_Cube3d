@@ -14,8 +14,8 @@ HEADERS = includes/cube3d.h includes/structs.h
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
-MFLAGS = -Lminilibx -framework OpenGL -framework AppKit 
+FLAGS = -Wall -Wextra -Werror 
+MFLAGS = -lmlx -framework OpenGL -framework AppKit -lm
 
 all: $(NAME)
 
@@ -23,7 +23,6 @@ all: $(NAME)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	make -C ./minilibx
 	@$(CC) $(FLAGS) $(OBJ) $(MFLAGS) -o $(NAME)
 
 
@@ -31,7 +30,6 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	make clean -C ./minilibx
 	rm -f $(NAME)
 
 re: clean all

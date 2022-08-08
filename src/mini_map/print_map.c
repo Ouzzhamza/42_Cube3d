@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/08 11:51:00 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 13:36:15 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,20 @@ int	render(t_data *data, int x, int y, int color)
 	return (0);
 }
 
-void	draw_minimap(t_data *data, char **map, int width, int height)
+int	render_player(t_data *data, int x, int y, int color)
+{
+	t_rect	rectangle;
+
+	rectangle.color = color;
+	rectangle.x = x;
+	rectangle.y = y;
+	rectangle.width = 16;
+	rectangle.height = 16;
+	render_rect(data, rectangle);
+	return (0);
+}
+
+void	draw_minimap(t_data *data, char **map)
 {
 	int i;
 	int	j;
@@ -81,30 +94,9 @@ void	draw_minimap(t_data *data, char **map, int width, int height)
 			else if (map[i][j] == '1')
 				render(data, x_start, y_start, 0xFF0000);
 			else
-				render(data, x_start, y_start, 0x00FF00);
+				render(data, x_start, y_start, 0xFFFFFF);
 			j++;
 		}
 		i++;
 	}
 }
-
-// int	main(void)
-// {
-// 	t_data	data;
-
-// 	data.mlx_ptr= mlx_init();
-// 	if (data.mlx_ptr == NULL)
-// 		return (1);
-// 	data.win_ptr = mlx_new_window(data.mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "My Window");
-// 	if (data.win_ptr == NULL)
-// 	{
-// 		free (data.win_ptr);
-// 		return (1);
-// 	}
-// 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
-// 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp, &data.img.line_len, &data.img.endian);
-// 	draw_minimap(&data, tab, WIN_WIDTH, WIN_HEIGHT);
-// 	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
-// 	mlx_loop(data.mlx_ptr);
-// 	free (data.mlx_ptr);
-// }

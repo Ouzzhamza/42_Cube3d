@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/06 11:40:57 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:40:07 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/structs.h"
 #include "../includes/cube3d.h"
-
 
 int	cheack_line(char *line, t_map *map)
 {
@@ -29,13 +28,12 @@ int	cheack_line(char *line, t_map *map)
 		{
 			new = ft_lstnew(line);
 			ft_lstadd_back(&(map->list), new);
-
 		}
 	}
 	return (1);
 }
 
-int	read_map(int ac, char **av)
+t_map	*read_map(int ac, char **av)
 {
 	char		*line;
 	t_map		*map;
@@ -52,6 +50,7 @@ int	read_map(int ac, char **av)
 	while (1)
 	{
 		line = get_next_line(fd);
+
 		if (line == NULL)
 			break;
 		if (line[0] != '\n')
@@ -61,18 +60,36 @@ int	read_map(int ac, char **av)
 	if (map->identifier != 6)
 		ft_error(MAP);
 	list_to_array(map);
-	parse_minimape(map);
-	// free_all(map);
-	return (0);
+	return (map);
 }
 
-// void checkLeaks()
-// {
-// 	system("leaks cube3d");
-// }
+void	mlx_data_init(t_data *data)
+{
+	data->mlx_ptr = mlx_init();
+	if (!data->mlx_ptr)
+		ft_error("mlx_ptre Error!\n");
+	data->win_ptr = mlx_new_window(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "CUBE3D");
+	if (!data->win_ptr)
+		ft_error("mlx_win Error!\n");
+	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
+	if (!data->img.mlx_img)
+		ft_error("mlx_img Error!\n");
+	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
+}
+
 
 int	main(int ac, char **av)
 {
-	// atexit(checkLeaks);
-	read_map(ac, av);
+	t_map	*map;
+	t_data	data;
+
+	map = read_map(ac, av);
+	if (parse_map(map->map))
+	{
+		mlx_data_init(&data);
+		draw_minimap(&data, map->map);
+		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
+		mlx_loop(data.mlx_ptr);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 11:44:48 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 12:48:32 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void list_to_array(t_map *map)
 	}
 	map->map[i] = "\0";
 }
-
 
 int a_wall(char *str, t_map *map)
 {
@@ -106,6 +105,7 @@ int valid_wall_image(char **line, t_map *map)
 	free_table(line);
 	return(1);
 }
+
 int is_identifire(char *str, t_map *map)
 {   
 	char **line;

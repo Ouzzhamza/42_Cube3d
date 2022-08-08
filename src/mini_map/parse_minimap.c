@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_minimap.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/07 11:52:31 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/08 13:31:19 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,17 +97,5 @@ int	parse_map(char **map)
 		}
 		i++;
 	}
-	return (0);
-}
-
-int	parse_minimape(t_map *map)
-{
-	if (parse_map(map->map) == 0)
-		printf("The Map Is Good\n");
-	
-	// for (int i = 0; i < 5; i++)
-	// {
-	// 	printf("%s\n",map->map[i]);
-	// }
-	return (0);
+	return (1);
 }
