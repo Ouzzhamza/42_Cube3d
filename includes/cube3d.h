@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/05 13:14:27 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:53:13 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@
 # define SOUTH "SO"
 # define FLOOR "F"
 # define CEILING "C"
-# define WIN_WIDTH 1500
-# define WIN_HEIGHT 400
 
 //^ CUBE3D_UTILES
 int         ft_atoi(const char *str);
@@ -72,5 +70,9 @@ int         empty_line(char *str);
 int         special_strlen(char *str);
 void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
+
+//^ RAYCASTING
+t_raycast   *raycast_init(void);
+double      convert_degree_to_radian(double degree);
 
 #endif

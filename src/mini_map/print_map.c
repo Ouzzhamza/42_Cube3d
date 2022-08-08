@@ -6,30 +6,12 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/03 15:13:33 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 09:36:36 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
-
-
-typedef struct s_data
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	t_img	img;
-} t_data;
-
-typedef struct s_rect
-{
-	int	x;
-	int	y;
-	int	width;
-	int	height;
-	int color;
-}t_rect;
-
 
 void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
 {

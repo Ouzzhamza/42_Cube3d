@@ -6,17 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-<<<<<<< HEAD
-# Make data base, printed on Thu Aug  4 08:46:37 2022
-=======
-<<<<<<< HEAD
-# Make data base, printed on Wed Aug  3 13:37:31 2022
-=======
-# Make data base, printed on Tue Aug  2 21:28:22 2022
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+# Make data base, printed on Mon Aug  8 09:21:53 2022
 
 # Variables
 
@@ -47,27 +38,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-<<<<<<< HEAD
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00006dr0001lf/T/vscode-ipc-7e1d0315-4995-4567-9eec-4f1b7dbc7f13.sock
-=======
-<<<<<<< HEAD
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-2f598016-903a-440e-912e-22bc460a9e87.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-47b11695-17f2-45e6-9e10-a4bd59d3e9f9.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /goinfre/mmoumni/miniconda3/bin:/Users/mmoumni/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Python.framework/Versions/3.9/bin
-# environment
-LaunchInstanceID = 9EC62D60-0E5D-4496-BC72-0D233FEDC642
-=======
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n00006dr0001lf/T/vscode-ipc-f69bb7a3-03c1-4e03-9ebf-8b50b90ad127.sock
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
-# environment
-VSCODE_CWD = /
-# environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -75,15 +50,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-<<<<<<< HEAD
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.OQg1K2JHZp/Listeners
-=======
-<<<<<<< HEAD
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.6imrB5Vpgc/Listeners
-=======
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.dkgK6TLKqE/Listeners
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bJR5maUCQR/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -97,7 +64,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/mmoumni
 # default
-MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/mmoumni/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
 # environment
@@ -106,8 +73,6 @@ LOGNAME = mmoumni
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from `Makefile', line 17)
 HEADERS = includes/cube3d.h includes/structs.h
-# environment
-ZSH = /Users/houazzan/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -132,12 +97,10 @@ USER = mmoumni
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 15)
 NAME = cube3d
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # default
 .VARIABLES := 
 # environment
@@ -153,33 +116,19 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-<<<<<<< HEAD
-XPC_SERVICE_NAME = com.microsoft.VSCode.1224
-=======
-<<<<<<< HEAD
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000006.Electron
-=======
-XPC_SERVICE_NAME = com.microsoft.VSCode.2152
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+XPC_SERVICE_NAME = com.microsoft.VSCode.2132
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x18C67:0:0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
-PAGER = less
-# environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186cf
 # automatic
 ^F = $(notdir $^)
 # default
@@ -193,21 +142,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-<<<<<<< HEAD
-VSCODE_PID = 3980
-# variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=3/103=3%
-=======
-<<<<<<< HEAD
-VSCODE_PID = 97493
-# variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=3/102=3%
-=======
-VSCODE_PID = 2686
+VSCODE_PID = 998
 # variable set hash-table stats:
 # Load=66/1024=6%, Rehash=0, Collisions=3/99=3%
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
 
 # Pattern-specific Variable Values
 
@@ -215,17 +152,11 @@ VSCODE_PID = 2686
 
 # Directories
 
-<<<<<<< HEAD
-# . (device 16777225, inode 931870): 13 files, no impossibilities.
+# . (device 16777225, inode 931870): 14 files, no impossibilities.
 # includes (device 16777225, inode 932177): 4 files, no impossibilities so far.
-# src (device 16777225, inode 932203): 4 files, no impossibilities so far.
-=======
-# . (device 16777225, inode 40676): 14 files, no impossibilities.
-# includes (device 16777225, inode 40755): 4 files, no impossibilities so far.
-# src (device 16777225, inode 40781): 4 files, no impossibilities so far.
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
+# src (device 16777225, inode 932203): 5 files, no impossibilities so far.
 
-# 21 files, no impossibilities in 3 directories.
+# 23 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -303,15 +234,7 @@ all: cube3d
 # Not a target:
 includes/structs.h:
 #  Implicit rule search has been done.
-<<<<<<< HEAD
-#  Last modified 2022-08-03 16:48:33
-=======
-<<<<<<< HEAD
-#  Last modified 2022-08-02 19:43:51
-=======
-#  Last modified 2022-08-02 20:41:27
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+#  Last modified 2022-08-07 15:00:00
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -325,15 +248,7 @@ includes/structs.h:
 # Not a target:
 includes/cube3d.h:
 #  Implicit rule search has been done.
-<<<<<<< HEAD
-#  Last modified 2022-08-03 16:52:45
-=======
-<<<<<<< HEAD
-#  Last modified 2022-08-02 21:17:21
-=======
-#  Last modified 2022-08-02 21:27:06
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+#  Last modified 2022-08-07 13:34:51
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -366,15 +281,7 @@ src/cube3d_utiles/ft_lstnew.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-<<<<<<< HEAD
-#  Last modified 2022-08-03 10:00:44
-=======
-<<<<<<< HEAD
-#  Last modified 2022-08-01 18:10:41
-=======
-#  Last modified 2022-08-02 21:28:18
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+#  Last modified 2022-08-07 13:34:51
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -384,20 +291,12 @@ Makefile:
 src/cube3d_utiles/get_next_line_utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
- 
 cube3d: src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/get_next_line_utils.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strncmp.o src/parcing_utiles.o src/cube3d_utiles/free.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/ft_isprint.o src/parcing_utiles1.o
 #  Implicit rule search has not been done.
-<<<<<<< HEAD
-#  Last modified 2022-08-03 17:58:46
-=======
-<<<<<<< HEAD
-#  File does not exist.
-=======
-#  Last modified 2022-08-02 21:27:08
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+#  Last modified 2022-08-07 13:34:51
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -409,15 +308,7 @@ cube3d: src/cube3d.o src/error.o src/cube3d_utiles/get_next_line.o src/cube3d_ut
 # Not a target:
 src/cube3d.c:
 #  Implicit rule search has been done.
-<<<<<<< HEAD
-#  Last modified 2022-08-03 17:59:11
-=======
-<<<<<<< HEAD
-#  Last modified 2022-08-01 19:00:49
-=======
-#  Last modified 2022-08-02 21:24:38
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+#  Last modified 2022-08-07 11:38:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -538,14 +429,6 @@ src/cube3d_utiles/ft_memset.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-<<<<<<< HEAD
-# Finished Make data base on Thu Aug  4 08:46:37 2022
-=======
-<<<<<<< HEAD
-# Finished Make data base on Wed Aug  3 13:37:31 2022
-=======
-# Finished Make data base on Tue Aug  2 21:28:22 2022
->>>>>>> 38416de72adeabc3056fbb13f15eaf88d3754136
->>>>>>> 65113106ab43b2615cac732083b3694e9b02c055
+# Finished Make data base on Mon Aug  8 09:21:53 2022
 
  

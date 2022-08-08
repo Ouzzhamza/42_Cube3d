@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 19:57:00 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/08 09:47:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
+# define WIN_WIDTH 1500
+# define WIN_HEIGHT 400
 
 typedef struct s_list
 {
@@ -44,5 +46,29 @@ typedef struct s_img
 	int		line_len;
 	int		endian;
 } t_img;
+
+typedef struct s_data
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+	t_img	img;
+} t_data;
+
+typedef struct s_rect
+{
+	int	x;
+	int	y;
+	int	width;
+	int	height;
+	int color;
+}t_rect;
+
+typedef struct	s_raycast
+{
+	int		dim_proj_plane;
+	int		cent_proj;
+	double	dis_proj;
+	double	angle;
+} t_raycast;
 
 #endif
