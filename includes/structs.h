@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 14:42:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/11 10:56:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,26 @@ typedef struct s_rect
 	int color;
 }t_rect;
 
+// typedef struct s_ray
+// {
+// 	double	x;
+// 	double	y;	
+// } t_ray;
+
+typedef struct s_point
+{
+	double	x;
+	double	y;
+} t_point;
+
 typedef struct	s_raycast
 {
 	int		dim_proj_plane;
-	int		cent_proj;
+	t_point	cent_proj;
 	double	dis_proj;
 	double	angle;
+	double	incrment_angle;
+	double	player_angle;
 } t_raycast;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 14:37:12 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/10 18:53:50 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,11 @@ int     check_item_valid(char **map, int x, int y);
 int     parse_map(char **map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
-void    draw_minimap(t_data *data, char **map);
+t_point draw_minimap(t_data *data, char **map);
 
 //^ RAYCASTING
-t_raycast   *raycast_init(void);
+// t_raycast   *raycast_init(void);
 double      convert_degree_to_radian(double degree);
-
+void    drawline(t_data *data, int x0, int y0, int x1, int y1);
+void	my_mlx_put_pixel(t_data *data, int x, int y, int color);
 #endif
