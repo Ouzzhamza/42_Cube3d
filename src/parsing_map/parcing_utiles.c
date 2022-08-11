@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 12:48:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/08 17:55:24 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void list_to_array(t_map *map)
 	map->map = (char **) malloc (map->longest * sizeof(char *) + 1);
 	while(ptr)
 	{
+		// printf("%d\n", map->longest);
 		map->map[i] = special_dupe(ptr->line, map->longest);
+		// printf("%d\n", ft_strlen(map->map[i]));
+		// printf("%s\n", map->map[i]);
 		i++;
 		ptr = ptr->next;
 	}

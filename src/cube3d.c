@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/11 12:04:13 by mmoumni          ###   ########.fr       */
+=======
+/*   Updated: 2022/08/08 18:20:20 by houazzan         ###   ########.fr       */
+>>>>>>> 51dbf4d2ab5557965a6d291d086d7b7fdc00c271
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +63,7 @@ t_map	*read_map(int ac, char **av)
 	}
 	if (map->identifier != 6)
 		ft_error(MAP);
+
 	list_to_array(map);
 	return (map);
 }
