@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/11 11:30:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/12 06:43:08 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,9 @@ t_point	draw_minimap(t_data *data, char **map)
 				render(data, x_start, y_start, 0xFF0000);
 			else
 			{
-				render_player(data, x_start + 8 , y_start + 8,  0xFFAFF);
+				map[i][j] = '0';
+				render(data, x_start, y_start, 0xFFFFFFF);
+				// render_player(data, x_start + 8 , y_start + 8,  0xFFAFF);
 				player_pos.x = x_start + 16;
 				player_pos.y = y_start + 16;
 			}

@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/11 12:04:13 by mmoumni          ###   ########.fr       */
-=======
-/*   Updated: 2022/08/08 18:20:20 by houazzan         ###   ########.fr       */
->>>>>>> 51dbf4d2ab5557965a6d291d086d7b7fdc00c271
+/*   Updated: 2022/08/12 09:38:12 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,69 +78,85 @@ void	mlx_data_init(t_data *data)
 	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
 }
 
-int	raycast_init(t_raycast *raycast)
-{
-	raycast->dim_proj_plane = WIN_HEIGHT * WIN_WIDTH;
-	raycast->cent_proj = (t_point) {WIN_HEIGHT / 2, WIN_WIDTH / 2};
-	raycast->dis_proj = (WIN_WIDTH / 2) / tan(M_1_PI / 6);
-	raycast->angle = M_1_PI / 3;
-	raycast->incrment_angle = (M_1_PI / 3) / WIN_WIDTH;
-	return (1);
-}
+// int	raycast_init(t_raycast *raycast)
+// {
+// 	raycast->dim_proj_plane = WIN_HEIGHT * WIN_WIDTH;
+// 	raycast->cent_proj = (t_point) {WIN_HEIGHT / 2, WIN_WIDTH / 2};
+// 	raycast->dis_proj = (WIN_WIDTH / 2) / tan(M_1_PI / 6);
+// 	raycast->angle = M_1_PI / 3;
+// 	raycast->incrment_angle = (M_1_PI / 3) / WIN_WIDTH;
+// 	return (1);
+// }
 
-void trace_rays(t_data *data, t_point player_pos, t_raycast *raycast)
+// void trace_rays(t_data *data, t_point player_pos, t_raycast *raycast)
+// {
+// 	int i;
+// 	t_point a;
+// 	double angle;
+
+// 	i = 0;
+// 	angle = -(M_PI / 6);
+// 	// raycast->player_angle = 0;
+// 	// player_pos.x = (player_pos.x) * cos(raycast->player_angle) - (player_pos.y) * sin(raycast->player_angle);
+// 	// player_pos.y = (player_pos.x) * sin(raycast->player_angle) + (player_pos.y ) * cos(raycast->player_angle);
+// 	// angle += raycast->player_angle;
+// 	while (i < WIN_WIDTH)
+// 	{
+// 		// a.x = player_pos.x;
+// 		// a.y = player_pos.y;
+// 		a.x = (player_pos.x + 50) * cos(angle) - (player_pos.y + 50) * sin(angle);
+// 		a.y = (player_pos.x + 50) * sin(angle) + (player_pos.y + 50) * cos(angle);
+// 		drawline(data, (int)player_pos.x, (int)player_pos.y, (int)a.x, (int)a.y);
+// 		angle += raycast->incrment_angle;
+// 		i++;
+// 	}	
+// }
+
+void	print_map(t_map *map)
 {
 	int i;
-	t_point a;
-	double angle;
+	int	j;
 
 	i = 0;
-	angle = -(M_PI / 6);
-	// raycast->player_angle = 0;
-	// player_pos.x = (player_pos.x) * cos(raycast->player_angle) - (player_pos.y) * sin(raycast->player_angle);
-	// player_pos.y = (player_pos.x) * sin(raycast->player_angle) + (player_pos.y ) * cos(raycast->player_angle);
-	// angle += raycast->player_angle;
-	while (i < WIN_WIDTH)
+	while (map->map[i])
 	{
-		// a.x = player_pos.x;
-		// a.y = player_pos.y;
-		a.x = (player_pos.x + 50) * cos(angle) - (player_pos.y + 50) * sin(angle);
-		a.y = (player_pos.x + 50) * sin(angle) + (player_pos.y + 50) * cos(angle);
-		drawline(data, (int)player_pos.x, (int)player_pos.y, (int)a.x, (int)a.y);
-		angle += raycast->incrment_angle;
+		j = 0;
+		while (map->map[i][j])
+		{
+			printf("%c ", map->map[i][j]);
+			j++;
+		}
+		printf("\n");
 		i++;
-	}	
+	}
 }
 
 int	main(int ac, char **av)
 {
 	t_map		*map;
 	t_data		data;
-	// t_raycast	raycast;
-	t_point		player_pos;
-	t_point		a;
-
+	t_player	player;
+	t_raycast	raycast;
+	t_point		ray;
+	
 	map = read_map(ac, av);
 	if (parse_map(map->map))
 	{
 		mlx_data_init(&data);
-		player_pos = draw_minimap(&data, map->map);
-		// printf("%f - %f\n",player_pos.x, player_pos.y);
-		a.x = player_pos.x * cos((2 * M_PI)/3 ) - (player_pos.y + 100) * sin((2 * M_PI)/3 );
-		a.y = player_pos.x * sin((2 * M_PI)/3 ) + (player_pos.y + 100) * cos((2 * M_PI)/3 );
-		drawline(&data, player_pos.x, player_pos.y, a.x, a.y);
-		// raycast_init(&raycast);
-		// trace_rays(&data, player_pos, &raycast);
+		player_data_init(map, &player);
+		player.map_pos = draw_minimap(&data, map->map);
+		player.map_pos.x -= 8;
+		player.map_pos.y -= 8;
+		raycast = raycast_data_init(&data, map, &player);
+		render_player(&data, player.map_pos.x, player.map_pos.y, 0x00FF00);
+		ray.x = player.map_pos.x + 30 * cos(player.angle);
+		ray.y = player.map_pos.y + 30 * sin(player.angle);
+		drawline(&data, player.map_pos.x, player.map_pos.y, ray.x, ray.y);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
+		mlx_hook(data.win_ptr, 17, 0, red_cross, &raycast);
+		mlx_hook(data.win_ptr, 2, 0, handle_player_move, &raycast);
+		mlx_key_hook(data.win_ptr, close_win, &raycast);
 		mlx_loop(data.mlx_ptr);
 	}
-	// for (int i = 0; map->map[i]; i++)
-	// {
-	// 	for (int j = 0; map->map[i][j]; j++)
-	// 	{
-	// 		printf("%c ", map->map[i][j]);
-	// 	}
-	// 	printf("\n");
-	// }
 	return (0);
 }

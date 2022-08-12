@@ -17,7 +17,7 @@ void    drawline(t_data *data, int x0, int y0, int x1, int y1)
     err = dx + dy;
     while (1)
     {
-        my_mlx_put_pixel(data, x0, y0,0x000000);
+        my_mlx_put_pixel(data, x0, y0,0x0000FF);
         e2 = 2*err;
         if (e2 >= dy)
         {
