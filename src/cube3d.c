@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/12 09:38:12 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/13 10:51:31 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,9 +153,7 @@ int	main(int ac, char **av)
 		ray.y = player.map_pos.y + 30 * sin(player.angle);
 		drawline(&data, player.map_pos.x, player.map_pos.y, ray.x, ray.y);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
-		mlx_hook(data.win_ptr, 17, 0, red_cross, &raycast);
-		mlx_hook(data.win_ptr, 2, 0, handle_player_move, &raycast);
-		mlx_key_hook(data.win_ptr, close_win, &raycast);
+		hooks(&raycast);
 		mlx_loop(data.mlx_ptr);
 	}
 	return (0);

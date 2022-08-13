@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/12 08:40:57 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/13 12:46:11 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,19 @@ t_point draw_minimap(t_data *data, char **map);
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);
 double      convert_degree_to_radian(double degree);
-void    drawline(t_data *data, int x0, int y0, int x1, int y1);
-void	my_mlx_put_pixel(t_data *data, int x, int y, int color);
-int     player_data_init(t_map *map, t_player *player);
-double	player_angle(char direction);
+void        drawline(t_data *data, int x0, int y0, int x1, int y1);
+void        my_mlx_put_pixel(t_data *data, int x, int y, int color);
+int         player_data_init(t_map *map, t_player *player);
+double	    player_angle(char direction);
 t_raycast	raycast_data_init(t_data *data, t_map *map, t_player *player);
-int	handle_player_move(int key, void *data);
-int	close_win(int key, void *param);
-int	red_cross(void *param);
 
+
+//^ HOOKS
+ 
+void hooks(t_raycast *raycast);
+void move_forward(t_raycast *raycast);
+void retreat(t_raycast *raycast);
+void redraw(t_raycast *raycast);
 
 // ^Free Functions
 void	free_list(t_list *list);
