@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/13 10:51:31 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:53:14 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,40 +77,6 @@ void	mlx_data_init(t_data *data)
 		ft_error("mlx_img Error!\n");
 	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
 }
-
-// int	raycast_init(t_raycast *raycast)
-// {
-// 	raycast->dim_proj_plane = WIN_HEIGHT * WIN_WIDTH;
-// 	raycast->cent_proj = (t_point) {WIN_HEIGHT / 2, WIN_WIDTH / 2};
-// 	raycast->dis_proj = (WIN_WIDTH / 2) / tan(M_1_PI / 6);
-// 	raycast->angle = M_1_PI / 3;
-// 	raycast->incrment_angle = (M_1_PI / 3) / WIN_WIDTH;
-// 	return (1);
-// }
-
-// void trace_rays(t_data *data, t_point player_pos, t_raycast *raycast)
-// {
-// 	int i;
-// 	t_point a;
-// 	double angle;
-
-// 	i = 0;
-// 	angle = -(M_PI / 6);
-// 	// raycast->player_angle = 0;
-// 	// player_pos.x = (player_pos.x) * cos(raycast->player_angle) - (player_pos.y) * sin(raycast->player_angle);
-// 	// player_pos.y = (player_pos.x) * sin(raycast->player_angle) + (player_pos.y ) * cos(raycast->player_angle);
-// 	// angle += raycast->player_angle;
-// 	while (i < WIN_WIDTH)
-// 	{
-// 		// a.x = player_pos.x;
-// 		// a.y = player_pos.y;
-// 		a.x = (player_pos.x + 50) * cos(angle) - (player_pos.y + 50) * sin(angle);
-// 		a.y = (player_pos.x + 50) * sin(angle) + (player_pos.y + 50) * cos(angle);
-// 		drawline(data, (int)player_pos.x, (int)player_pos.y, (int)a.x, (int)a.y);
-// 		angle += raycast->incrment_angle;
-// 		i++;
-// 	}	
-// }
 
 void	print_map(t_map *map)
 {

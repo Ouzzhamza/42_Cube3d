@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:25:12 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/13 12:51:23 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:09:50 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ int  key_type(int key, t_raycast *raycast)
 {
 	if (key == 53)
 		ft_exit(raycast);
-	else if (key == 13)
+	else if (key == 13 || key == 126)
 		move_forward(raycast);
-	else if (key == 1)
+	else if (key == 1 || key == 125)
 		retreat(raycast);
+	else if (key == 123)
+		move_left(raycast);
+	else if (key == 124)
+		move_right(raycast);
 	else if (key == 2)
-		raycast->player->angle += 0.174533;
-	else if (key == 0)
 		raycast->player->angle -= 0.174533;
+	else if (key == 0)
+		raycast->player->angle += 0.174533;
 	redraw(raycast);
 	return(0);
 }

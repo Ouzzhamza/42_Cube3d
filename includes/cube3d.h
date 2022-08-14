@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/13 12:46:11 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:06:36 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,21 @@ t_raycast	raycast_data_init(t_data *data, t_map *map, t_player *player);
 //^ HOOKS
  
 void hooks(t_raycast *raycast);
+int	valid_move(t_raycast *raycast);
 void move_forward(t_raycast *raycast);
+void move_right(t_raycast *raycast);
+void move_left(t_raycast *raycast);
 void retreat(t_raycast *raycast);
 void redraw(t_raycast *raycast);
+
 
 // ^Free Functions
 void	free_list(t_list *list);
 void	free_two_dim_arr(char **arr);
 void	free_map(t_map *map);
+
+
+// int	red_cross(void *param);
+// int	close_win(int key, void *param);
+// int	handle_player_move(int key, void *data);
 #endif
