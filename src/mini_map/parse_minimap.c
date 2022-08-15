@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/08 13:31:19 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/14 09:53:34 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,16 @@ int	check_vertical(char **map, int x, int y)
 	int	i;
 	int	j;
 
-	i = x - 1;
-	j = y;
-	if (i >= 0)
+	i = y - 1;
+	j = x;
+	if (i >= 0 && map[i] != NULL && map[i][j])
 	{
 		if (map[i][j] == ' ')
-			return (1);
-	}
-	else
+			return (0);
+		if (map[i + 2][j] == ' ')
+			return (0);
 		return (1);
-	i = x + 1;
-	j = y;
-	if (map[i])
-	{
-		if (map[i][j] == ' ')
-			return (1);
 	}
-	else
-		return (1);
 	return (0);
 }
 
@@ -44,34 +36,26 @@ int	check_horizontal(char **map, int x, int y)
 	int	i;
 	int	j;
 
-	i = x;
-	j = y - 1;
-	if (j >= 0)
+	i = y;
+	j = x - 1;
+	if (j >= 0 && map[i][j])
 	{
 		if (map[i][j] == ' ')
-			return (1);
-	}
-	else
+			return (0);
+		if (map[i][j + 2] == ' ')
+			return (0);
 		return (1);
-	i = x;
-	j = y + 1;
-	if (map[i][j] != '\0')
-	{
-		if (map[i][j] == ' ')
-			return (1);
 	}
-	else
-		return (1);
 	return (0);
 }
 
 int	check_item_valid(char **map, int x, int y)
 {
-	if (check_vertical(map, x, y))
-		return (1);
-	if (check_horizontal(map, x, y))
-		return (1);
-	return (0);
+	if (!check_vertical(map, x, y))
+		return (0);
+	if (!check_horizontal(map, x, y))
+		return (0);
+	return (1);
 }
 
 int	parse_map(char **map)
@@ -89,8 +73,8 @@ int	parse_map(char **map)
 			if (map[i][j] == '0' || map[i][j] == 'W' || map[i][j] == 'N'
 				|| map[i][j] == 'E' || map[i][j] == 'S')
 			{
-				validation = check_item_valid(map, i, j);
-				if (validation)
+				validation = check_item_valid(map, j, i);
+				if (!validation)
 					ft_error(MAP);
 			}
 			j++;

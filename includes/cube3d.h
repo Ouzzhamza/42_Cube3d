@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/12 08:40:57 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/14 08:50:59 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,23 +79,30 @@ int     check_item_valid(char **map, int x, int y);
 int     parse_map(char **map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
-t_point draw_minimap(t_data *data, char **map);
+void    draw_minimap(t_data *data, char **map);
 
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);
+t_point	get_player_pos(char **map);
 double      convert_degree_to_radian(double degree);
-void    drawline(t_data *data, int x0, int y0, int x1, int y1);
-void	my_mlx_put_pixel(t_data *data, int x, int y, int color);
-int     player_data_init(t_map *map, t_player *player);
-double	player_angle(char direction);
-t_raycast	raycast_data_init(t_data *data, t_map *map, t_player *player);
-int	handle_player_move(int key, void *data);
-int	close_win(int key, void *param);
-int	red_cross(void *param);
-
+void        drawline(t_data *data, int x0, int y0, int x1, int y1);
+void        my_mlx_put_pixel(t_data *data, int x, int y, int color);
+t_player    *player_data_init(t_map *map);
+double      player_angle(char direction);
+t_raycast   *raycast_data_init(t_data *data, t_map *map, t_player *player);
+int         handle_player_move(int key, void *data);
+int         close_win(int key, void *param);
+int         red_cross(void *param);
+int         trace_rays(t_raycast *raycast);
 
 // ^Free Functions
 void	free_list(t_list *list);
 void	free_two_dim_arr(char **arr);
 void	free_map(t_map *map);
+
+double  get_horizontal_intersection(t_raycast *raycast, double angle);
+double  get_vertical_intersection(t_raycast *raycast, double angle);
+double  get_intersection(t_raycast *raycast, double angle);
+int     ray_casting(t_raycast *raycast);
+void	init_tab(double *tab, int size);
 #endif

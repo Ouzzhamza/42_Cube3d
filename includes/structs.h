@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/12 08:30:17 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/14 14:33:34 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1024
+# define WIN_WIDTH 800
+# define WIN_HEIGHT 600
 # define CUB_SIZE	32
 
 typedef struct s_list
@@ -83,6 +83,10 @@ typedef struct	s_raycast
 	t_data		*data;
 	t_player	*player;
 	t_map		*map;
+	double		dis_plane;
+	double		angle;
+	double		increment_angle;
+	double		*rays;
 } t_raycast;
 
 #endif

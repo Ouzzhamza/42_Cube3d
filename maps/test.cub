@@ -1,0 +1,15 @@
+NO ./assets/brick.xpm
+EA ./assets/brick.xpm
+SO ./assets/brick.xpm
+WE ./assets/brick.xpm
+
+F 36,85,0
+C 0,0,0
+
+111111
+110001
+100001
+100001
+100001
+101N01
+111111
