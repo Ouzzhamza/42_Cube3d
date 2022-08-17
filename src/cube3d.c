@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 14:59:04 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 18:42:34 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ int	main(int ac, char **av)
 		// draw_minimap(&data, map->map);
 		raycast = raycast_data_init(&data, map, player);
 		// printf("%d --- %d\n",raycast->map->map_width, raycast->map->map_height);
+		render_image_color(raycast, raycast->map->ceiling, 0);
+		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);

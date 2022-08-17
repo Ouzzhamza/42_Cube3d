@@ -6,7 +6,7 @@ SRCS  = ./src/cube3d_utiles/free.c ./src/cube3d_utiles/ft_isprint.c ./src/cube3d
 		./src/mini_map/print_map.c ./src/parsing_map/parcing_utiles.c ./src/parsing_map/parcing_utiles1.c ./src/raycasting/raycasting.c \
 		./src/raycasting/raycasting_utils.c ./src/cube3d.c ./src/errors/error.c ./src/draw_line.c ./src/hooks/player_move.c ./src/hooks/hooks.c \
 		./src/hooks/player_move_utiles.c ./src/errors/free_functions.c ./src/parsing_map/map_parcing.c ./src/raycasting/rays_distance.c \
-		./src/raycasting/intersection_steps.c ./src/raycasting/raycasting_utils_2.c
+		./src/raycasting/intersection_steps.c ./src/raycasting/raycasting_utils_2.c ./src/raycasting/render_floor_ceil.c
 
 OBJ = $(SRCS:.c=.o)
  

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 11:45:42 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 18:43:16 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void redraw(t_raycast *raycast)
 	raycast->data->img.mlx_img = mlx_new_image(raycast->data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	// draw_minimap(raycast->data, raycast->map->map);
 	// render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+	render_image_color(raycast, raycast->map->ceiling, 0);
+	render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 	ray_casting(raycast);
 	mlx_put_image_to_window(raycast->data->mlx_ptr, raycast->data->win_ptr, raycast->data->img.mlx_img,0,0);
 }

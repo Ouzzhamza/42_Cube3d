@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 16:49:56 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 18:11:22 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 	return ((t_point){1e9,1e9});
 }
 
-double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical)
+double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical, double angle)
 {
 	double	horiz_dist;
 	double	vertic_dist;
@@ -77,13 +77,13 @@ double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vert
 		{
 			vertic_dist = calculate_ray_distance(raycast->player->map_pos, ray_vertical);
 			if (horiz_dist < vertic_dist)
-				return (horiz_dist);
-			return (vertic_dist);
+				return (horiz_dist * cos(raycast->player->angle - angle));
+			return (vertic_dist * cos(raycast->player->angle - angle));
 		}
-		return (horiz_dist);
+		return (horiz_dist * cos(raycast->player->angle - angle));
 	}
 	vertic_dist = calculate_ray_distance(raycast->player->map_pos, ray_vertical);
-	return (vertic_dist);
+	return (vertic_dist * cos(raycast->player->angle - angle));
 }
 
 int	ray_casting(t_raycast *raycast)
@@ -101,8 +101,8 @@ int	ray_casting(t_raycast *raycast)
 		ray_angle = normlize_angle(ray_angle);
 		horiz_ray = get_horiz_inters_point(raycast, ray_angle);
 		vertic_ray = get_vertic_inters_point(raycast, ray_angle);
-		dist = valid_inters(raycast, horiz_ray, vertic_ray);
-		draw_wall(raycast, i, dist);
+		dist = valid_inters(raycast, horiz_ray, vertic_ray, ray_angle);
+		draw_wall(raycast, i, calculate_wall_projection(raycast, dist));
 		ray_angle += raycast->increment_angle;
 		i++;
 	}

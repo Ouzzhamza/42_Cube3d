@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 15:09:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 18:38:14 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,6 @@ bool ft_is_ray_up(double angle);
 double	calculate_wall_projection(t_raycast *raycast, double dist_wall);
 void	free_raycast(t_raycast *raycast);
 int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
+void	render_image_color(t_raycast *raycast, int color, int y_start);
 // double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 #endif
