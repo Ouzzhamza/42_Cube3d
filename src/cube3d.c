@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 11:45:23 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 14:59:04 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,39 +95,6 @@ int	trace_rays(t_raycast *raycast)
 	}
 	return (1);
 }
-
-void	print_map(t_map *map)
-{
-	int i;
-	int	j;
-
-	i = 0;
-	while (map->map[i])
-	{
-		j = 0;
-		while (map->map[i][j])
-		{
-			printf("%c ", map->map[i][j]);
-			j++;
-		}
-		// printf("\n");
-		i++;
-	}
-	printf("hello\n");
-}
-
-void	print_rays(t_raycast *ray_casting)
-{
-	int i;
-
-	i = 0;
-	while (i < WIN_WIDTH)
-	{
-		printf("cord:%d = Dis:%f",i,ray_casting->rays[i]);
-		i++;
-	}
-}
-
 
 int	main(int ac, char **av)
 {

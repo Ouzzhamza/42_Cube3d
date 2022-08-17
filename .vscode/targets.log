@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Wed Aug 17 11:27:02 2022
+# Make data base, printed on Wed Aug 17 14:44:26 2022
 
 # Variables
 
@@ -38,11 +39,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-71f2b132-e17a-4ec3-b2a9-0e0ba21483c8.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-3a90b38d-1305-46da-8d60-5eba1d42b6ec.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.tWJIP7adpS/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.nMuS8cTvgh/Render
 # environment
 PATH = /goinfre/mmoumni/miniconda3/bin:/Users/mmoumni/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Python.framework/Versions/3.9/bin
 # environment
@@ -52,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.USZaBTRlP9/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.RH0SOIqpoT/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -118,7 +119,7 @@ MFLAGS = -lmlx -framework OpenGL -framework AppKit -lm
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -148,7 +149,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 33960
+VSCODE_PID = 1335
 # variable set hash-table stats:
 # Load=69/1024=7%, Rehash=0, Collisions=3/103=3%
 
@@ -158,11 +159,14 @@ VSCODE_PID = 33960
 
 # Directories
 
+# src/mini_map (device 16777227, inode 1021863): 7 files, no impossibilities so far.
+# src/raycasting (device 16777227, inode 1217304): 4 files, no impossibilities so far.
+# src/parsing_map (device 16777227, inode 1218411): 6 files, no impossibilities so far.
 # . (device 16777227, inode 931870): 13 files, no impossibilities.
 # includes (device 16777227, inode 932177): 4 files, no impossibilities so far.
-# src/cube3d_utiles (device 16777227, inode 932206): 3 files, no impossibilities so far.
+# src/cube3d_utiles (device 16777227, inode 932206): 37 files, no impossibilities so far.
 
-# 20 files, no impossibilities in 3 directories.
+# 71 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
@@ -175,11 +179,17 @@ VSCODE_PID = 33960
 
 # Files
 
-# Not a target:
-src/cube3d_utiles/ft_split.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_split.o: src/cube3d_utiles/ft_split.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_split'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/cube3d.o:
@@ -190,42 +200,66 @@ src/cube3d.o:
 src/cube3d_utiles/free.o: src/cube3d_utiles/free.c includes/cube3d.h includes/structs.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `src/cube3d_utiles/free'
-#  File does not exist.
+#  Last modified 2022-08-17 14:41:37
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := src/cube3d_utiles/free.o
-# automatic
-# % := 
-# automatic
-# * := src/cube3d_utiles/free
-# automatic
-# + := src/cube3d_utiles/free.c includes/cube3d.h includes/structs.h
-# automatic
-# | := 
-# automatic
-# < := src/cube3d_utiles/free.c
-# automatic
-# ^ := src/cube3d_utiles/free.c includes/cube3d.h includes/structs.h
-# automatic
-# ? := src/cube3d_utiles/free.c includes/cube3d.h includes/structs.h
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 25):
 	@$(CC) $(FLAGS) -c $< -o $@
 	
 
 # Not a target:
-src/cube3d_utiles/ft_putstr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/mini_map/move_inmap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-08 13:35:43
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/cube3d_utiles/ft_isprint.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-01 18:10:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/cube3d_utiles/ft_strtrim.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_putstr.o: src/cube3d_utiles/ft_putstr.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_putstr'
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/cube3d_utiles/ft_isprint.o: src/cube3d_utiles/ft_isprint.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_isprint'
+ 
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 all: cube3d
 #  Phony target (prerequisite of .PHONY).
@@ -238,9 +272,27 @@ all: cube3d
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 # Not a target:
+src/mini_map/print_map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-14 09:55:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/cube3d_utiles/ft_lstadd_back.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 includes/structs.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-17 11:11:09
+#  Last modified 2022-08-17 11:34:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -254,18 +306,39 @@ includes/structs.h:
 # Not a target:
 includes/cube3d.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-17 11:22:11
+#  Last modified 2022-08-17 14:41:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-src/raycasting/raycasting.o:
- 
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/raycasting/raycasting.o: src/raycasting/raycasting.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/raycasting/raycasting'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := src/raycasting/raycasting.o
+# automatic
+# % := 
+# automatic
+# * := src/raycasting/raycasting
+# automatic
+# + := src/raycasting/raycasting.c includes/cube3d.h includes/structs.h
+# automatic
+# | := 
+# automatic
+# < := src/raycasting/raycasting.c
+# automatic
+# ^ := src/raycasting/raycasting.c includes/cube3d.h includes/structs.h
+# automatic
+# ? := src/raycasting/raycasting.c includes/cube3d.h includes/structs.h
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/raycasting/raycasting_utils_2.o:
@@ -273,17 +346,38 @@ src/raycasting/raycasting_utils_2.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/mini_map/parse_minimap.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/mini_map/parse_minimap.o: src/mini_map/parse_minimap.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/mini_map/parse_minimap'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/cube3d_utiles/ft_lstnew.o: src/cube3d_utiles/ft_lstnew.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_lstnew'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
-src/cube3d_utiles/ft_lstnew.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 14:16:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .SUFFIXES:
@@ -301,20 +395,41 @@ Makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/parsing_map/parcing_utiles.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_memset.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-01 09:45:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-src/cube3d_utiles/get_next_line_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/parsing_map/parcing_utiles.o: src/parsing_map/parcing_utiles.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/parsing_map/parcing_utiles'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/cube3d_utiles/get_next_line_utils.o: src/cube3d_utiles/get_next_line_utils.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/get_next_line_utils'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 cube3d: src/cube3d_utiles/free.o src/cube3d_utiles/ft_isprint.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_strchr.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strncmp.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/get_next_line_utils.o src/mini_map/move_inmap.o src/mini_map/parse_minimap.o src/mini_map/print_map.o src/parsing_map/parcing_utiles.o src/parsing_map/parcing_utiles1.o src/raycasting/raycasting.o src/raycasting/raycasting_utils.o src/cube3d.o src/errors/error.o src/draw_line.o src/hooks/player_move.o src/hooks/hooks.o src/hooks/player_move_utiles.o src/errors/free_functions.o src/parsing_map/map_parcing.o src/raycasting/rays_distance.o src/raycasting/intersection_steps.o src/raycasting/raycasting_utils_2.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-17 11:26:30
+#  Last modified 2022-08-17 12:37:38
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -324,16 +439,31 @@ cube3d: src/cube3d_utiles/free.o src/cube3d_utiles/ft_isprint.o src/cube3d_utile
 	
 
 # Not a target:
+src/cube3d_utiles/ft_split.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 src/draw_line.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/cube3d_utiles/ft_lstsize.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_lstsize.o: src/cube3d_utiles/ft_lstsize.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_lstsize'
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/cube3d_utiles/free.c:
@@ -345,16 +475,47 @@ src/cube3d_utiles/free.c:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-src/cube3d_utiles/ft_strlcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_putstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-01 09:45:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+ 
+src/cube3d_utiles/ft_strlcpy.o: src/cube3d_utiles/ft_strlcpy.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strlcpy'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
-src/cube3d_utiles/ft_strncmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_isprint.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-03 15:14:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_strncmp.o: src/cube3d_utiles/ft_strncmp.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strncmp'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -366,10 +527,25 @@ fclean: clean
 	
 
 # Not a target:
-src/parsing_map/parcing_utiles1.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/raycasting/raycasting.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-17 14:42:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/parsing_map/parcing_utiles1.o: src/parsing_map/parcing_utiles1.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/parsing_map/parcing_utiles1'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/errors/free_functions.o:
@@ -378,16 +554,40 @@ src/errors/free_functions.o:
 #  File has not been updated.
 
 # Not a target:
-src/cube3d_utiles/ft_strchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/mini_map/parse_minimap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 17:15:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_strchr.o: src/cube3d_utiles/ft_strchr.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strchr'
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/hooks/player_move_utiles.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+src/cube3d_utiles/ft_lstnew.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 src/hooks/player_move.o:
@@ -401,11 +601,17 @@ src/hooks/player_move.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/cube3d_utiles/ft_strnstr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_strnstr.o: src/cube3d_utiles/ft_strnstr.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strnstr'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/hooks/hooks.o:
@@ -414,10 +620,34 @@ src/hooks/hooks.o:
 #  File has not been updated.
 
 # Not a target:
-src/cube3d_utiles/get_next_line.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/parsing_map/parcing_utiles.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-14 09:24:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/cube3d_utiles/get_next_line_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-08 13:35:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/get_next_line.o: src/cube3d_utiles/get_next_line.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/get_next_line'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 re: clean all
 #  Phony target (prerequisite of .PHONY).
@@ -441,34 +671,92 @@ clean:
 	
 
 # Not a target:
-src/mini_map/move_inmap.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_lstlast.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/mini_map/move_inmap.o: src/mini_map/move_inmap.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/mini_map/move_inmap'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/cube3d_utiles/ft_atoi.o: src/cube3d_utiles/ft_atoi.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_atoi'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
-src/cube3d_utiles/ft_atoi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_lstsize.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 20:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_strtrim.o: src/cube3d_utiles/ft_strtrim.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strtrim'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/mini_map/print_map.o: src/mini_map/print_map.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/mini_map/print_map'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
+src/cube3d_utiles/ft_lstadd_back.o: src/cube3d_utiles/ft_lstadd_back.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+ 
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_lstadd_back'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
-src/cube3d_utiles/ft_strtrim.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/mini_map/print_map.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/cube3d_utiles/ft_lstadd_back.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_strlcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 14:16:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 src/raycasting/raycasting_utils.o:
@@ -477,22 +765,61 @@ src/raycasting/raycasting_utils.o:
 #  File has not been updated.
 
 # Not a target:
+src/cube3d_utiles/ft_strncmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-01 18:58:11
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 src/errors/error.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/cube3d_utiles/ft_strlen.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/parsing_map/parcing_utiles1.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-11 12:09:33
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_strlen.o: src/cube3d_utiles/ft_strlen.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_strlen'
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
-src/cube3d_utiles/ft_lstlast.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_strchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-08 14:36:52
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+src/cube3d_utiles/ft_lstlast.o: src/cube3d_utiles/ft_lstlast.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_lstlast'
+#  Last modified 2022-08-17 14:41:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
 
 # Not a target:
 src/raycasting/rays_distance.o:
@@ -500,11 +827,26 @@ src/raycasting/rays_distance.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+src/cube3d_utiles/ft_memset.o: src/cube3d_utiles/ft_memset.c includes/cube3d.h includes/structs.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/cube3d_utiles/ft_memset'
+#  Last modified 2022-08-17 14:41:38
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	@$(CC) $(FLAGS) -c $< -o $@
+	
+
 # Not a target:
-src/cube3d_utiles/ft_memset.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/cube3d_utiles/ft_strnstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-03 15:14:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 src/raycasting/intersection_steps.o:
@@ -512,8 +854,17 @@ src/raycasting/intersection_steps.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/cube3d_utiles/get_next_line.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 14:16:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 # files hash-table stats:
-# Load=48/1024=5%, Rehash=0, Collisions=0/112=0%
+# Load=71/1024=7%, Rehash=0, Collisions=3/296=1%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -525,6 +876,6 @@ src/raycasting/intersection_steps.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Aug 17 11:27:02 2022
+# Finished Make data base on Wed Aug 17 14:44:26 2022
 
  

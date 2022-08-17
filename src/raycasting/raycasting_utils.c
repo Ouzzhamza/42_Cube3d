@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 11:26:29 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 14:55:12 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,6 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 
 	raycast = (t_raycast *)malloc(sizeof(t_raycast));
 	if (!raycast)
-		ft_error("Malloc Error");
-	raycast->rays = (double *)malloc(sizeof(double) * WIN_WIDTH);
-	if (!raycast->rays)
-		ft_error("Malloc Error");
-	raycast->wall_proj = (double *)malloc(sizeof(double) * WIN_WIDTH);
-	if (!raycast->wall_proj)
 		ft_error("Malloc Error");
 	raycast->data = data;
 	raycast->map = map;

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 11:34:08 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 16:35:58 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ typedef struct	s_raycast
 	double		height_proj;
 	double		half_width;
 	double		centre_height;
-	double		*rays;
-	double		*wall_proj;
 } t_raycast;
 
 #endif

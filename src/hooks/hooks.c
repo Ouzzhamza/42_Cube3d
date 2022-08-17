@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:25:12 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 10:54:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:22:48 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int ft_exit(t_raycast *raycast)
 {
 	mlx_destroy_image(raycast->data->mlx_ptr, raycast->data->img.addr);
 	mlx_destroy_window(raycast->data->mlx_ptr, raycast->data->win_ptr);
-	free(raycast->data->mlx_ptr);
 	free_raycast(raycast);
 	exit(0);
 	

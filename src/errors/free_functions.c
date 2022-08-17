@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 08:29:23 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 10:58:56 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 15:22:26 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,8 @@ void	free_tab(void *tab)
 
 void	free_raycast(t_raycast *raycast)
 {
-	free_tab(raycast->rays);
-	free_tab(raycast->wall_proj);
 	free_map(raycast->map);
 	free(raycast->player);
-	free(raycast->data);
+	// free(raycast->data);
 	free(raycast);
 }
