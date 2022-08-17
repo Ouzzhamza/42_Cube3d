@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_move_utiles.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/14 18:58:36 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:45:42 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,10 @@ int	valid_move(t_raycast *raycast)
 
 void redraw(t_raycast *raycast)
 {
-	t_point ray;
-
 	mlx_destroy_image(raycast->data->mlx_ptr, raycast->data->img.mlx_img);
 	raycast->data->img.mlx_img = mlx_new_image(raycast->data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
-	draw_minimap(raycast->data, raycast->map->map);
-	render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-	ray.x = raycast->player->map_pos.x + 30 * cos(raycast->player->angle);
-	ray.y = raycast->player->map_pos.y + 30 * sin(raycast->player->angle);
-	drawline(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
+	// draw_minimap(raycast->data, raycast->map->map);
+	// render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+	ray_casting(raycast);
 	mlx_put_image_to_window(raycast->data->mlx_ptr, raycast->data->win_ptr, raycast->data->img.mlx_img,0,0);
 }

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/14 14:33:34 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 11:34:08 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1080
 # define CUB_SIZE	32
 
 typedef struct s_list
@@ -37,6 +37,8 @@ typedef struct map
 	void		*mlx;
 	int			identifier;
 	int 		longest;
+	int			map_width;
+	int			map_height;
 	t_list 		*list;
 } t_map;
 
@@ -86,7 +88,11 @@ typedef struct	s_raycast
 	double		dis_plane;
 	double		angle;
 	double		increment_angle;
+	double		height_proj;
+	double		half_width;
+	double		centre_height;
 	double		*rays;
+	double		*wall_proj;
 } t_raycast;
 
 #endif

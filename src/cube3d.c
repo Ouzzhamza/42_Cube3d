@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/15 12:59:29 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 11:45:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,18 +142,12 @@ int	main(int ac, char **av)
 		
 		mlx_data_init(&data);
 		player = player_data_init(map);
-		draw_minimap(&data, map->map);
+		// draw_minimap(&data, map->map);
 		raycast = raycast_data_init(&data, map, player);
-		// printf("%f -- %f\n", raycast->player->map_pos.x / CUB_SIZE, raycast->player->map_pos.y / CUB_SIZE);
-		// printf("%f -- %f\n",player.map_pos.x, player.map_pos.y);
-		// render_player(&data, player.map_pos.x, player.map_pos.y, 0x00FF00);
-		// trace_rays(raycast);
-		// printf("Here\n");
+		// printf("%d --- %d\n",raycast->map->map_width, raycast->map->map_height);
 		ray_casting(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
-		mlx_hook(data.win_ptr, 17, 0, red_cross, &raycast);
-		// mlx_hook(data.win_ptr, 2, 0, handle_player_move, &raycast);
-		mlx_key_hook(data.win_ptr, close_win, &raycast);
+		hooks(raycast);
 		mlx_loop(data.mlx_ptr);
 	}
 	return (0);

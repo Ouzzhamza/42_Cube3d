@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/15 12:58:35 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/17 12:35:19 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <stdio.h>
 # include <mlx.h>
 # include <math.h>
+# include <stdbool.h>
 
 
 //^ MACROS 
@@ -80,6 +81,7 @@ int     parse_map(char **map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
 void    draw_minimap(t_data *data, char **map);
+void    get_dimension_of_map(t_map *map, int *width, int *height);
 
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);
@@ -105,4 +107,24 @@ double  get_vertical_intersection(t_raycast *raycast, double angle);
 double  get_intersection(t_raycast *raycast, double angle);
 int     ray_casting(t_raycast *raycast);
 void	init_tab(double *tab, int size);
+
+void move_forward(t_raycast *raycast);
+void retreat(t_raycast *raycast);
+void move_right(t_raycast *raycast);
+void move_left(t_raycast *raycast);
+void redraw(t_raycast *raycast);
+void hooks(t_raycast *raycast);
+double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
+
+t_point	first_intersec_horiz(t_raycast *raycast, double angle);
+t_point xy_steps_horiz(double angle);
+t_point	first_intersec_vertic(t_raycast *raycast, double angle);
+t_point xy_steps_vertic(double angle);
+double	normlize_angle(double angle);
+bool ft_is_ray_right(double angle);
+bool ft_is_ray_up(double angle);
+double	calculate_wall_projection(t_raycast *raycast, double dist_wall);
+void	free_raycast(t_raycast *raycast);
+int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
+// double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 #endif
