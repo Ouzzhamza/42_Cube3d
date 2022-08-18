@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 08:29:23 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 15:22:26 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 09:07:05 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ void	free_raycast(t_raycast *raycast)
 {
 	free_map(raycast->map);
 	free(raycast->player);
-	// free(raycast->data);
 	free(raycast);
 }

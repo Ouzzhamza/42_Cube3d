@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 17:22:04 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 14:38:17 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 	raycast->increment_angle = (M_PI / (3 * WIN_WIDTH));
 	raycast->height_proj = raycast->dis_plane * CUB_SIZE;
 	raycast->centre_height = WIN_HEIGHT / 2;
+	raycast->width_limit = CUB_SIZE * map->map_width;
+	raycast->height_limit = CUB_SIZE * map->map_height;
 	return (raycast);
 }
 

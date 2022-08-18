@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 17:50:56 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 15:04:17 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 800
+# define WIN_WIDTH 850
 # define WIN_HEIGHT 600
 # define CUB_SIZE	32
 
@@ -91,6 +91,8 @@ typedef struct	s_raycast
 	double		height_proj;
 	double		half_width;
 	double		centre_height;
+	double		width_limit;
+	double		height_limit;
 } t_raycast;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 18:11:22 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 15:13:26 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ t_point	get_horiz_inters_point(t_raycast *raycast, double angle)
 	wall_interct = false;
 	inters = first_intersec_horiz(raycast, angle);
 	delta = xy_steps_horiz(angle);
-	while (inters.x >= 0 && inters.x < (CUB_SIZE * raycast->map->map_width) && inters.y >= 0 && inters.y < (raycast->map->map_height * CUB_SIZE))
+	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
 	{
 		grid.x = inters.x / CUB_SIZE;
 		grid.y = inters.y / CUB_SIZE;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
 		{
 			wall_interct = true;
+			if (ft_is_ray_up(angle))
+				inters.y++;
 			return ((t_point){inters.x, inters.y});
-			break ;
 		}
 		inters.x += delta.x;
 		inters.y += delta.y;
@@ -49,15 +50,16 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 	wall_interct = false;
 	inters = first_intersec_vertic(raycast, angle);
 	delta = xy_steps_vertic(angle);
-	while (inters.x >= 0 && inters.x < (CUB_SIZE * raycast->map->map_width) && inters.y >= 0 && inters.y < (raycast->map->map_height * CUB_SIZE))
+	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
 	{
 		grid.x = inters.x / CUB_SIZE;
 		grid.y = inters.y / CUB_SIZE;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
 		{
 			wall_interct = true;
+			if (!ft_is_ray_right(angle))
+				inters.x++;
 			return ((t_point){inters.x, inters.y});
-			break ;
 		}
 		inters.x += delta.x;
 		inters.y += delta.y;
@@ -70,10 +72,10 @@ double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vert
 	double	horiz_dist;
 	double	vertic_dist;
 
-	if (ray_horizontal.x != 1e9 || ray_horizontal.y != 1e9)
+	if (ray_horizontal.x != 1e9 && ray_horizontal.y != 1e9)
 	{
 		horiz_dist = calculate_ray_distance(raycast->player->map_pos, ray_horizontal);
-		if (ray_vertical.x != 1e9 || ray_vertical.y != 1e9)
+		if (ray_vertical.x != 1e9 && ray_vertical.y != 1e9)
 		{
 			vertic_dist = calculate_ray_distance(raycast->player->map_pos, ray_vertical);
 			if (horiz_dist < vertic_dist)
