@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:23:31 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 16:37:56 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 18:44:36 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ t_point	first_intersec_horiz(t_raycast *raycast, double angle)
 	double	y_intersection;
 	t_point	grid;
 
-	y_intersection = ((int)(raycast->player->map_pos.y / CUB_SIZE)) * CUB_SIZE;
+	y_intersection = (int)(raycast->player->map_pos.y / CUB_SIZE) * CUB_SIZE;
 	if (!ft_is_ray_up(angle))
 		y_intersection += CUB_SIZE;
-	if (ft_is_ray_up(angle))
-		y_intersection--;
 	x_intersection = raycast->player->map_pos.x + (y_intersection - raycast->player->map_pos.y) / tan(angle);
 	grid.x = x_intersection;
 	grid.y = y_intersection;
@@ -51,12 +49,10 @@ t_point	first_intersec_vertic(t_raycast *raycast, double angle)
 	double	y_intersection;
 	t_point	grid;
 	
-	x_intersection = ((int)(raycast->player->map_pos.x / CUB_SIZE)) * CUB_SIZE;
+	x_intersection = (floor(raycast->player->map_pos.x / CUB_SIZE)) * CUB_SIZE;
 	if (ft_is_ray_right(angle))
 		x_intersection += CUB_SIZE;
 	y_intersection = raycast->player->map_pos.y + (x_intersection - raycast->player->map_pos.x) * tan(angle);
-	if (!ft_is_ray_right(angle))
-		x_intersection--;
 	grid.x = x_intersection;
 	grid.y = y_intersection;
 	return (grid);

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 15:13:26 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 18:43:08 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,18 @@ t_point	get_horiz_inters_point(t_raycast *raycast, double angle)
 	t_point	inters;
 	t_point	delta;
 	t_point	grid;
-	bool	wall_interct;
 
-	wall_interct = false;
 	inters = first_intersec_horiz(raycast, angle);
 	delta = xy_steps_horiz(angle);
 	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
 	{
+		if (ft_is_ray_up(angle))
+			grid.y = (inters.y - 1) / CUB_SIZE;
+		else
+			grid.y = inters.y / CUB_SIZE;
 		grid.x = inters.x / CUB_SIZE;
-		grid.y = inters.y / CUB_SIZE;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
-		{
-			wall_interct = true;
-			if (ft_is_ray_up(angle))
-				inters.y++;
 			return ((t_point){inters.x, inters.y});
-		}
 		inters.x += delta.x;
 		inters.y += delta.y;
 	}
@@ -45,22 +41,18 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 	t_point	inters;
 	t_point	delta;
 	t_point	grid;
-	bool	wall_interct;
 
-	wall_interct = false;
 	inters = first_intersec_vertic(raycast, angle);
 	delta = xy_steps_vertic(angle);
 	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
 	{
-		grid.x = inters.x / CUB_SIZE;
+		if (!ft_is_ray_right(angle))
+			grid.x = (inters.x - 1) / CUB_SIZE;
+		else
+			grid.x = (inters.x) / CUB_SIZE;
 		grid.y = inters.y / CUB_SIZE;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
-		{
-			wall_interct = true;
-			if (!ft_is_ray_right(angle))
-				inters.x++;
 			return ((t_point){inters.x, inters.y});
-		}
 		inters.x += delta.x;
 		inters.y += delta.y;
 	}

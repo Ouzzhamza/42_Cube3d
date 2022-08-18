@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 14:38:17 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 18:07:27 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,14 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 
 bool ft_is_ray_up(double angle)
 {
-	if (angle >= M_PI && angle <= (2 *M_PI))
+	if (angle > M_PI && angle < (2 * M_PI))
 		return (true);
 	return (false);
 }
 
 bool ft_is_ray_right(double angle)
 {
-	if ((angle < 0.5 * M_PI) || (angle > 1.5 * M_PI))
+	if ((angle < M_PI / 2) || (angle > 1.5 * M_PI))
 		return (true);
 	return (false);
 }

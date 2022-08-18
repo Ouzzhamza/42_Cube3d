@@ -18,7 +18,6 @@ cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strlcpy.c -o src/cube3d_utiles
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strncmp.c -o src/cube3d_utiles/ft_strncmp.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strtrim.c -o src/cube3d_utiles/ft_strtrim.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/get_next_line_utils.c -o src/cube3d_utiles/get_next_line_utils.o
- 
 cc -Wall -Wextra -Werror  -c src/mini_map/move_inmap.c -o src/mini_map/move_inmap.o
 cc -Wall -Wextra -Werror  -c src/mini_map/parse_minimap.c -o src/mini_map/parse_minimap.o
 cc -Wall -Wextra -Werror  -c src/mini_map/print_map.c -o src/mini_map/print_map.o

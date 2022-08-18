@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Thu Aug 18 09:03:30 2022
+# Make data base, printed on Thu Aug 18 18:15:26 2022
 
 # Variables
 
@@ -38,7 +39,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-867c266e-3616-4265-b56c-dacd07186e19.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-2177f65a-7ec8-4735-97f8-4c93e2a25bd8.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -240,7 +241,7 @@ all: cube3d
 # Not a target:
 includes/structs.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-18 09:00:29
+#  Last modified 2022-08-18 18:07:54
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -261,7 +262,6 @@ includes/cube3d.h:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
- 
 src/raycasting/raycasting.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -271,6 +271,7 @@ src/raycasting/raycasting.o:
 src/raycasting/raycasting_utils_2.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -314,7 +315,7 @@ src/cube3d_utiles/get_next_line_utils.o:
 
 cube3d: src/cube3d_utiles/free.o src/cube3d_utiles/ft_isprint.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_strchr.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strncmp.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/get_next_line_utils.o src/mini_map/move_inmap.o src/mini_map/parse_minimap.o src/mini_map/print_map.o src/parsing_map/parcing_utiles.o src/parsing_map/parcing_utiles1.o src/raycasting/raycasting.o src/raycasting/raycasting_utils.o src/cube3d.o src/errors/error.o src/draw_line.o src/hooks/player_move.o src/hooks/hooks.o src/hooks/player_move_utiles.o src/errors/free_functions.o src/parsing_map/map_parcing.o src/raycasting/rays_distance.o src/raycasting/intersection_steps.o src/raycasting/raycasting_utils_2.o src/raycasting/render_floor_ceil.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 09:00:36
+#  Last modified 2022-08-18 17:53:48
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -531,6 +532,6 @@ src/raycasting/intersection_steps.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug 18 09:03:30 2022
+# Finished Make data base on Thu Aug 18 18:15:26 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:43:43 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:07 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/18 18:07:44 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 double	calculate_ray_distance(t_point player_pos, t_point wall_pos)
 {
-	return (sqrt((player_pos.x - wall_pos.x) * (player_pos.x - wall_pos.x) + (player_pos.y - wall_pos.y) * (player_pos.y - wall_pos.y)));
+	return (sqrt(pow(player_pos.x - wall_pos.x, 2) + pow(player_pos.y - wall_pos.y, 2)));
 }
 
 int	draw_wall(t_raycast *raycast, int x_start, double wall_height)
@@ -25,15 +25,12 @@ int	draw_wall(t_raycast *raycast, int x_start, double wall_height)
 
 	wall_height_half = wall_height / 2;
 	y_start = raycast->centre_height;
-	if (wall_height > WIN_HEIGHT)
-	{
-		drawline(raycast->data, x_start, 0, x_start, WIN_HEIGHT / 2 - 1);
-		drawline(raycast->data, x_start, y_start, x_start, WIN_HEIGHT / 2 - 1);
-	}
+	if (wall_height >= WIN_HEIGHT)
+		drawline(raycast->data, x_start, 0, x_start, WIN_HEIGHT);
 	else
 	{
-		drawline(raycast->data, x_start, y_start, x_start, (WIN_HEIGHT / 2) - wall_height_half - 1);
-		drawline(raycast->data, x_start, y_start, x_start, (WIN_HEIGHT / 2) + wall_height_half);
+		drawline(raycast->data, x_start, y_start, x_start, raycast->centre_height - wall_height_half);
+		drawline(raycast->data, x_start, y_start, x_start, raycast->centre_height + wall_height_half);
 	}
 	return (1);
 }
