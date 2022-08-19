@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/18 18:17:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/19 17:00:55 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,8 @@ int	main(int ac, char **av)
 	t_raycast	*raycast;
 
 	map = read_map(ac, av);
-	if (parse_map(map->map))
+	get_dimension_of_map(map, &map->map_width, &map->map_height);
+	if (parse_map(map))
 	{
 		
 		mlx_data_init(&data);

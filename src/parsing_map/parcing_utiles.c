@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/14 09:24:34 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/19 16:55:51 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,11 @@ void list_to_array(t_map *map)
 	map->map = (char **) malloc (map->longest * sizeof(char *) + 1);
 	while(ptr)
 	{
-		// printf("%d\n", map->longest);
-		// printf("|%s|\n", ptr->line);
+
 		map->map[i] = special_dupe(ptr->line, map->longest);
-		// printf("%d\n", ft_strlen(map->map[i]));
-		// printf("%s\n", map->map[i]);
 		i++;
 		ptr = ptr->next;
 	}
-	// free(map->map[i - 1]);
 	map->map[i] = NULL;
 }
 

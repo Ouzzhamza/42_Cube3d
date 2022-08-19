@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 18:07:27 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/19 17:00:46 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 		ft_error("Malloc Error");
 	raycast->data = data;
 	raycast->map = map;
-	get_dimension_of_map(map, &map->map_width, &map->map_height);
 	raycast->half_width = WIN_WIDTH / 2;
 	raycast->player = player;
 	raycast->angle = M_PI / 3;

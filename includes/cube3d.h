@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 18:38:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/19 16:49:21 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
 
 //^ MINIMAP PARSING
-int     check_vertical(char **map, int x, int y);
-int     check_horizontal(char **map, int x, int y);
-int     check_item_valid(char **map, int x, int y);
-int     parse_map(char **map);
+int     check_vertical(t_map *map, int x, int y);
+int     check_horizontal(t_map *map, int x, int y);
+int     check_item_valid(t_map *map, int x, int y);
+int     parse_map(t_map *map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
 void    draw_minimap(t_data *data, char **map);
