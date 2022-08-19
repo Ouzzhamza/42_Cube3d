@@ -30,6 +30,7 @@ cc -Wall -Wextra -Werror  -c src/errors/error.c -o src/errors/error.o
 cc -Wall -Wextra -Werror  -c src/draw_line.c -o src/draw_line.o
 cc -Wall -Wextra -Werror  -c src/hooks/player_move.c -o src/hooks/player_move.o
 cc -Wall -Wextra -Werror  -c src/hooks/hooks.c -o src/hooks/hooks.o
+ 
 cc -Wall -Wextra -Werror  -c src/hooks/player_move_utiles.c -o src/hooks/player_move_utiles.o
 cc -Wall -Wextra -Werror  -c src/errors/free_functions.c -o src/errors/free_functions.o
 cc -Wall -Wextra -Werror  -c src/parsing_map/map_parcing.c -o src/parsing_map/map_parcing.o
