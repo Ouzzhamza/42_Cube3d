@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/17 18:38:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 10:36:36 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int         empty_line(char *str);
 int         special_strlen(char *str);
 void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
+int         map_file_name(char *str);
 
 //^ MINIMAP PARSING
 int     check_vertical(char **map, int x, int y);
@@ -114,12 +115,13 @@ void move_right(t_raycast *raycast);
 void move_left(t_raycast *raycast);
 void redraw(t_raycast *raycast);
 void hooks(t_raycast *raycast);
-double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
+int	valid_move(t_raycast *raycast, int type);
 
 t_point	first_intersec_horiz(t_raycast *raycast, double angle);
 t_point xy_steps_horiz(double angle);
 t_point	first_intersec_vertic(t_raycast *raycast, double angle);
 t_point xy_steps_vertic(double angle);
+double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 double	normlize_angle(double angle);
 bool ft_is_ray_right(double angle);
 bool ft_is_ray_up(double angle);
@@ -128,4 +130,6 @@ void	free_raycast(t_raycast *raycast);
 int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
 void	render_image_color(t_raycast *raycast, int color, int y_start);
 // double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
+
+int ft_grb(int t, int r, int g, int b);
 #endif

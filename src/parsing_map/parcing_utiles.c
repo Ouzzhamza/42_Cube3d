@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/14 09:24:34 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 10:13:52 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,10 @@ void list_to_array(t_map *map)
 	map->map = (char **) malloc (map->longest * sizeof(char *) + 1);
 	while(ptr)
 	{
-		// printf("%d\n", map->longest);
-		// printf("|%s|\n", ptr->line);
 		map->map[i] = special_dupe(ptr->line, map->longest);
-		// printf("%d\n", ft_strlen(map->map[i]));
-		// printf("%s\n", map->map[i]);
 		i++;
 		ptr = ptr->next;
 	}
-	// free(map->map[i - 1]);
 	map->map[i] = NULL;
 }
 
@@ -61,7 +56,10 @@ int a_wall(char *str, t_map *map)
 		map->longest = special_strlen(str);
 	return(1);
 }
-
+int ft_grb(int t, int r, int g, int b)
+{
+	return(((t << 24) + (r << 16) + (g << 8) + b));
+}
 void rgb_to_int(int *rgb, char *str, t_map *map)
 {
 	char **line;

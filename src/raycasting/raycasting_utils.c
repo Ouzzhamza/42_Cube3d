@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 18:07:27 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 11:16:39 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_point	get_player_pos(char **map)
 			if (map[i][j] == 'W' || map[i][j] == 'S'
 				|| map[i][j] == 'E' || map[i][j] == 'N')
 			{
-				player.x = (j * CUB_SIZE);
-				player.y = (i * CUB_SIZE);
+				player.x = (j * (CUB_SIZE / 2));
+				player.y = (i * (CUB_SIZE / 2));
 			}
 			j++;
 		}
@@ -60,7 +60,7 @@ t_player	*player_data_init(t_map *map)
 		ft_error("Malloc Error");
 	player->map_pos = get_player_pos(map->map);
 	player->angle = player_angle(map->player);
-	player->speed = 10;
+	player->speed = 4;
 	return (player);
 }
 

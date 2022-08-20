@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/18 18:17:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 12:15:52 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,11 @@ t_map	*read_map(int ac, char **av)
 	if (ac != 2)
 		ft_error(ARG);
 	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
+	if (fd == -1 || !(map_file_name(av[1])))
 		ft_error(MAP);
 	while (1)
 	{
 		line = get_next_line(fd);
-
 		if (line == NULL)
 			break;
 		if (line[0] != '\n')
@@ -87,8 +86,8 @@ int	trace_rays(t_raycast *raycast)
 	angle_iter = raycast->player->angle - (M_PI / 6);
 	while (i < WIN_WIDTH)
 	{
-		ray.x = raycast->player->map_pos.x + raycast->dis_plane * cos(angle_iter);
-		ray.y = raycast->player->map_pos.y + raycast->dis_plane * sin(angle_iter);
+		ray.x = raycast->player->map_pos.x + 30 * cos(angle_iter);
+		ray.y = raycast->player->map_pos.y + 30 * sin(angle_iter);
 		drawline(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
 		angle_iter += raycast->increment_angle;
 		i++;
@@ -109,12 +108,13 @@ int	main(int ac, char **av)
 		
 		mlx_data_init(&data);
 		player = player_data_init(map);
-		// draw_minimap(&data, map->map);
 		raycast = raycast_data_init(&data, map, player);
-		// printf("%d --- %d\n",raycast->map->map_width, raycast->map->map_height);
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
+		draw_minimap(&data, map->map);
+		render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+		trace_rays(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);
