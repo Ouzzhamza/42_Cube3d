@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:04:14 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/08 18:19:47 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/20 10:35:30 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,11 @@ char *special_dupe(char *s1, int size)
 	str[i] = '\0';
 	return (str);
 }
+
+
+ int map_file_name(char *str)
+ {
+     if (ft_strcmp(ft_strnstr(str, ".cub", ft_strlen(str)), ".cub"))
+        return(0);
+    return(1);
+ }

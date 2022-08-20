@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/20 11:25:18 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 16:14:05 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,8 @@ int	render_rect(t_data *data, t_rect rect)
 			my_mlx_put_pixel(data, j, i, rect.color);
 			j++;
 		}
-		// my_mlx_put_pixel(data, j, i, 0x000000);
 		i++;
 	}
-	// j = rect.x;
-	// while (j < rect.x + rect.width)
-	// {
-	// 	my_mlx_put_pixel(data, j, i, 0x000000);
-	// 	j++;
-	// }
 	return (0);
 }
 
@@ -56,8 +49,8 @@ int	render(t_data *data, int x, int y, int color)
 	rectangle.color = color;
 	rectangle.x = x;
 	rectangle.y = y;
-	rectangle.width = CUB_SIZE;
-	rectangle.height = CUB_SIZE;
+	rectangle.width = CUB_SIZE / 2;
+	rectangle.height = CUB_SIZE / 2;
 	render_rect(data, rectangle);
 	return (0);
 }
@@ -69,8 +62,8 @@ int	render_player(t_data *data, int x, int y, int color)
 	rectangle.color = color;
 	rectangle.x = x;
 	rectangle.y = y;
-	rectangle.width = CUB_SIZE / 2;
-	rectangle.height = CUB_SIZE / 2;
+	rectangle.width = CUB_SIZE / 8;
+	rectangle.height = CUB_SIZE / 8;
 	render_rect(data, rectangle);
 	return (0);
 }
@@ -86,21 +79,17 @@ void	draw_minimap(t_data *data, char **map)
 	while (map[i])
 	{
 		j = 0;
-		y_start = i * CUB_SIZE / 2;
+		y_start = i * (CUB_SIZE / 2);
 		while (map[i][j])
 		{
-			x_start = j * CUB_SIZE / 2;
-			if (map[i][j] == ' ')
-			{
-				render(data, x_start, y_start, 0x000000);
-			}
-			else if (map[i][j] == '0')
+			x_start = j * (CUB_SIZE / 2);
+			if (map[i][j] == '0')
 			{
 				render(data, x_start, y_start, 0xFFFFFF);
 			}
 			else if (map[i][j] == '1')
 				render(data, x_start, y_start, 0xFF0000);
-			else
+			else if (map[i][j] != ' ')
 			{
 				map[i][j] = '0';
 				render(data, x_start, y_start, 0xFFFFFF);

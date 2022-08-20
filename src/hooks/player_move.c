@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 06:53:13 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/14 21:07:21 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/20 10:55:55 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,37 @@
 
 void move_forward(t_raycast *raycast)
 {
-	// if (valid_move(raycast))
-	// {
+	if (valid_move(raycast, 1))
+	{
 		raycast->player->map_pos.x += raycast->player->speed * cos(raycast->player->angle);
 		raycast->player->map_pos.y += raycast->player->speed * sin(raycast->player->angle);
-	// }
+	}
 }
-
 
 void retreat(t_raycast *raycast)
 {
-	// if (valid_move(raycast))
-	// {
+	if (valid_move(raycast, 2))
+	{
 		raycast->player->map_pos.x -= raycast->player->speed * cos(raycast->player->angle);
 		raycast->player->map_pos.y -= raycast->player->speed * sin(raycast->player->angle);
-	// }
+	}
 }
-
 
 void move_right(t_raycast *raycast)
 {
-	raycast->player->map_pos.x += raycast->player->speed / 2;
+	if (valid_move(raycast, 3))
+	{
+		raycast->player->map_pos.x += raycast->player->speed * sin(raycast->player->angle);
+		raycast->player->map_pos.y -= raycast->player->speed * cos(raycast->player->angle);	
+	}
 }
 
 void move_left(t_raycast *raycast)
 {
-	// if (valid_move(raycast))
-	// {
-		raycast->player->map_pos.x -= raycast->player->speed / 2;
-	// }
+	 if (valid_move(raycast, 4))
+	 {
+		raycast->player->map_pos.x -= raycast->player->speed * sin (raycast->player->angle);
+		raycast->player->map_pos.y -= raycast->player->speed * cos(raycast->player->angle);
+	 }
 }
 
