@@ -1,7 +1,0 @@
-{
-    "editor.tabCompletion": "on",
-    "files.associations": {
-        "cube3d.h": "c",
-        "structs.h": "c"
-    }
-}
