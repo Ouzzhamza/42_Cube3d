@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/14 09:55:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 11:25:18 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ void	draw_minimap(t_data *data, char **map)
 	while (map[i])
 	{
 		j = 0;
-		y_start = i * CUB_SIZE;
+		y_start = i * CUB_SIZE / 2;
 		while (map[i][j])
 		{
-			x_start = j * CUB_SIZE;
+			x_start = j * CUB_SIZE / 2;
 			if (map[i][j] == ' ')
 			{
 				render(data, x_start, y_start, 0x000000);

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/19 16:54:16 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/20 10:16:42 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1020
 # define CUB_SIZE	32
+# define NO 0
+# define SO 3
+# define WE 2
+# define EA 1
 
 typedef struct s_list
 {
@@ -49,6 +53,8 @@ typedef struct s_img
 	int		bpp;
 	int		line_len;
 	int		endian;
+	int		width;
+	int		height;
 } t_img;
 
 typedef struct s_data
@@ -93,6 +99,7 @@ typedef struct	s_raycast
 	double		centre_height;
 	double		width_limit;
 	double		height_limit;
+	t_img		*textures;
 } t_raycast;
 
 #endif
