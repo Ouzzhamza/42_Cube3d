@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 12:15:52 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:50:09 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,15 +103,16 @@ int	main(int ac, char **av)
 	t_raycast	*raycast;
 
 	map = read_map(ac, av);
-	if (parse_map(map->map))
+	get_dimension_of_map(map, &map->map_width, &map->map_height);
+	if (parse_map(map))
 	{
 		
 		mlx_data_init(&data);
 		player = player_data_init(map);
 		raycast = raycast_data_init(&data, map, player);
-		render_image_color(raycast, raycast->map->ceiling, 0);
-		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
-		ray_casting(raycast);
+		// render_image_color(raycast, raycast->map->ceiling, 0);
+		// render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
+		// ray_casting(raycast);
 		draw_minimap(&data, map->map);
 		render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
 		trace_rays(raycast);

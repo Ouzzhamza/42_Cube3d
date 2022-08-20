@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 10:36:36 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:38:29 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # define BUFFER_SIZE 1
 # endif
 
+# include "structs.h"
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "structs.h"
 # include <stdio.h>
 # include <mlx.h>
 # include <math.h>
@@ -75,10 +75,10 @@ char        *special_dupe(char *s1, int size);
 int         map_file_name(char *str);
 
 //^ MINIMAP PARSING
-int     check_vertical(char **map, int x, int y);
-int     check_horizontal(char **map, int x, int y);
-int     check_item_valid(char **map, int x, int y);
-int     parse_map(char **map);
+int     check_vertical(t_map *map, int x, int y);
+int     check_horizontal(t_map *map, int x, int y);
+int     check_item_valid(t_map *map, int x, int y);
+int     parse_map(t_map *map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
 void    draw_minimap(t_data *data, char **map);
