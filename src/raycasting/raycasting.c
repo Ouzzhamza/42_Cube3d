@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/23 00:56:26 by houazzan         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/22 21:12:42 by mmoumni          ###   ########.fr       */
+>>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +75,18 @@ double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vert
 		{
 			vertic_dist = calculate_ray_distance(raycast->player->map_pos, ray_vertical);
 			if (horiz_dist < vertic_dist)
+			{
+				raycast->inters_type = 0;
 				return (horiz_dist * cos(raycast->player->angle - angle));
+			}
+			raycast->inters_type = 1;
 			return (vertic_dist * cos(raycast->player->angle - angle));
 		}
+		raycast->inters_type = 0;
 		return (horiz_dist * cos(raycast->player->angle - angle));
 	}
 	vertic_dist = calculate_ray_distance(raycast->player->map_pos, ray_vertical);
+	raycast->inters_type = 1;
 	return (vertic_dist * cos(raycast->player->angle - angle));
 }
 
@@ -97,6 +107,10 @@ int	ray_casting(t_raycast *raycast)
 		vertic_ray = get_vertic_inters_point(raycast, ray_angle);
 		dist = valid_inters(raycast, horiz_ray, vertic_ray, ray_angle);
 		draw_wall(raycast, i, calculate_wall_projection(raycast, dist));
+		// if (raycast->inters_type == 0)
+		// 	draw_horiz_texture(raycast, i, calculate_wall_projection(raycast, dist), horiz_ray);
+		// else
+		// 	draw_vertic_texture(raycast, i, calculate_wall_projection(raycast, dist), vertic_ray);
 		ray_angle += raycast->increment_angle;
 		i++;
 	}

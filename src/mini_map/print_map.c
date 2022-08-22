@@ -3,30 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/22 23:26:04 by houazzan         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/22 08:56:21 by mmoumni          ###   ########.fr       */
+>>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
+void	my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color)
 {
-	char	*pixel;
-
-	pixel = data->img.addr + (y * data->img.line_len + x * (data->img.bpp / 8));
-	*(int *)pixel = color;
+	if (x >= 0 && x < WIN_WIDTH && y >= 0 && y < WIN_HEIGHT)
+	{
+		raycast->data->img.addr[y * WIN_WIDTH + x] = color;
+	}
 }
 
-int	render_rect(t_data *data, t_rect rect)
+int	render_rect(t_raycast *data, t_rect rect)
 {
 	int i;
 	int j;
 	
-	if (data->win_ptr == NULL)
+	if (data->data->win_ptr == NULL)
 		return (1);
 	i = rect.y;
 	while (i < rect.y + rect.height)
@@ -42,7 +46,7 @@ int	render_rect(t_data *data, t_rect rect)
 	return (0);
 }
 
-int	render(t_data *data, int x, int y, int color)
+int	render(t_raycast *data, int x, int y, int color)
 {
 	t_rect rectangle;
 
@@ -55,7 +59,7 @@ int	render(t_data *data, int x, int y, int color)
 	return (0);
 }
 
-int	render_player(t_data *data, int x, int y, int color)
+int	render_player(t_raycast *data, int x, int y, int color)
 {
 	t_rect	rectangle;
 
@@ -68,7 +72,11 @@ int	render_player(t_data *data, int x, int y, int color)
 	return (0);
 }
 
+<<<<<<< HEAD
 void	draw_minimap(t_data *data, t_map *map)
+=======
+void	draw_minimap(t_raycast *data, char **map)
+>>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 {
 	int i;
 	int	j;

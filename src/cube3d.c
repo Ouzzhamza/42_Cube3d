@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/23 00:55:22 by houazzan         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/22 09:31:06 by mmoumni          ###   ########.fr       */
+>>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +77,7 @@ void	mlx_data_init(t_data *data)
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	if (!data->img.mlx_img)
 		ft_error("mlx_img Error!\n");
-	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
+	data->img.addr = (int *)mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
 }
 
 int	trace_rays(t_raycast *raycast)
@@ -88,7 +92,7 @@ int	trace_rays(t_raycast *raycast)
 	{
 		ray.x = raycast->+ 30 * cos(angle_iter);
 		ray.y = raycast->player->map_pos.y + 30 * sin(angle_iter);
-		drawline(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
+		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
 		angle_iter += raycast->increment_angle;
 		i++;
 	}
@@ -110,12 +114,22 @@ int	main(int ac, char **av)
 		mlx_data_init(&data);
 		player = player_data_init(map);
 		raycast = raycast_data_init(&data, map, player);
+<<<<<<< HEAD
 		 // render_image_color(raycast, raycast->map->ceiling, 0);
 		// render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
 		//draw_minimap(&data, map);
 		render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
 		trace_rays(raycast);
+=======
+		render_image_color(raycast, raycast->map->ceiling, 0);
+		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
+		load_xpm_files(raycast);
+		ray_casting(raycast);
+		// draw_minimap(&data, map->map);
+		// render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+		// trace_rays(raycast);
+>>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);

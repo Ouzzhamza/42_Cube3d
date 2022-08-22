@@ -1,7 +1,7 @@
 #include "../includes/structs.h"
 #include "../includes/cube3d.h"
 
-void    drawline(t_data *data, int x0, int y0, int x1, int y1)
+void    drawline(t_raycast *data, int x0, int y0, int x1, int y1)
 {
     int dx;
     int sx;
