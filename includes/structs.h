@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 16:14:48 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/22 21:13:37 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1020
-# define CUB_SIZE	32
+# define CUB_SIZE	16
 # define NO 0
 # define SO 3
 # define WE 2
@@ -49,7 +49,7 @@ typedef struct map
 typedef struct s_img
 {
 	void	*mlx_img;
-	char	*addr;
+	int		*addr;
 	int		bpp;
 	int		line_len;
 	int		endian;
@@ -99,6 +99,7 @@ typedef struct	s_raycast
 	double		centre_height;
 	double		width_limit;
 	double		height_limit;
+	int			inters_type;
 	t_img		*textures;
 } t_raycast;
 

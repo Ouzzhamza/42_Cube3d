@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 16:13:54 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/22 09:31:06 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	mlx_data_init(t_data *data)
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	if (!data->img.mlx_img)
 		ft_error("mlx_img Error!\n");
-	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
+	data->img.addr = (int *)mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
 }
 
 int	trace_rays(t_raycast *raycast)
@@ -88,7 +88,7 @@ int	trace_rays(t_raycast *raycast)
 	{
 		ray.x = raycast->player->map_pos.x + 30 * cos(angle_iter);
 		ray.y = raycast->player->map_pos.y + 30 * sin(angle_iter);
-		drawline(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
+		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
 		angle_iter += raycast->increment_angle;
 		i++;
 	}
@@ -110,9 +110,10 @@ int	main(int ac, char **av)
 		mlx_data_init(&data);
 		player = player_data_init(map);
 		raycast = raycast_data_init(&data, map, player);
-		// render_image_color(raycast, raycast->map->ceiling, 0);
-		// render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
-		// ray_casting(raycast);
+		render_image_color(raycast, raycast->map->ceiling, 0);
+		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
+		load_xpm_files(raycast);
+		ray_casting(raycast);
 		// draw_minimap(&data, map->map);
 		// render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
 		// trace_rays(raycast);

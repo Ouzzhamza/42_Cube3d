@@ -1,9 +1,11 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/mmoumni/Desktop/42_Cube3d'
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/free.c -o src/cube3d_utiles/free.o
+ 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_isprint.c -o src/cube3d_utiles/ft_isprint.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstlast.c -o src/cube3d_utiles/ft_lstlast.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstsize.c -o src/cube3d_utiles/ft_lstsize.o
+ 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_putstr.c -o src/cube3d_utiles/ft_putstr.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strchr.c -o src/cube3d_utiles/ft_strchr.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strlen.c -o src/cube3d_utiles/ft_strlen.o

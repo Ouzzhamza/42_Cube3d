@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 14:38:29 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:25:28 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,17 @@ int     check_vertical(t_map *map, int x, int y);
 int     check_horizontal(t_map *map, int x, int y);
 int     check_item_valid(t_map *map, int x, int y);
 int     parse_map(t_map *map);
-int     render_player(t_data *data, int x, int y, int color);
+int     render_player(t_raycast *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
-void    draw_minimap(t_data *data, char **map);
+void    draw_minimap(t_raycast *data, char **map);
 void    get_dimension_of_map(t_map *map, int *width, int *height);
 
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);
 t_point	get_player_pos(char **map);
 double      convert_degree_to_radian(double degree);
-void        drawline(t_data *data, int x0, int y0, int x1, int y1);
-void        my_mlx_put_pixel(t_data *data, int x, int y, int color);
+void        drawline(t_raycast *data, int x0, int y0, int x1, int y1);
+void        my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color);
 t_player    *player_data_init(t_map *map);
 double      player_angle(char direction);
 t_raycast   *raycast_data_init(t_data *data, t_map *map, t_player *player);
@@ -127,9 +127,16 @@ bool ft_is_ray_right(double angle);
 bool ft_is_ray_up(double angle);
 double	calculate_wall_projection(t_raycast *raycast, double dist_wall);
 void	free_raycast(t_raycast *raycast);
-int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
+// int	draw_wall(t_raycast *raycast, int x_start, double wall_height, t_point intersec_point);
+int	draw_vertic_texture(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
+int	draw_horiz_texture(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
 void	render_image_color(t_raycast *raycast, int color, int y_start);
+int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
 // double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 
 int ft_grb(int t, int r, int g, int b);
+void    load_xpm_files(t_raycast *raycast);
+void	trace_whole_line(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
+void	trace_start_end_line(t_raycast *raycast, int x_start, double wall_height, t_point interesc);
+
 #endif

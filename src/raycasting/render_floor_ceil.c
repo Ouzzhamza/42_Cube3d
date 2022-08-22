@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 18:29:16 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/17 18:39:26 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/21 20:18:20 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	render_image_color(t_raycast *raycast, int color, int y_start)
 		j = 0;
 		while (j < WIN_WIDTH)
 		{
-			my_mlx_put_pixel(raycast->data, j, i, color);
+			my_mlx_put_pixel(raycast, j, i, color);
 			j++;
 		}
 		i++;
