@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersection_steps.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:23:31 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 18:44:36 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/21 14:57:39 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_point	first_intersec_vertic(t_raycast *raycast, double angle)
 	double	y_intersection;
 	t_point	grid;
 	
-	x_intersection = (floor(raycast->player->map_pos.x / CUB_SIZE)) * CUB_SIZE;
+	x_intersection = (int)(raycast->player->map_pos.x / CUB_SIZE) * CUB_SIZE;
 	if (ft_is_ray_right(angle))
 		x_intersection += CUB_SIZE;
 	y_intersection = raycast->player->map_pos.y + (x_intersection - raycast->player->map_pos.x) * tan(angle);

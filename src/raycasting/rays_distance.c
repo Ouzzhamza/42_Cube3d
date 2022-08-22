@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_distance.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:43:43 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 18:07:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/21 11:20:25 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	draw_wall(t_raycast *raycast, int x_start, double wall_height)
 	wall_height_half = wall_height / 2;
 	y_start = raycast->centre_height;
 	if (wall_height >= WIN_HEIGHT)
-		drawline(raycast->data, x_start, 0, x_start, WIN_HEIGHT);
+		drawline(raycast->data, x_start, 0, x_start, WIN_HEIGHT - 1);
 	else
 	{
 		drawline(raycast->data, x_start, y_start, x_start, raycast->centre_height - wall_height_half);

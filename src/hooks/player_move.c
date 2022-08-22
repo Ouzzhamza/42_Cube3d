@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 06:53:13 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/20 10:55:55 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:11:40 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 # include "../../includes/structs.h"
 
 
-void move_forward(t_raycast *raycast)
+int move_forward(t_raycast *raycast)
 {
-	if (valid_move(raycast, 1))
+	if ( valid_move(raycast, 1))
 	{
 		raycast->player->map_pos.x += raycast->player->speed * cos(raycast->player->angle);
 		raycast->player->map_pos.y += raycast->player->speed * sin(raycast->player->angle);
 	}
+	return 0;
+	
 }
 
 void retreat(t_raycast *raycast)

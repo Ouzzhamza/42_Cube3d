@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 14:37:48 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:07:27 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1020
+# define WIN_WIDTH 1200
+# define WIN_HEIGHT 1200
 # define CUB_SIZE	32
 
 typedef struct s_list
@@ -34,11 +34,13 @@ typedef struct map
 	char		player;
 	int			ceiling;
 	int			floor;
-	void		*mlx;
+	int			x_scall;
+	int			y_scall;
 	int			identifier;
 	int 		longest;
 	int			map_width;
 	int			map_height;
+	void		*mlx;
 	t_list 		*list;
 } t_map;
 
@@ -78,6 +80,13 @@ typedef struct s_player
 	t_point	map_pos;
 	double	angle;
 	double	speed;
+	int		advance;
+	int		retreat;
+	int		left;
+	int		right;
+	int		l_rotate;
+	int		r_rotate;
+	int		exit;
 } t_player;
 
 typedef struct	s_raycast

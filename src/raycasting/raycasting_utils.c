@@ -39,8 +39,8 @@ t_point	get_player_pos(char **map)
 			if (map[i][j] == 'W' || map[i][j] == 'S'
 				|| map[i][j] == 'E' || map[i][j] == 'N')
 			{
-				player.x = (j * (CUB_SIZE / 2));
-				player.y = (i * (CUB_SIZE / 2));
+				player.x = (j * (CUB_SIZE));
+				player.y = (i * (CUB_SIZE));
 			}
 			j++;
 		}
@@ -56,9 +56,10 @@ t_player	*player_data_init(t_map *map)
 	player = (t_player *)malloc(sizeof(t_player));
 	if (!player)
 		ft_error("Malloc Error");
+	ft_memset(player, 0, sizeof(t_player));
 	player->map_pos = get_player_pos(map->map);
 	player->angle = player_angle(map->player);
-	player->speed = 4;
+	player->speed = 2;
 	return (player);
 }
 

@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 14:38:29 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:10:31 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ int     check_item_valid(t_map *map, int x, int y);
 int     parse_map(t_map *map);
 int     render_player(t_data *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
-void    draw_minimap(t_data *data, char **map);
+void    draw_minimap(t_data *data, t_map *map);
 void    get_dimension_of_map(t_map *map, int *width, int *height);
 
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);
-t_point	get_player_pos(char **map);
+t_point	    get_player_pos(char **map);
 double      convert_degree_to_radian(double degree);
 void        drawline(t_data *data, int x0, int y0, int x1, int y1);
 void        my_mlx_put_pixel(t_data *data, int x, int y, int color);
@@ -94,8 +94,6 @@ t_player    *player_data_init(t_map *map);
 double      player_angle(char direction);
 t_raycast   *raycast_data_init(t_data *data, t_map *map, t_player *player);
 int         handle_player_move(int key, void *data);
-int         close_win(int key, void *param);
-int         red_cross(void *param);
 int         trace_rays(t_raycast *raycast);
 
 // ^Free Functions
@@ -109,13 +107,14 @@ double  get_intersection(t_raycast *raycast, double angle);
 int     ray_casting(t_raycast *raycast);
 void	init_tab(double *tab, int size);
 
-void move_forward(t_raycast *raycast);
+int  move_forward();
 void retreat(t_raycast *raycast);
 void move_right(t_raycast *raycast);
 void move_left(t_raycast *raycast);
-void redraw(t_raycast *raycast);
+int redraw(t_raycast *raycast);
 void hooks(t_raycast *raycast);
 int	valid_move(t_raycast *raycast, int type);
+int ft_exit(t_raycast *raycast);
 
 t_point	first_intersec_horiz(t_raycast *raycast, double angle);
 t_point xy_steps_horiz(double angle);
@@ -131,5 +130,4 @@ int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
 void	render_image_color(t_raycast *raycast, int color, int y_start);
 // double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 
-int ft_grb(int t, int r, int g, int b);
 #endif

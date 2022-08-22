@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/20 11:56:27 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/22 23:26:04 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	render(t_data *data, int x, int y, int color)
 	rectangle.color = color;
 	rectangle.x = x;
 	rectangle.y = y;
-	rectangle.width = CUB_SIZE / 2;
-	rectangle.height = CUB_SIZE / 2;
+	rectangle.width = CUB_SIZE;
+	rectangle.height = CUB_SIZE;
 	render_rect(data, rectangle);
 	return (0);
 }
@@ -68,7 +68,7 @@ int	render_player(t_data *data, int x, int y, int color)
 	return (0);
 }
 
-void	draw_minimap(t_data *data, char **map)
+void	draw_minimap(t_data *data, t_map *map)
 {
 	int i;
 	int	j;
@@ -76,22 +76,22 @@ void	draw_minimap(t_data *data, char **map)
 	int y_start;
 
 	i = 0;
-	while (map[i])
+	while (map->map[i])
 	{
 		j = 0;
-		y_start = i * (CUB_SIZE / 2);
-		while (map[i][j])
+		y_start = i * (CUB_SIZE);
+		while (map->map[i][j])
 		{
-			x_start = j * (CUB_SIZE / 2);
-			if (map[i][j] == '0')
+			x_start = j * (CUB_SIZE);
+			if (map->map[i][j] == '0')
 			{
 				render(data, x_start, y_start, 0xFFFFFF);
 			}
-			else if (map[i][j] == '1')
+			else if (map->map[i][j] == '1')
 				render(data, x_start, y_start, 0xFF0000);
-			else if (map[i][j] != ' ')
+			else if (map->map[i][j] != ' ')
 			{
-				map[i][j] = '0';
+				map->map[i][j] = '0';
 				render(data, x_start, y_start, 0xFFFFFF);
 			}
 			j++;
