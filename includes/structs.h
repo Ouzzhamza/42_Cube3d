@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/22 23:07:27 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 21:13:37 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/24 12:39:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +17,13 @@
 #  define BUFFER_SIZE 1
 # endif
 
-<<<<<<< HEAD
 # define WIN_WIDTH 1200
-# define WIN_HEIGHT 1200
+# define WIN_HEIGHT 780
 # define CUB_SIZE	32
-=======
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1020
-# define CUB_SIZE	16
-# define NO 0
 # define SO 3
 # define WE 2
 # define EA 1
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+
 
 typedef struct s_list
 {
@@ -119,6 +109,8 @@ typedef struct	s_raycast
 	double		width_limit;
 	double		height_limit;
 	int			inters_type;
+	double			*x;
+	double			*y;
 	t_img		*textures;
 } t_raycast;
 

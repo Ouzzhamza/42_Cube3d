@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/22 23:26:04 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 08:56:21 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/23 13:00:17 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
@@ -72,11 +69,7 @@ int	render_player(t_raycast *data, int x, int y, int color)
 	return (0);
 }
 
-<<<<<<< HEAD
-void	draw_minimap(t_data *data, t_map *map)
-=======
 void	draw_minimap(t_raycast *data, char **map)
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 {
 	int i;
 	int	j;
@@ -84,22 +77,22 @@ void	draw_minimap(t_raycast *data, char **map)
 	int y_start;
 
 	i = 0;
-	while (map->map[i])
+	while (map[i])
 	{
 		j = 0;
 		y_start = i * (CUB_SIZE);
-		while (map->map[i][j])
+		while (map[i][j])
 		{
 			x_start = j * (CUB_SIZE);
-			if (map->map[i][j] == '0')
+			if (map[i][j] == '0')
 			{
 				render(data, x_start, y_start, 0xFFFFFF);
 			}
-			else if (map->map[i][j] == '1')
+			else if (map[i][j] == '1')
 				render(data, x_start, y_start, 0xFF0000);
-			else if (map->map[i][j] != ' ')
+			else if (map[i][j] != ' ')
 			{
-				map->map[i][j] = '0';
+				map[i][j] = '0';
 				render(data, x_start, y_start, 0xFFFFFF);
 			}
 			j++;

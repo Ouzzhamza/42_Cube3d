@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:12:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/21 21:16:12 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/23 22:00:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,4 @@ void    get_dimension_of_map(t_map *map, int *width, int *height)
     *height = i;
     map->x_scall = WIN_WIDTH / (WIN_WIDTH / 2);
     map->y_scall = WIN_HEIGHT / (WIN_HEIGHT / 2);
-    printf("%d\n", map->x_scall);
-    printf("%d\n", map->y_scall);
 }

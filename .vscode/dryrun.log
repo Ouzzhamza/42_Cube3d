@@ -1,11 +1,9 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/mmoumni/Desktop/42_Cube3d'
+make: Entering directory `/Users/houazzan/Desktop/Cube3d'
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/free.c -o src/cube3d_utiles/free.o
- 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_isprint.c -o src/cube3d_utiles/ft_isprint.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstlast.c -o src/cube3d_utiles/ft_lstlast.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstsize.c -o src/cube3d_utiles/ft_lstsize.o
- 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_putstr.c -o src/cube3d_utiles/ft_putstr.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strchr.c -o src/cube3d_utiles/ft_strchr.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strlen.c -o src/cube3d_utiles/ft_strlen.o
@@ -38,12 +36,7 @@ cc -Wall -Wextra -Werror  -c src/raycasting/rays_distance.c -o src/raycasting/ra
 cc -Wall -Wextra -Werror  -c src/raycasting/intersection_steps.c -o src/raycasting/intersection_steps.o
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting_utils_2.c -o src/raycasting/raycasting_utils_2.o
 cc -Wall -Wextra -Werror  -c src/raycasting/render_floor_ceil.c -o src/raycasting/render_floor_ceil.o
-<<<<<<< HEAD
-cc -Wall -Wextra -Werror  ./src/cube3d_utiles/free.o ./src/cube3d_utiles/ft_isprint.o ./src/cube3d_utiles/ft_lstlast.o ./src/cube3d_utiles/ft_lstsize.o ./src/cube3d_utiles/ft_putstr.o ./src/cube3d_utiles/ft_strchr.o ./src/cube3d_utiles/ft_strlen.o ./src/cube3d_utiles/ft_strnstr.o ./src/cube3d_utiles/get_next_line.o ./src/cube3d_utiles/ft_atoi.o ./src/cube3d_utiles/ft_lstadd_back.o ./src/cube3d_utiles/ft_lstnew.o ./src/cube3d_utiles/ft_memset.o ./src/cube3d_utiles/ft_split.o ./src/cube3d_utiles/ft_strlcpy.o ./src/cube3d_utiles/ft_strncmp.o ./src/cube3d_utiles/ft_strtrim.o ./src/cube3d_utiles/get_next_line_utils.o ./src/mini_map/parse_minimap.o ./src/mini_map/print_map.o ./src/parsing_map/parcing_utiles.o ./src/parsing_map/parcing_utiles1.o ./src/raycasting/raycasting.o ./src/raycasting/raycasting_utils.o ./src/cube3d.o ./src/errors/error.o ./src/draw_line.o ./src/hooks/player_move.o ./src/hooks/hooks.o ./src/hooks/player_move_utiles.o ./src/errors/free_functions.o ./src/parsing_map/map_parcing.o ./src/raycasting/rays_distance.o ./src/raycasting/intersection_steps.o ./src/raycasting/raycasting_utils_2.o ./src/raycasting/render_floor_ceil.o -lmlx -framework OpenGL -framework AppKit -lm -o cube3d
-make: Leaving directory `/Users/houazzan/Desktop/Cube3d'
-=======
 cc -Wall -Wextra -Werror  -c src/textures/textures.c -o src/textures/textures.o
 cc -Wall -Wextra -Werror  ./src/cube3d_utiles/free.o ./src/cube3d_utiles/ft_isprint.o ./src/cube3d_utiles/ft_lstlast.o ./src/cube3d_utiles/ft_lstsize.o ./src/cube3d_utiles/ft_putstr.o ./src/cube3d_utiles/ft_strchr.o ./src/cube3d_utiles/ft_strlen.o ./src/cube3d_utiles/ft_strnstr.o ./src/cube3d_utiles/get_next_line.o ./src/cube3d_utiles/ft_atoi.o ./src/cube3d_utiles/ft_lstadd_back.o ./src/cube3d_utiles/ft_lstnew.o ./src/cube3d_utiles/ft_memset.o ./src/cube3d_utiles/ft_split.o ./src/cube3d_utiles/ft_strlcpy.o ./src/cube3d_utiles/ft_strncmp.o ./src/cube3d_utiles/ft_strtrim.o ./src/cube3d_utiles/get_next_line_utils.o ./src/mini_map/parse_minimap.o ./src/mini_map/print_map.o ./src/parsing_map/parcing_utiles.o ./src/parsing_map/parcing_utiles1.o ./src/raycasting/raycasting.o ./src/raycasting/raycasting_utils.o ./src/cube3d.o ./src/errors/error.o ./src/draw_line.o ./src/hooks/player_move.o ./src/hooks/hooks.o ./src/hooks/player_move_utiles.o ./src/errors/free_functions.o ./src/parsing_map/map_parcing.o ./src/raycasting/rays_distance.o ./src/raycasting/intersection_steps.o ./src/raycasting/raycasting_utils_2.o ./src/raycasting/render_floor_ceil.o ./src/textures/textures.o -lmlx -framework OpenGL -framework AppKit -lm -o cube3d
-make: Leaving directory `/Users/mmoumni/Desktop/42_Cube3d'
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+make: Leaving directory `/Users/houazzan/Desktop/Cube3d'
  

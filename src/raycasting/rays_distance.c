@@ -6,16 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:43:43 by mmoumni           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/21 11:20:25 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 21:13:06 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/23 20:51:44 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
-#include "../../includes/structs.h"
 
 double	calculate_ray_distance(t_point player_pos, t_point wall_pos)
 {
@@ -31,11 +26,7 @@ int	draw_wall(t_raycast *raycast, int x_start, double wall_height)
 	wall_height_half = wall_height / 2;
 	y_start = raycast->centre_height;
 	if (wall_height >= WIN_HEIGHT)
-<<<<<<< HEAD
-		drawline(raycast->data, x_start, 0, x_start, WIN_HEIGHT - 1);
-=======
 		drawline(raycast, x_start, 0, x_start, WIN_HEIGHT);
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 	else
 	{
 		drawline(raycast, x_start, y_start, x_start, raycast->centre_height - wall_height_half);
@@ -62,7 +53,7 @@ void	trace_whole_line(t_raycast *raycast, int x_start, double wall_height, t_poi
 	{
 		y_offset = (i - draw_start) * ((float)(raycast->textures->height) / wall_height);
 		raycast->data->img.addr [i * WIN_WIDTH + x_start] = raycast->textures->addr[(y_offset * raycast->textures->width) + x_offset];
-		// my_mlx_put_pixel(raycast, x_start, i, );
+		my_mlx_put_pixel(raycast, x_start, i, 106);
 		i++;
 	}		
 }

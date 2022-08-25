@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/23 00:55:22 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 09:31:06 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/25 09:42:25 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,19 +79,23 @@ void	mlx_data_init(t_data *data)
 int	trace_rays(t_raycast *raycast)
 {
 	int		i;
-	double	angle_iter;
-	t_point ray;
+	// t_point ray;
 
 	i = 0;
-	angle_iter = raycast->player->angle - (M_PI / 6);
 	while (i < WIN_WIDTH)
 	{
-		ray.x = raycast->+ 30 * cos(angle_iter);
-		ray.y = raycast->player->map_pos.y + 30 * sin(angle_iter);
-		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
-		angle_iter += raycast->increment_angle;
+		// printf("value of i %d|\n", i);
+		// printf("player position %f\n", raycast->player->map_pos.y);
+			// printf("%d\n", i);
+		if (raycast->x[i] == 1e9 || raycast->y[i] == 1e9)
+		{
+			printf("x = %f\n", raycast->x[i]);
+			printf("y = %f\n", raycast->y[i]);
+		}
+		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, raycast->x[i], raycast->y[i]);
 		i++;
 	}
+	//exit(0);
 	return (1);
 }
 
@@ -114,22 +114,13 @@ int	main(int ac, char **av)
 		mlx_data_init(&data);
 		player = player_data_init(map);
 		raycast = raycast_data_init(&data, map, player);
-<<<<<<< HEAD
-		 // render_image_color(raycast, raycast->map->ceiling, 0);
-		// render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
-		ray_casting(raycast);
-		//draw_minimap(&data, map);
-		render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-		trace_rays(raycast);
-=======
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
-		load_xpm_files(raycast);
+		// load_xpm_files(raycast);
 		ray_casting(raycast);
-		// draw_minimap(&data, map->map);
-		// render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-		// trace_rays(raycast);
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+		draw_minimap(raycast, map->map);
+		render_player(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+		trace_rays(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);

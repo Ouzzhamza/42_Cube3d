@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/22 23:10:31 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 16:25:28 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/24 11:39:01 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +81,7 @@ int     check_item_valid(t_map *map, int x, int y);
 int     parse_map(t_map *map);
 int     render_player(t_raycast *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
-<<<<<<< HEAD
-void    draw_minimap(t_data *data, t_map *map);
-=======
 void    draw_minimap(t_raycast *data, char **map);
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 void    get_dimension_of_map(t_map *map, int *width, int *height);
 
 //^ RAYCASTING
@@ -140,13 +132,10 @@ int	draw_horiz_texture(t_raycast *raycast, int x_start, double wall_height, t_po
 void	render_image_color(t_raycast *raycast, int color, int y_start);
 int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
 // double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
+void	intersection_cordinate(t_raycast *raycast, t_point *horiz_ray,t_point *vertic_ray, int i);
 
-<<<<<<< HEAD
-=======
-int ft_grb(int t, int r, int g, int b);
 void    load_xpm_files(t_raycast *raycast);
 void	trace_whole_line(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
 void	trace_start_end_line(t_raycast *raycast, int x_start, double wall_height, t_point interesc);
 
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
 #endif

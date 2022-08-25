@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:25:12 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/23 00:30:36 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/23 20:48:28 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int  key_type_pres(int key, t_raycast *raycast)
     else if (key == 1 || key == 125)
 		raycast->player->retreat = 1;
 	else if (key == 2)
-		raycast->player->left = 1;
-	else if (key == 0)
 		raycast->player->right = 1;
+	else if (key == 0)
+		raycast->player->left = 1;
 	else if (key == 123)
 		raycast->player->l_rotate = 1;
 	else if (key == 124)
@@ -49,9 +49,9 @@ int	key_type_releas(int key, t_raycast *raycast)
    else if (key == 1 || key == 125)
 		raycast->player->retreat = 0;
 	else if (key == 2)
-		raycast->player->left = 0;
-	else if (key == 0)
 		raycast->player->right = 0;
+	else if (key == 0)
+		raycast->player->left = 0;
 	else if (key == 123)
 		raycast->player->l_rotate = 0;
 	else if (key == 124)
@@ -73,9 +73,9 @@ int handle_event(t_raycast *raycast)
 	if (raycast->player->left == 1)
 		move_left(raycast);
 	if (raycast->player->l_rotate == 1)
-		raycast->player->angle -= 0.104533;
+		raycast->player->angle -= 0.0374533;
 	if (raycast->player->r_rotate == 1)
-		raycast->player->angle += 0.104533;
+		raycast->player->angle += 0.0374533;
 	redraw(raycast);
 	return(0);
 		

@@ -70,6 +70,8 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 	raycast = (t_raycast *)malloc(sizeof(t_raycast));
 	if (!raycast)
 		ft_error("Malloc Error");
+	raycast->x = (double *)malloc((WIN_WIDTH) * sizeof(double));
+	raycast->y = (double *)malloc((WIN_WIDTH) * sizeof(double));
 	raycast->data = data;
 	raycast->map = map;
 	raycast->half_width = WIN_WIDTH / 2;
@@ -81,6 +83,7 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 	raycast->centre_height = WIN_HEIGHT / 2;
 	raycast->width_limit = CUB_SIZE * map->map_width;
 	raycast->height_limit = CUB_SIZE * map->map_height;
+	raycast->inters_type = -1;
 	return (raycast);
 }
 

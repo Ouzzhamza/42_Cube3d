@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/23 00:56:26 by houazzan         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/22 21:12:42 by mmoumni          ###   ########.fr       */
->>>>>>> ddb35a5b71d33c1086019ae761a42c65c76b8924
+/*   Updated: 2022/08/25 10:04:58 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +89,10 @@ double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vert
 int	ray_casting(t_raycast *raycast)
 {
 	int		i;
+	double	dist;
 	double	ray_angle;
 	t_point	horiz_ray;
 	t_point	vertic_ray;
-	double	dist;
 
 	i = 0;
 	ray_angle = raycast->player->angle - (M_PI / 6);
@@ -106,6 +102,16 @@ int	ray_casting(t_raycast *raycast)
 		horiz_ray = get_horiz_inters_point(raycast, ray_angle);
 		vertic_ray = get_vertic_inters_point(raycast, ray_angle);
 		dist = valid_inters(raycast, horiz_ray, vertic_ray, ray_angle);
+		if (raycast->inters_type == 0)
+		{
+			raycast->x[i] = horiz_ray.x;
+			raycast->y[i] = horiz_ray.y;
+		}
+		else if (raycast->inters_type == 1)
+		{
+			raycast->x[i] = vertic_ray.x;
+			raycast->y[i] = vertic_ray.y;
+		}
 		draw_wall(raycast, i, calculate_wall_projection(raycast, dist));
 		// if (raycast->inters_type == 0)
 		// 	draw_horiz_texture(raycast, i, calculate_wall_projection(raycast, dist), horiz_ray);
