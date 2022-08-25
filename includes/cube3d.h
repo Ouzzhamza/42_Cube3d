@@ -128,7 +128,9 @@ double  calculate_wall_projection(double dist_wall);
 void    free_raycast(t_raycast *raycast);
 void	render_image_color(t_raycast *raycast, int color, int y_start);
 void	intersection_cordinate(t_raycast *raycast, t_point *horiz_ray,t_point *vertic_ray, int i);
-void	draw_proj_wall(t_raycast *raycast, int x_start, double wall_height, t_point inters);
+void	draw_proj_wall(t_raycast *raycast, int x_start, t_img *texture, t_point inters);
 void    load_xpm_files(t_raycast *raycast);
+t_img   *get_texture_by_direc(t_raycast *raycast, t_point inters);
+t_img *get_texture_by_direc(t_raycast *raycast, t_point inters);
 
 #endif

@@ -110,13 +110,12 @@ int	main(int ac, char **av)
 	get_dimension_of_map(map, &map->map_width, &map->map_height);
 	if (parse_map(map))
 	{
-		
 		mlx_data_init(&data);
 		player = player_data_init(map);
 		raycast = raycast_data_init(&data, map, player);
+		load_xpm_files(raycast);
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
-		load_xpm_files(raycast);
 		ray_casting(raycast);
 		// // draw_minimap(&data, map->map);
 		// // render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);

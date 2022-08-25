@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH  850
-# define WIN_HEIGHT 500
+# define WIN_WIDTH  1920
+# define WIN_HEIGHT 1020
 # define CUB_SIZE 32
 # define NO 0
 # define SO 3
@@ -96,6 +96,17 @@ typedef struct s_player
 	int		exit;
 } t_player;
 
+typedef struct s_proj
+{
+	double		x_offset;
+	double		y_offset;
+	int			draw_start;
+	int			draw_end;
+	int			y;
+	int			color;
+	int			dist_from_top;
+}t_proj;
+
 typedef struct	s_raycast
 {
 	t_data		*data;
@@ -110,7 +121,8 @@ typedef struct	s_raycast
 	int			inters_type;
 	double			*x;
 	double			*y;
-	t_img		*textures;
+	double		wall_height;
+	t_img		textures[4];
 } t_raycast;
 
 #endif

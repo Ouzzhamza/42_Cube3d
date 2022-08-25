@@ -1,7 +1,7 @@
 NO ./assets/brick.xpm
-SO ./assets/brick.xpm
-WE ./assets/brick.xpm
-EA ./assets/brick.xpm
+SO ./assets/eagle.xpm
+WE ./assets/mossy.xpm
+EA ./assets/barrel.xpm
 
 C 0,0,0
 F 36,85,0

@@ -22,7 +22,6 @@ int ft_exit(t_raycast *raycast)
 	
 }
 
-
 int  key_type_pres(int key, t_raycast *raycast)
 {
 	if (key == 53)
@@ -57,7 +56,6 @@ int	key_type_releas(int key, t_raycast *raycast)
 	else if (key == 124)
 		raycast->player->r_rotate = 0;
 	return(0);
-
 }
 
 int handle_event(t_raycast *raycast)
@@ -73,9 +71,15 @@ int handle_event(t_raycast *raycast)
 	if (raycast->player->left == 1)
 		move_left(raycast);
 	if (raycast->player->l_rotate == 1)
+	{
 		raycast->player->angle -= 0.0374533;
+		raycast->player->angle = normlize_angle(raycast->player->angle);
+	}
 	if (raycast->player->r_rotate == 1)
+	{
 		raycast->player->angle += 0.0374533;
+		raycast->player->angle = normlize_angle(raycast->player->angle);
+	}
 	redraw(raycast);
 	return(0);
 		

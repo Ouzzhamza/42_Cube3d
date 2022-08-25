@@ -59,7 +59,7 @@ t_player	*player_data_init(t_map *map)
 	ft_memset(player, 0, sizeof(t_player));
 	player->map_pos = get_player_pos(map->map);
 	player->angle = player_angle(map->player);
-	player->speed = 0.2;
+	player->speed = 0.1;
 	return (player);
 }
 

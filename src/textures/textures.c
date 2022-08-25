@@ -13,16 +13,41 @@
 #include "../../includes/cube3d.h"
 #include "../../includes/structs.h"
 
+t_img *get_texture_by_direc(t_raycast *raycast, t_point inters)
+{
+    (void)inters;
+    if (raycast->inters_type == 0)
+    {
+        if (raycast->player->angle > M_PI && raycast->player->angle < (2 * M_PI))
+            return (&raycast->textures[NO]);
+        else
+            return (&raycast->textures[SO]);
+    }
+    else
+    {
+        if ((raycast->player->angle <= M_PI / 2) || (raycast->player->angle >= 1.5 * M_PI))
+            return (&raycast->textures[EA]);
+        else
+            return (&raycast->textures[WE]);
+    }
+    return (NULL);
+}
+
 void    load_xpm_files(t_raycast *raycast)
 {
-    int     height;
-    int     width;
+    int i;
 
-    height = 0;
-    width = 0;
-    raycast->textures = (t_img *)malloc(sizeof(t_img));
-    if (!raycast->textures)
-        ft_error("Malloc Error\n");
-    raycast->textures->mlx_img = mlx_xpm_file_to_image(raycast->data->mlx_ptr, raycast->map->wall[NO], &raycast->textures->width, &raycast->textures->height);
-    raycast->textures->addr = (int *)mlx_get_data_addr(raycast->textures->mlx_img, &raycast->textures->bpp, &raycast->textures->line_len, &raycast->textures->endian);
+    i = 0;
+    while (i < 4)
+    {
+        raycast->textures[i].mlx_img = mlx_xpm_file_to_image(raycast->data->mlx_ptr,
+        raycast->map->wall[i],
+        &raycast->textures[i].width, &raycast->textures[i].height);
+        if (raycast->textures[i].mlx_img == NULL)
+            ft_error("Mlx_Xpm_Error\n");
+        raycast->textures[i].addr = (int *)mlx_get_data_addr(raycast->textures[i].mlx_img,
+        &raycast->textures[i].bpp,
+        &raycast->textures[i].line_len, &raycast->textures[i].endian);
+        i++;
+    }
 }

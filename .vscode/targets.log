@@ -8,9 +8,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Aug 25 11:00:37 2022
+# Make data base, printed on Thu Aug 25 12:37:07 2022
 
 # Variables
+ 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -39,11 +40,13 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-5bed0a55-590f-4ebc-a906-9338cc1f1b27.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cccw003337/T/vscode-ipc-2b534be5-d126-4711-9cf8-09dfe4687736.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /goinfre/mmoumni/miniconda3/bin:/Users/mmoumni/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Python.framework/Versions/3.9/bin
+# environment
+LaunchInstanceID = 05CA0262-B99E-4F5A-A0E6-FDEFC331C4B3
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -51,7 +54,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.t4yefStiIJ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.GMuJbHTJmO/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -117,20 +120,25 @@ MFLAGS = -lmlx -framework OpenGL -framework AppKit -lm
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1180
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x18C67:0:0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a7
 # automatic
+ 
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
@@ -143,9 +151,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 76390
+VSCODE_PID = 842
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=3/100=3%
+# Load=69/1024=7%, Rehash=0, Collisions=3/103=3%
 
 # Pattern-specific Variable Values
 
@@ -153,11 +161,11 @@ VSCODE_PID = 76390
 
 # Directories
 
-# . (device 16777225, inode 931870): 14 files, no impossibilities.
+# . (device 16777225, inode 931870): 13 files, no impossibilities.
 # includes (device 16777225, inode 932177): 4 files, no impossibilities so far.
 # src/cube3d_utiles (device 16777225, inode 932206): 3 files, no impossibilities so far.
 
-# 21 files, no impossibilities in 3 directories.
+# 20 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -235,7 +243,7 @@ all: cube3d
 # Not a target:
 includes/structs.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-25 10:46:23
+#  Last modified 2022-08-25 11:08:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -274,7 +282,6 @@ src/mini_map/parse_minimap.o:
 #  File has not been updated.
 
 # Not a target:
- 
 src/cube3d_utiles/ft_lstnew.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -315,7 +322,7 @@ src/cube3d_utiles/get_next_line_utils.o:
 
 cube3d: src/cube3d_utiles/free.o src/cube3d_utiles/ft_isprint.o src/cube3d_utiles/ft_lstlast.o src/cube3d_utiles/ft_lstsize.o src/cube3d_utiles/ft_putstr.o src/cube3d_utiles/ft_strchr.o src/cube3d_utiles/ft_strlen.o src/cube3d_utiles/ft_strnstr.o src/cube3d_utiles/get_next_line.o src/cube3d_utiles/ft_atoi.o src/cube3d_utiles/ft_lstadd_back.o src/cube3d_utiles/ft_lstnew.o src/cube3d_utiles/ft_memset.o src/cube3d_utiles/ft_split.o src/cube3d_utiles/ft_strlcpy.o src/cube3d_utiles/ft_strncmp.o src/cube3d_utiles/ft_strtrim.o src/cube3d_utiles/get_next_line_utils.o src/mini_map/parse_minimap.o src/mini_map/print_map.o src/parsing_map/parcing_utiles.o src/parsing_map/parcing_utiles1.o src/raycasting/raycasting.o src/raycasting/raycasting_utils.o src/cube3d.o src/errors/error.o src/draw_line.o src/hooks/player_move.o src/hooks/hooks.o src/hooks/player_move_utiles.o src/errors/free_functions.o src/parsing_map/map_parcing.o src/raycasting/rays_distance.o src/raycasting/intersection_steps.o src/raycasting/raycasting_utils_2.o src/raycasting/render_floor_ceil.o src/textures/textures.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-25 10:46:23
+#  Last modified 2022-08-25 11:56:38
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -403,6 +410,7 @@ src/hooks/player_move.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -526,6 +534,6 @@ src/raycasting/intersection_steps.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Aug 25 11:00:37 2022
+# Finished Make data base on Thu Aug 25 12:37:07 2022
 
  
