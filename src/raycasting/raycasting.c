@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/25 10:04:58 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:58:24 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ t_point	get_horiz_inters_point(t_raycast *raycast, double angle)
 
 	inters = first_intersec_horiz(raycast, angle);
 	delta = xy_steps_horiz(angle);
-	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
+	while (inters.x >= 0 && inters.x < raycast->map->map_width && inters.y >= 0 && inters.y < raycast->map->map_height)
 	{
 		if (ft_is_ray_up(angle))
-			grid.y = (inters.y - 1) / CUB_SIZE;
+			grid.y = (inters.y - 1);
 		else
-			grid.y = inters.y / CUB_SIZE;
-		grid.x = inters.x / CUB_SIZE;
+			grid.y = inters.y;
+		grid.x = inters.x;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
 			return ((t_point){inters.x, inters.y});
 		inters.x += delta.x;
@@ -44,13 +44,13 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 
 	inters = first_intersec_vertic(raycast, angle);
 	delta = xy_steps_vertic(angle);
-	while (inters.x >= 0 && inters.x < raycast->width_limit && inters.y >= 0 && inters.y < raycast->height_limit)
+	while (inters.x >= 0 && inters.x < raycast->map->map_width && inters.y >= 0 && inters.y < raycast->map->map_height)
 	{
 		if (!ft_is_ray_right(angle))
-			grid.x = (inters.x - 1) / CUB_SIZE;
+			grid.x = (inters.x - 1);
 		else
-			grid.x = (inters.x) / CUB_SIZE;
-		grid.y = inters.y / CUB_SIZE;
+			grid.x = (inters.x);
+		grid.y = inters.y;
 		if (raycast->map->map[(int)grid.y][(int)grid.x] == '1')
 			return ((t_point){inters.x, inters.y});
 		inters.x += delta.x;
@@ -104,19 +104,16 @@ int	ray_casting(t_raycast *raycast)
 		dist = valid_inters(raycast, horiz_ray, vertic_ray, ray_angle);
 		if (raycast->inters_type == 0)
 		{
+			draw_proj_wall(raycast, i, calculate_wall_projection(dist), horiz_ray);
 			raycast->x[i] = horiz_ray.x;
 			raycast->y[i] = horiz_ray.y;
 		}
-		else if (raycast->inters_type == 1)
+		else
 		{
+			draw_proj_wall(raycast, i, calculate_wall_projection(dist), vertic_ray);
 			raycast->x[i] = vertic_ray.x;
 			raycast->y[i] = vertic_ray.y;
 		}
-		draw_wall(raycast, i, calculate_wall_projection(raycast, dist));
-		// if (raycast->inters_type == 0)
-		// 	draw_horiz_texture(raycast, i, calculate_wall_projection(raycast, dist), horiz_ray);
-		// else
-		// 	draw_vertic_texture(raycast, i, calculate_wall_projection(raycast, dist), vertic_ray);
 		ray_angle += raycast->increment_angle;
 		i++;
 	}

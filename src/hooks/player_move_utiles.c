@@ -56,9 +56,9 @@ int redraw(t_raycast *raycast)
 	render_image_color(raycast, raycast->map->ceiling, 0);
 	render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 	ray_casting(raycast);
-	draw_minimap(raycast, raycast->map->map);
-	render_player(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-	trace_rays(raycast);
+	// draw_minimap(raycast, raycast->map->map);
+	// render_player(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
+	// trace_rays(raycast);
 	mlx_put_image_to_window(raycast->data->mlx_ptr, raycast->data->win_ptr, raycast->data->img.mlx_img,0,0);
 	return(0);
 }

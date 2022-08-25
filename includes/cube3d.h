@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/24 11:39:01 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:56:41 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,21 +121,14 @@ t_point xy_steps_horiz(double angle);
 t_point	first_intersec_vertic(t_raycast *raycast, double angle);
 t_point xy_steps_vertic(double angle);
 double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
-double	normlize_angle(double angle);
-bool ft_is_ray_right(double angle);
-bool ft_is_ray_up(double angle);
-double	calculate_wall_projection(t_raycast *raycast, double dist_wall);
-void	free_raycast(t_raycast *raycast);
-// int	draw_wall(t_raycast *raycast, int x_start, double wall_height, t_point intersec_point);
-int	draw_vertic_texture(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
-int	draw_horiz_texture(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
+double  normlize_angle(double angle);
+bool    ft_is_ray_right(double angle);
+bool    ft_is_ray_up(double angle);
+double  calculate_wall_projection(double dist_wall);
+void    free_raycast(t_raycast *raycast);
 void	render_image_color(t_raycast *raycast, int color, int y_start);
-int	draw_wall(t_raycast *raycast, int x_start, double wall_height);
-// double	calculate_ray_distance(t_point player_pos, t_point wall_pos);
 void	intersection_cordinate(t_raycast *raycast, t_point *horiz_ray,t_point *vertic_ray, int i);
-
+void	draw_proj_wall(t_raycast *raycast, int x_start, double wall_height, t_point inters);
 void    load_xpm_files(t_raycast *raycast);
-void	trace_whole_line(t_raycast *raycast, int x_start, double wall_height, t_point intersc);
-void	trace_start_end_line(t_raycast *raycast, int x_start, double wall_height, t_point interesc);
 
 #endif

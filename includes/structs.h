@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/24 12:39:33 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/25 10:38:21 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 1200
-# define WIN_HEIGHT 780
-# define CUB_SIZE	32
+# define WIN_WIDTH  850
+# define WIN_HEIGHT 500
+# define CUB_SIZE 32
+# define NO 0
 # define SO 3
 # define WE 2
 # define EA 1
@@ -106,8 +107,6 @@ typedef struct	s_raycast
 	double		height_proj;
 	double		half_width;
 	double		centre_height;
-	double		width_limit;
-	double		height_limit;
 	int			inters_type;
 	double			*x;
 	double			*y;

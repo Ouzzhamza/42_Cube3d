@@ -18,8 +18,8 @@ int move_forward(t_raycast *raycast)
 {
 	if ( valid_move(raycast, 1))
 	{
-		raycast->player->map_pos.x += raycast->player->speed * cos(raycast->player->angle);
-		raycast->player->map_pos.y += raycast->player->speed * sin(raycast->player->angle);
+		raycast->player->map_pos.x += (raycast->player->speed / 2) * cos(raycast->player->angle);
+		raycast->player->map_pos.y += (raycast->player->speed / 2) * sin(raycast->player->angle);
 	}
 	return 0;
 	

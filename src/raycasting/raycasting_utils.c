@@ -39,8 +39,8 @@ t_point	get_player_pos(char **map)
 			if (map[i][j] == 'W' || map[i][j] == 'S'
 				|| map[i][j] == 'E' || map[i][j] == 'N')
 			{
-				player.x = (j * (CUB_SIZE));
-				player.y = (i * (CUB_SIZE));
+				player.x = j;
+				player.y = i;
 			}
 			j++;
 		}
@@ -59,7 +59,7 @@ t_player	*player_data_init(t_map *map)
 	ft_memset(player, 0, sizeof(t_player));
 	player->map_pos = get_player_pos(map->map);
 	player->angle = player_angle(map->player);
-	player->speed = 2;
+	player->speed = 0.2;
 	return (player);
 }
 
@@ -74,16 +74,12 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 	raycast->y = (double *)malloc((WIN_WIDTH) * sizeof(double));
 	raycast->data = data;
 	raycast->map = map;
-	raycast->half_width = WIN_WIDTH / 2;
 	raycast->player = player;
+	raycast->half_width = WIN_WIDTH / 2;
+	raycast->centre_height = WIN_HEIGHT / 2;
 	raycast->angle = M_PI / 3;
 	raycast->dis_plane = raycast->half_width / tan(M_PI / 6);
 	raycast->increment_angle = (M_PI / (3 * WIN_WIDTH));
-	raycast->height_proj = raycast->dis_plane * CUB_SIZE;
-	raycast->centre_height = WIN_HEIGHT / 2;
-	raycast->width_limit = CUB_SIZE * map->map_width;
-	raycast->height_limit = CUB_SIZE * map->map_height;
-	raycast->inters_type = -1;
 	return (raycast);
 }
 
