@@ -14,6 +14,14 @@
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
+void	my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color)
+{
+	if (x >= 0 && x < WIN_WIDTH && y >= 0 && y < WIN_HEIGHT)
+	{
+		raycast->data->img.addr[y * WIN_WIDTH + x] = color;
+	}
+}
+
 int	render_rect(t_raycast *data, t_rect rect)
 {
 	int i;
