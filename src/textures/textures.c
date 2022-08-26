@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:23:54 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/23 12:27:34 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/26 18:53:08 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,32 @@ t_img	*get_texture_by_direc(t_raycast *raycast, double angle)
 			return (&raycast->textures[NO]);
 		else
 			return (&raycast->textures[SO]);
-    }
+	}
 	else
 	{
 		if ((angle < M_PI / 2) || (angle > 1.5 * M_PI))
 			return (&raycast->textures[EA]);
 		else
 			return (&raycast->textures[WE]);
-    }
-    return (NULL);
+	}
+	return (NULL);
 }
 
-void    load_xpm_files(t_raycast *raycast)
+void	load_xpm_files(t_raycast *raycast)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < 4)
-    {
-        raycast->textures[i].mlx_img = mlx_xpm_file_to_image(raycast->data->mlx_ptr,
-        raycast->map->wall[i],
-        &raycast->textures[i].width, &raycast->textures[i].height);
-        if (raycast->textures[i].mlx_img == NULL)
-            ft_error("Mlx_Xpm_Error\n");
-        raycast->textures[i].addr = (int *)mlx_get_data_addr(raycast->textures[i].mlx_img,
-        &raycast->textures[i].bpp,
-        &raycast->textures[i].line_len, &raycast->textures[i].endian);
-        i++;
-    }
+	i = 0;
+	while (i < 4)
+	{
+		raycast->textures[i].mlx_img = mlx_xpm_file_to_image(\
+		raycast->data->mlx_ptr, raycast->map->wall[i], \
+		&raycast->textures[i].width, &raycast->textures[i].height);
+		if (raycast->textures[i].mlx_img == NULL)
+			ft_error("Mlx_Xpm_Error\n");
+		raycast->textures[i].addr = (int *)mlx_get_data_addr(\
+		raycast->textures[i].mlx_img, &raycast->textures[i].bpp, \
+		&raycast->textures[i].line_len, &raycast->textures[i].endian);
+		i++;
+	}
 }
