@@ -113,7 +113,7 @@ int	main(int ac, char **av)
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
-		// // draw_minimap(&data, map->map);
+		draw_minimap(&data, map->map);
 		// // render_player(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
 		// // trace_rays(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
