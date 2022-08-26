@@ -13,17 +13,16 @@ cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_atoi.c -o src/cube3d_utiles/ft
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstadd_back.c -o src/cube3d_utiles/ft_lstadd_back.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstnew.c -o src/cube3d_utiles/ft_lstnew.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_memset.c -o src/cube3d_utiles/ft_memset.o
- 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_split.c -o src/cube3d_utiles/ft_split.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strlcpy.c -o src/cube3d_utiles/ft_strlcpy.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strncmp.c -o src/cube3d_utiles/ft_strncmp.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_strtrim.c -o src/cube3d_utiles/ft_strtrim.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/get_next_line_utils.c -o src/cube3d_utiles/get_next_line_utils.o
 cc -Wall -Wextra -Werror  -c src/mini_map/parse_minimap.c -o src/mini_map/parse_minimap.o
+ 
 cc -Wall -Wextra -Werror  -c src/mini_map/print_map.c -o src/mini_map/print_map.o
 cc -Wall -Wextra -Werror  -c src/parsing_map/parcing_utiles.c -o src/parsing_map/parcing_utiles.o
 cc -Wall -Wextra -Werror  -c src/parsing_map/parcing_utiles1.c -o src/parsing_map/parcing_utiles1.o
- 
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting.c -o src/raycasting/raycasting.o
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting_utils.c -o src/raycasting/raycasting_utils.o
 cc -Wall -Wextra -Werror  -c src/cube3d.c -o src/cube3d.o
@@ -35,7 +34,6 @@ cc -Wall -Wextra -Werror  -c src/hooks/player_move_utiles.c -o src/hooks/player_
 cc -Wall -Wextra -Werror  -c src/errors/free_functions.c -o src/errors/free_functions.o
 cc -Wall -Wextra -Werror  -c src/parsing_map/map_parcing.c -o src/parsing_map/map_parcing.o
 cc -Wall -Wextra -Werror  -c src/raycasting/rays_distance.c -o src/raycasting/rays_distance.o
- 
 cc -Wall -Wextra -Werror  -c src/raycasting/intersection_steps.c -o src/raycasting/intersection_steps.o
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting_utils_2.c -o src/raycasting/raycasting_utils_2.o
 cc -Wall -Wextra -Werror  -c src/raycasting/render_floor_ceil.c -o src/raycasting/render_floor_ceil.o

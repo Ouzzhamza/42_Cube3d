@@ -25,7 +25,7 @@ t_img *get_texture_by_direc(t_raycast *raycast, t_point inters)
     }
     else
     {
-        if ((raycast->player->angle <= M_PI / 2) || (raycast->player->angle >= 1.5 * M_PI))
+        if ((raycast->player->angle < M_PI / 2) || (raycast->player->angle > 1.5 * M_PI))
             return (&raycast->textures[EA]);
         else
             return (&raycast->textures[WE]);

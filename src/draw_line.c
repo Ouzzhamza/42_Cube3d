@@ -3,35 +3,30 @@
 
 void    drawline(t_raycast *data, int x0, int y0, int x1, int y1)
 {
-    int dx;
-    int sx;
-    int dy;
-    int sy;
-    int err;
-    int e2;
+    t_bresn bre;
 
-    dx = abs(x1 - x0);
-    sx = x0<x1 ? 1 : -1;
-    dy = -abs(y1 - y0);
-    sy = y0<y1 ? 1 : -1;
-    err = dx + dy;
+    bre.dx = abs(x1 - x0);
+    bre.sx = x0<x1 ? 1 : -1;
+    bre.dy = -abs(y1 - y0);
+    bre.sy = y0<y1 ? 1 : -1;
+    bre.err = bre.dx + bre.dy;
     while (1)
     {
         my_mlx_put_pixel(data, x0, y0, 103);
-        e2 = 2*err;
-        if (e2 >= dy)
+        bre.e2 = 2*bre.err;
+        if (bre.e2 >= bre.dy)
         {
             if (x0 == x1)
                 break ;
-            err += dy;
-            x0 += sx;
+            bre.err += bre.dy;
+            x0 += bre.sx;
         }
-        if (e2 <= dx)
+        if (bre.e2 <= bre.dx)
         {
             if (y0 == y1)
                 break ;
-            err += dx;
-            y0 += sy;
+            bre.err += bre.dx;
+            y0 += bre.sy;
         }
     }
 }

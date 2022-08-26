@@ -79,14 +79,10 @@ void	mlx_data_init(t_data *data)
 int	trace_rays(t_raycast *raycast)
 {
 	int		i;
-	// t_point ray;
 
 	i = 0;
 	while (i < WIN_WIDTH)
 	{
-		// printf("value of i %d|\n", i);
-		// printf("player position %f\n", raycast->player->map_pos.y);
-			// printf("%d\n", i);
 		if (raycast->x[i] == 1e9 || raycast->y[i] == 1e9)
 		{
 			printf("x = %f\n", raycast->x[i]);

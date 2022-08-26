@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH  1920
-# define WIN_HEIGHT 1020
+# define WIN_WIDTH  850
+# define WIN_HEIGHT 600
 # define CUB_SIZE 32
 # define NO 0
 # define SO 3
@@ -106,6 +106,16 @@ typedef struct s_proj
 	int			color;
 	int			dist_from_top;
 }t_proj;
+
+typedef struct s_bresn
+{
+	int dx;
+    int sx;
+    int dy;
+    int sy;
+    int err;
+    int e2;
+}t_bresn;
 
 typedef struct	s_raycast
 {

@@ -1,10 +1,10 @@
 NO ./assets/eagle.xpm
 EA ./assets/brick.xpm
 SO ./assets/tree.xpm
+WE ./assets/mossy.xpm
 
 F 36,85,0
 C 255,153,51
-WE ./assets/mossy.xpm
  
  
         1111111111111111111111111
