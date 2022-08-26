@@ -13,10 +13,9 @@
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *ptr;
+	t_list	*ptr;
 
 	ptr = lst;
 	if (!lst)

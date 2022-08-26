@@ -16,5 +16,5 @@
 void	ft_error(char *str)
 {
 	ft_putstr(str);
-	exit (EXIT_FAILURE); //& this one should be executed after freeing every thing
+	exit (EXIT_FAILURE);
 }

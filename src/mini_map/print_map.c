@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
@@ -24,9 +23,9 @@ void	my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color)
 
 int	render_rect(t_raycast *data, t_rect rect)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	if (data->data->win_ptr == NULL)
 		return (1);
 	i = rect.y;
@@ -45,7 +44,7 @@ int	render_rect(t_raycast *data, t_rect rect)
 
 int	render(t_raycast *data, int x, int y, int color)
 {
-	t_rect rectangle;
+	t_rect	rectangle;
 
 	rectangle.color = color;
 	rectangle.x = x;
@@ -71,10 +70,10 @@ int	render_player(t_raycast *data, int x, int y, int color)
 
 void	draw_minimap(t_raycast *data, char **map)
 {
-	int i;
+	int	i;
 	int	j;
 	int	x_start;
-	int y_start;
+	int	y_start;
 
 	i = 0;
 	while (map[i])

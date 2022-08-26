@@ -22,13 +22,14 @@ t_point	first_intersec_horiz(t_raycast *raycast, double angle)
 	y_intersection = (int)(raycast->player->map_pos.y);
 	if (!ft_is_ray_up(angle))
 		y_intersection += 1;
-	x_intersection = raycast->player->map_pos.x + (y_intersection - raycast->player->map_pos.y) / tan(angle);
+	x_intersection = raycast->player->map_pos.x + \
+	(y_intersection - raycast->player->map_pos.y) / tan(angle);
 	grid.x = x_intersection;
 	grid.y = y_intersection;
 	return (grid);
 }
 
-t_point xy_steps_horiz(double angle)
+t_point	xy_steps_horiz(double angle)
 {
 	t_point	delta;
 
@@ -48,17 +49,18 @@ t_point	first_intersec_vertic(t_raycast *raycast, double angle)
 	double	x_intersection;
 	double	y_intersection;
 	t_point	grid;
-	
+
 	x_intersection = (int)(raycast->player->map_pos.x);
 	if (ft_is_ray_right(angle))
 		x_intersection += 1;
-	y_intersection = raycast->player->map_pos.y + (x_intersection - raycast->player->map_pos.x) * tan(angle);
+	y_intersection = raycast->player->map_pos.y + \
+	(x_intersection - raycast->player->map_pos.x) * tan(angle);
 	grid.x = x_intersection;
 	grid.y = y_intersection;
 	return (grid);
 }
 
-t_point xy_steps_vertic(double angle)
+t_point	xy_steps_vertic(double angle)
 {
 	t_point	delta;
 

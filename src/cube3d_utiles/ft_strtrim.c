@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/structs.h"
-# include "../../includes/cube3d.h"
+#include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
 
 char	*ft_ftrim(char *ptr1, char *ptr2, char *c_s1, char *set)
 {

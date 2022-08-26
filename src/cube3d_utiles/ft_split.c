@@ -64,7 +64,7 @@ static char	**ft_freetab(char **str, int tofree)
 	return (str);
 }
 
-char	**ft_split(char  *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		i;
 	char	**str;

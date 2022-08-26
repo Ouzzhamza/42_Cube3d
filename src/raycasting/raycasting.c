@@ -21,8 +21,8 @@ t_point	get_horiz_inters_point(t_raycast *raycast, double angle)
 
 	inters = first_intersec_horiz(raycast, angle);
 	delta = xy_steps_horiz(angle);
-	// printf("vertic:here\n");
-	while (inters.x >= 0 && inters.x < raycast->map->map_width && inters.y >= 0 && inters.y < raycast->map->map_height)
+	while (inters.x >= 0 && inters.x < raycast->map->map_width
+		&& inters.y >= 0 && inters.y < raycast->map->map_height)
 	{
 		if (ft_is_ray_up(angle))
 			grid.y = (inters.y - 1);
@@ -34,8 +34,7 @@ t_point	get_horiz_inters_point(t_raycast *raycast, double angle)
 		inters.x += delta.x;
 		inters.y += delta.y;
 	}
-	// printf("horiz:Here2\n");
-	return ((t_point){1e9,1e9});
+	return ((t_point){1e9, 1e9});
 }
 
 t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
@@ -46,8 +45,8 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 
 	inters = first_intersec_vertic(raycast, angle);
 	delta = xy_steps_vertic(angle);
-	// printf("vertic:here\n");
-	while (inters.x >= 0 && inters.x < raycast->map->map_width && inters.y >= 0 && inters.y < raycast->map->map_height)
+	while (inters.x >= 0 && inters.x < raycast->map->map_width
+		&& inters.y >= 0 && inters.y < raycast->map->map_height)
 	{
 		if (!ft_is_ray_right(angle))
 			grid.x = (inters.x - 1);
@@ -59,11 +58,10 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 		inters.x += delta.x;
 		inters.y += delta.y;
 	}
-	// printf("horiz:Here2\n");
-	return ((t_point){1e9,1e9});
+	return ((t_point){1e9, 1e9});
 }
 
-double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical, double angle)
+double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical,double angle)
 {
 	double	horiz_dist;
 	double	vertic_dist;

@@ -15,7 +15,7 @@
 
 void	render_image_color(t_raycast *raycast, int color, int y_start)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = y_start;
@@ -30,4 +30,3 @@ void	render_image_color(t_raycast *raycast, int color, int y_start)
 		i++;
 	}
 }
-

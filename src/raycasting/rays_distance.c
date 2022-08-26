@@ -14,7 +14,8 @@
 
 double	calculate_ray_distance(t_point player_pos, t_point wall_pos)
 {
-	return (sqrt(pow((player_pos.x - wall_pos.x), 2) + pow((player_pos.y - wall_pos.y), 2)));
+	return (sqrt(pow((player_pos.x - wall_pos.x), 2) + \
+	pow((player_pos.y - wall_pos.y), 2)));
 }
 
 void	draw_proj_wall(t_raycast *raycast, int x_start, t_img *texture, t_point inters)

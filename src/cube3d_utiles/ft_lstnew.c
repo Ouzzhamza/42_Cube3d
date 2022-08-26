@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
-
 
 t_list	*ft_lstnew(void *content)
 {

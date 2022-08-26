@@ -13,21 +13,21 @@
 #include "../../includes/cube3d.h"
 #include "../../includes/structs.h"
 
-t_img *get_texture_by_direc(t_raycast *raycast, double angle)
+t_img	*get_texture_by_direc(t_raycast *raycast, double angle)
 {
-    if (raycast->inters_type == 0)
-    {
-        if (angle > M_PI && angle < (2 * M_PI))
-            return (&raycast->textures[NO]);
-        else
-            return (&raycast->textures[SO]);
+	if (raycast->inters_type == 0)
+	{
+		if (angle > M_PI && angle < (2 * M_PI))
+			return (&raycast->textures[NO]);
+		else
+			return (&raycast->textures[SO]);
     }
-    else
-    {
-        if ((angle < M_PI / 2) || (angle > 1.5 * M_PI))
-            return (&raycast->textures[EA]);
-        else
-            return (&raycast->textures[WE]);
+	else
+	{
+		if ((angle < M_PI / 2) || (angle > 1.5 * M_PI))
+			return (&raycast->textures[EA]);
+		else
+			return (&raycast->textures[WE]);
     }
     return (NULL);
 }

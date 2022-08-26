@@ -8,8 +8,8 @@
 /*   Created: 2022/08/08 09:48:36 by mmoumni           #+#    #+#             */
 /* ************************************************************************** */
 
-
 #include "../../includes/cube3d.h"
+#include "../../includes/structs.h"
 
 double	player_angle(char direction)
 {
@@ -29,7 +29,7 @@ t_point	get_player_pos(char **map)
 	int		i;
 	int		j;
 	t_point	player;
-	
+
 	i = 0;
 	while (map[i])
 	{
@@ -81,27 +81,4 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 	raycast->dis_plane = raycast->half_width / tan(M_PI / 6);
 	raycast->increment_angle = (M_PI / (3 * WIN_WIDTH));
 	return (raycast);
-}
-
-bool ft_is_ray_up(double angle)
-{
-	if (angle > M_PI && angle < (2 * M_PI))
-		return (true);
-	return (false);
-}
-
-bool ft_is_ray_right(double angle)
-{
-	if ((angle < M_PI / 2) || (angle > 1.5 * M_PI))
-		return (true);
-	return (false);
-}
-
-double	normlize_angle(double angle)
-{
-	if (angle >= 0)
-		angle = fmod(angle, (2 * M_PI));
-	else
-		angle += (2 * M_PI);
-	return (angle);
 }

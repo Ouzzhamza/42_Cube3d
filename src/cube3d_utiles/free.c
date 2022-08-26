@@ -13,10 +13,9 @@
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-
 void	free_table(char **table)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (table[++i])
@@ -24,10 +23,12 @@ void	free_table(char **table)
 	free(table);
 }
 
-void free_all(t_map *map)
+void	free_all(t_map *map)
 {
-	int i = 0;
-	while(map->wall[i])
+	int	i;
+
+	i = 0;
+	while (map->wall[i])
 	{
 		free(map->wall[i]);
 		i++;

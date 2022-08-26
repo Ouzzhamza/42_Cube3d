@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cube3d.h"
-# include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
+#include "../../includes/structs.h"
 
 void	free_map(t_map *map)
 {
@@ -21,7 +21,7 @@ void	free_map(t_map *map)
 
 void	free_two_dim_arr(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i])
@@ -38,7 +38,7 @@ void	free_list(t_list *list)
 	{
 		next = tmp->next;
 		free(tmp);
-		tmp = next;		
+		tmp = next;
 	}
 }
 

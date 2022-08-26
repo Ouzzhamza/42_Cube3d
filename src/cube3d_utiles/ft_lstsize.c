@@ -13,11 +13,10 @@
 #include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
-
-int	ft_lstsize(t_list   *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_list  	*new;
+	t_list	*new;
 
 	new = lst;
 	i = 0;

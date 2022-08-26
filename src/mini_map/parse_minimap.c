@@ -70,7 +70,8 @@ int	parse_map(t_map *map)
 		j = 0;
 		while (map->map[i][j])
 		{
-			if (map->map[i][j] == '0' || map->map[i][j] == 'W' || map->map[i][j] == 'N'
+			if (map->map[i][j] == '0' || map->map[i][j] == 'W'
+				|| map->map[i][j] == 'N'
 				|| map->map[i][j] == 'E' || map->map[i][j] == 'S')
 			{
 				validation = check_item_valid(map, j, i);
