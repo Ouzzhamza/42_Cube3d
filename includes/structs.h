@@ -19,7 +19,7 @@
 
 # define WIN_WIDTH  850
 # define WIN_HEIGHT 600
-# define CUB_SIZE 32
+# define CUB_SIZE 8
 # define NO 0
 # define SO 3
 # define WE 2

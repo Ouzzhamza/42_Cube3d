@@ -21,7 +21,7 @@ void	draw_proj_wall(t_raycast *raycast, int x_start, t_img *texture, t_point int
 {
 	t_proj	proj;
 	int		y;
-	
+
 	proj.draw_start = raycast->centre_height - (raycast->wall_height / 2);
 	if (proj.draw_start < 0)
 		proj.draw_start = 0;
@@ -47,4 +47,5 @@ void	draw_proj_wall(t_raycast *raycast, int x_start, t_img *texture, t_point int
 		raycast->data->img.addr[y * WIN_WIDTH + x_start] = proj.color;
 		y++;
 	}
+	// printf("angle: %f-- ray_index: %d\n", raycast->player->angle, x_start);
 }

@@ -109,13 +109,13 @@ int	ray_casting(t_raycast *raycast)
 		raycast->wall_height = calculate_wall_projection(dist);
 		if (raycast->inters_type == 0)
 		{
-			draw_proj_wall(raycast, i, get_texture_by_direc(raycast, horiz_ray), horiz_ray);
+			draw_proj_wall(raycast, i, get_texture_by_direc(raycast, ray_angle), horiz_ray);
 			raycast->x[i] = horiz_ray.x;
 			raycast->y[i] = horiz_ray.y;
 		}
 		else
 		{
-			draw_proj_wall(raycast, i, get_texture_by_direc(raycast, vertic_ray), vertic_ray);
+			draw_proj_wall(raycast, i, get_texture_by_direc(raycast, ray_angle), vertic_ray);
 			raycast->x[i] = vertic_ray.x;
 			raycast->y[i] = vertic_ray.y;
 		}

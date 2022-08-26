@@ -61,8 +61,8 @@ int	render_player(t_raycast *data, int x, int y, int color)
 	t_rect	rectangle;
 
 	rectangle.color = color;
-	rectangle.x = x;
-	rectangle.y = y;
+	rectangle.x = x * CUB_SIZE;
+	rectangle.y = y * CUB_SIZE;
 	rectangle.width = CUB_SIZE / 8;
 	rectangle.height = CUB_SIZE / 8;
 	render_rect(data, rectangle);
