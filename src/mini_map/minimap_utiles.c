@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 09:39:34 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 17:02:49 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:38:01 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void set_minimap_field(t_raycast *raycast)
             if (i == 0 || i == MINI_HEIGHT || j == 0 || j == MINI_WIDTH)
                 my_mlx_put_pixel(raycast, j, i, 0xFF0000);
 			else if (i < MINI_HEIGHT && j < MINI_WIDTH)
-				 my_mlx_put_pixel(raycast, j, i, 0x0000000);
+                ;
+				//  my_mlx_put_pixel(raycast, j, i, 0x0000000);
 			j++;
 		}
 		i++;

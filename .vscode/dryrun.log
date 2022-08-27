@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/mmoumni/Desktop/42_Cube3d'
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/free.c -o src/cube3d_utiles/free.o
- 
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_isprint.c -o src/cube3d_utiles/ft_isprint.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstlast.c -o src/cube3d_utiles/ft_lstlast.o
 cc -Wall -Wextra -Werror  -c src/cube3d_utiles/ft_lstsize.c -o src/cube3d_utiles/ft_lstsize.o
@@ -24,7 +23,6 @@ cc -Wall -Wextra -Werror  -c src/mini_map/print_map.c -o src/mini_map/print_map.
 cc -Wall -Wextra -Werror  -c src/parsing_map/parcing_utiles.c -o src/parsing_map/parcing_utiles.o
 cc -Wall -Wextra -Werror  -c src/parsing_map/parcing_utiles1.c -o src/parsing_map/parcing_utiles1.o
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting.c -o src/raycasting/raycasting.o
- 
 cc -Wall -Wextra -Werror  -c src/raycasting/raycasting_utils.c -o src/raycasting/raycasting_utils.o
 cc -Wall -Wextra -Werror  -c src/cube3d.c -o src/cube3d.o
 cc -Wall -Wextra -Werror  -c src/errors/error.c -o src/errors/error.o
