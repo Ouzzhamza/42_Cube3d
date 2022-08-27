@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:12:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/26 18:56:12 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 15:46:14 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,20 @@ int	is_identifire(char *str, t_map *map)
 		return (free_table(line), 0);
 	free(str);
 	return (1);
+}
+
+int	is_number(char *num)
+{
+	int	i;
+
+	i = 0;
+	if ((num[i] == '-' || num[i] == '+') && ft_strlen(num) > 1)
+		i++;
+	while (num[i])
+	{
+		if (num[i] < '0' || num[i] > '9')
+			return (1);
+		i++;
+	}
+	return (0);
 }

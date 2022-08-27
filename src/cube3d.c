@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/25 09:42:25 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 17:04:57 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	cheack_line(char *line, t_map *map)
 {
-	int i;
-	t_list *new;
+	int		i;
+	t_list	*new;
 
 	i = 0;
 	line = ft_strtrim(line, "\n");
@@ -24,7 +24,7 @@ int	cheack_line(char *line, t_map *map)
 	{
 		if (!a_wall(line, map))
 			ft_error(MAP);
-		if(map->longest)
+		if (map->longest)
 		{
 			new = ft_lstnew(line);
 			ft_lstadd_back(&(map->list), new);
@@ -51,7 +51,7 @@ t_map	*read_map(int ac, char **av)
 	{
 		line = get_next_line(fd);
 		if (line == NULL)
-			break;
+			break ;
 		if (line[0] != '\n')
 			cheack_line(ft_strdup(line), map);
 		free(line);
@@ -67,13 +67,15 @@ void	mlx_data_init(t_data *data)
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
 		ft_error("mlx_ptre Error!\n");
-	data->win_ptr = mlx_new_window(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "CUBE3D");
+	data->win_ptr = mlx_new_window(data->mlx_ptr, \
+	WIN_WIDTH, WIN_HEIGHT, "CUBE3D");
 	if (!data->win_ptr)
 		ft_error("mlx_win Error!\n");
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	if (!data->img.mlx_img)
 		ft_error("mlx_img Error!\n");
-	data->img.addr = (int *)mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, &data->img.line_len, &data->img.endian);
+	data->img.addr = (int *)mlx_get_data_addr(data->img.mlx_img, \
+	&data->img.bpp, &data->img.line_len, &data->img.endian);
 }
 
 int	trace_rays(t_raycast *raycast)
@@ -91,7 +93,6 @@ int	trace_rays(t_raycast *raycast)
 		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, raycast->x[i], raycast->y[i]);
 		i++;
 	}
-	//exit(0);
 	return (1);
 }
 

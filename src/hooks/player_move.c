@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_move.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 06:53:13 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/23 21:59:59 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 15:54:15 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int move_forward(t_raycast *raycast)
 {
-	if ( valid_move(raycast, 1))
+	if (valid_move(raycast, 1))
 	{
 		raycast->player->map_pos.x += (raycast->player->speed / 2) * cos(raycast->player->angle);
 		raycast->player->map_pos.y += (raycast->player->speed / 2) * sin(raycast->player->angle);

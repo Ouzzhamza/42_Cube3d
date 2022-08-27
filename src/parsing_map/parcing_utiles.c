@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/26 18:56:17 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:08:45 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ void	rgb_to_int(int *rgb, char *str, t_map *map)
 	byte = 65536;
 	i = -1;
 	line = ft_split(str, ' ');
-	ptr = line;
-	line = ft_split(line[1], ',');
-	while (line[++i])
+	ptr = ft_split(line[1], ',');
+	while (ptr[++i])
 	{
-		if (ft_atoi(line[i]) > 255 || ft_atoi(line[i]) < 0)
+		if (is_number(ptr[i]) || ft_atoi(ptr[i]) > 255
+			|| ft_atoi(ptr[i]) < 0)
 			ft_error(RGB);
 		else
 		{
-			*rgb = *rgb + ft_atoi(line[i]) * byte;
+			*rgb = *rgb + ft_atoi(ptr[i]) * byte;
 			byte = byte / 256;
 		}
 	}
