@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/25 10:38:21 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 09:55:39 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,28 @@
 # define WE 2
 # define EA 1
 
-
 typedef struct s_list
 {
-	char 	*line;
-	struct 	s_list *next; 
-} t_list;
+	char			*line;
+	struct s_list	*next;
+}	t_list;
 
 typedef struct map
 {
-	char 		**map;
-	char 		*wall[5];
+	char		**map;
+	char		*wall[5];
 	char		player;
 	int			ceiling;
 	int			floor;
 	int			x_scall;
 	int			y_scall;
 	int			identifier;
-	int 		longest;
+	int			longest;
 	int			map_width;
 	int			map_height;
 	void		*mlx;
-	t_list 		*list;
-} t_map;
+	t_list		*list;
+}	t_map;
 
 typedef struct s_img
 {
@@ -58,14 +57,14 @@ typedef struct s_img
 	int		endian;
 	int		width;
 	int		height;
-} t_img;
+}	t_img;
 
 typedef struct s_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_img	img;
-} t_data;
+}	t_data;
 
 typedef struct s_rect
 {
@@ -73,14 +72,14 @@ typedef struct s_rect
 	int	y;
 	int	width;
 	int	height;
-	int color;
-}t_rect;
+	int	color;
+}	t_rect;
 
 typedef struct s_point
 {
 	double	x;
 	double	y;
-} t_point;
+}	t_point;
 
 typedef struct s_player
 {
@@ -94,7 +93,7 @@ typedef struct s_player
 	int		l_rotate;
 	int		r_rotate;
 	int		exit;
-} t_player;
+}	t_player;
 
 typedef struct s_proj
 {
@@ -109,30 +108,30 @@ typedef struct s_proj
 
 typedef struct s_bresn
 {
-	int dx;
-    int sx;
-    int dy;
-    int sy;
-    int err;
-    int e2;
-}t_bresn;
+	int	dx;
+	int	sx;
+	int	dy;
+	int	sy;
+	int	err;
+	int	e2;
+}	t_bresn;
 
-typedef struct	s_raycast
+typedef struct s_raycast
 {
-	t_data		*data;
-	t_player	*player;
-	t_map		*map;
-	double		dis_plane;
-	double		angle;
-	double		increment_angle;
-	double		height_proj;
-	double		half_width;
-	double		centre_height;
-	int			inters_type;
-	double			*x;
+	t_data			*data;
+	t_player		*player;
+	t_map			*map;
 	double			*y;
-	double		wall_height;
-	t_img		textures[4];
-} t_raycast;
+	double			*x;
+	double			dis_plane;
+	double			angle;
+	double			increment_angle;
+	double			height_proj;
+	double			half_width;
+	double			centre_height;
+	int				inters_type;
+	double			wall_height;
+	t_img			textures[4];
+}	t_raycast;
 
 #endif

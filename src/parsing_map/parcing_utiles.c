@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 14:36:37 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/26 18:56:17 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,30 +109,5 @@ int	valid_wall_image(char **line, t_map *map)
 		return (0);
 	map->identifier++;
 	free_table(line);
-	return (1);
-}
-
-int	is_identifire(char *str, t_map *map)
-{
-	char	**line;
-
-	if (!ft_isprint(str[0]) || !ft_isprint(str[ft_strlen(str)- 1]))
-		return (0);
-	line = ft_split(str, ' ');
-	if (!line[1] || !line[0])
-		return (free_table(line), 0);
-	else if (!ft_strcmp(FLOOR, line[0]) && map->floor == -1)
-	{
-		map->floor = 0;
-		rgb_to_int(&map->floor, str, map);
-	}
-	else if (!ft_strcmp(CEILING, line[0]) && map->ceiling == -1)
-	{
-		map->ceiling = 0;
-		rgb_to_int(&map->ceiling, str, map);
-	}
-	else if (!valid_wall_image(line, map))
-		return (free_table(line), 0);
-	free(str);
 	return (1);
 }

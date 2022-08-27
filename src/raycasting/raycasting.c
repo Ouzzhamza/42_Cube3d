@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/25 10:58:24 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/26 18:54:19 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_point	get_vertic_inters_point(t_raycast *raycast, double angle)
 	return ((t_point){1e9, 1e9});
 }
 
-double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical,double angle)
+double	valid_inters(t_raycast *raycast, t_point ray_horizontal, t_point ray_vertical, double angle)
 {
 	double	horiz_dist;
 	double	vertic_dist;

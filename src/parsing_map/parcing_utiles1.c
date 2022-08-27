@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing_utiles1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:04:14 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 10:35:30 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/26 18:55:46 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	empty_line(char *str)
 
 char	*special_dupe(char *s1, int size)
 {
-    int		i;
+	int		i;
 	char	*str;
 
 	i = 0;
@@ -68,9 +68,9 @@ char	*special_dupe(char *s1, int size)
 	return (str);
 }
 
- int	map_file_name(char *str)
- {
-	 if (ft_strcmp(ft_strnstr(str, ".cub", ft_strlen(str)), ".cub"))
-	 	return (0);
+int	map_file_name(char *str)
+{
+	if (ft_strcmp(ft_strnstr(str, ".cub", ft_strlen(str)), ".cub"))
+		return (0);
 	return (1);
- }
+}

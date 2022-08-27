@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:43:43 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/25 10:49:49 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/26 18:54:05 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,4 @@ void	draw_proj_wall(t_raycast *raycast, int x_start, t_img *texture, t_point int
 		raycast->data->img.addr[y * WIN_WIDTH + x_start] = proj.color;
 		y++;
 	}
-	// printf("angle: %f-- ray_index: %d\n", raycast->player->angle, x_start);
 }
