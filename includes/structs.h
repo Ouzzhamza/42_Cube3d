@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/25 10:38:21 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 17:00:27 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 
 # define WIN_WIDTH  850
 # define WIN_HEIGHT 600
-# define CUB_SIZE 8
+# define CUB_SIZE 20
+# define MINI_HEIGHT 150
+# define MINI_WIDTH 350
+# define MIMPH_CENTER 75
+# define MIMPW_CENTER 175
 # define NO 0
 # define SO 3
 # define WE 2
@@ -85,6 +89,7 @@ typedef struct s_point
 typedef struct s_player
 {
 	t_point	map_pos;
+	t_point minimap_pos;
 	double	angle;
 	double	speed;
 	int		advance;
@@ -131,6 +136,8 @@ typedef struct	s_raycast
 	int			inters_type;
 	double			*x;
 	double			*y;
+	double			Dx;
+	double			Dy;
 	double		wall_height;
 	t_img		textures[4];
 } t_raycast;

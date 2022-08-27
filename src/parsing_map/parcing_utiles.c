@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/20 14:36:37 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 19:20:21 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,6 @@ int	a_wall(char *str, t_map *map)
 	return (1);
 }
 
-int	ft_grb(int t, int r, int g, int b)
-{
-	return (((t << 24) + (r << 16) + (g << 8) + b));
-}
-
 void	rgb_to_int(int *rgb, char *str, t_map *map)
 {
 	char	**line;
@@ -73,15 +68,15 @@ void	rgb_to_int(int *rgb, char *str, t_map *map)
 	byte = 65536;
 	i = -1;
 	line = ft_split(str, ' ');
-	ptr = line;
-	line = ft_split(line[1], ',');
-	while (line[++i])
+	ptr = ft_split(line[1], ',');
+	while (ptr[++i])
 	{
-		if (ft_atoi(line[i]) > 255 || ft_atoi(line[i]) < 0)
+		 //! is number
+		if (ft_atoi(ptr[i]) > 255 || ft_atoi(ptr[i]) < 0)
 			ft_error(RGB);
 		else
 		{
-			*rgb = *rgb + ft_atoi(line[i]) * byte;
+			*rgb = *rgb + ft_atoi(ptr[i]) * byte;
 			byte = byte / 256;
 		}
 	}

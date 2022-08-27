@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/25 10:56:41 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 12:42:14 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void        list_to_array(t_map *map);
 char        *special_dupe(char *s1, int size);
 int         map_file_name(char *str);
 
-//^ MINIMAP PARSING
+//^ MINIMAP 
 int     check_vertical(t_map *map, int x, int y);
 int     check_horizontal(t_map *map, int x, int y);
 int     check_item_valid(t_map *map, int x, int y);
@@ -82,7 +82,10 @@ int     parse_map(t_map *map);
 int     render_player(t_raycast *data, int x, int y, int color);
 int     parse_minimap(t_map *map);
 void    draw_minimap(t_raycast *data, char **map);
+void    set_minimap_field(t_raycast *raycast);
 void    get_dimension_of_map(t_map *map, int *width, int *height);
+void    get_scalling_unites(t_raycast *raycast);
+void    normlise_DX_DY(t_raycast *data, t_rect *rectanle);
 
 //^ RAYCASTING
 // t_raycast   *raycast_init(void);

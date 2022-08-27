@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:46:59 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/26 18:48:54 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 19:38:37 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	drawline(t_raycast *data, int x0, int y0, int x1, int y1)
 	bre.err = bre.dx + bre.dy;
 	while (1)
 	{
-		my_mlx_put_pixel(data, x0, y0, 103);
+		my_mlx_put_pixel(data, x0, y0, 0x00FF00);
 		bre.e2 = 2 * bre.err;
 		if (bre.e2 >= bre.dy)
 		{

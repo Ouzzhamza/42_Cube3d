@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/25 09:42:25 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:10:31 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,9 @@ int	trace_rays(t_raycast *raycast)
 	i = 0;
 	while (i < WIN_WIDTH)
 	{
-		if (raycast->x[i] == 1e9 || raycast->y[i] == 1e9)
-		{
-			printf("x = %f\n", raycast->x[i]);
-			printf("y = %f\n", raycast->y[i]);
-		}
-		drawline(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, raycast->x[i], raycast->y[i]);
+		drawline(raycast, raycast->player->minimap_pos.x, raycast->player->minimap_pos.y, raycast->x[i], raycast->y[i]);
 		i++;
 	}
-	//exit(0);
 	return (1);
 }
 
@@ -108,14 +102,16 @@ int	main(int ac, char **av)
 	{
 		mlx_data_init(&data);
 		player = player_data_init(map);
+		printf("%f\n", player->minimap_pos.x);
+		printf("%f\n", player->minimap_pos.y);
 		raycast = raycast_data_init(&data, map, player);
 		load_xpm_files(raycast);
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
-		// draw_minimap(raycast, map->map);
-		// render_player(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-		// trace_rays(raycast);
+		draw_minimap(raycast, map->map);
+		render_player(raycast, raycast->player->minimap_pos.x, raycast->player->minimap_pos.y, 0x00FF00);
+		//trace_rays(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);

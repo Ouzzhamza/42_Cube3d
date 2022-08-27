@@ -6,11 +6,10 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/23 13:00:17 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/27 19:48:35 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/structs.h"
 #include "../../includes/cube3d.h"
 
 void	my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color)
@@ -34,7 +33,8 @@ int	render_rect(t_raycast *data, t_rect rect)
 		j = rect.x;
 		while (j < rect.x + rect.width)
 		{
-			my_mlx_put_pixel(data, j, i, rect.color);
+			if ((j != 0 && i != 0) && (j < 349 && i < 149))
+				my_mlx_put_pixel(data, j, i, rect.color);
 			j++;
 		}
 		i++;
@@ -51,6 +51,7 @@ int	render(t_raycast *data, int x, int y, int color)
 	rectangle.y = y;
 	rectangle.width = CUB_SIZE;
 	rectangle.height = CUB_SIZE;
+	normlise_DX_DY(data, &rectangle);
 	render_rect(data, rectangle);
 	return (0);
 }
@@ -60,16 +61,19 @@ int	render_player(t_raycast *data, int x, int y, int color)
 	t_rect	rectangle;
 
 	rectangle.color = color;
-	rectangle.x = x * CUB_SIZE;
-	rectangle.y = y * CUB_SIZE;
-	rectangle.width = CUB_SIZE / 8;
-	rectangle.height = CUB_SIZE / 8;
+	rectangle.x = x;
+	rectangle.y = y; 
+	rectangle.width = CUB_SIZE / 3;
+	rectangle.height = CUB_SIZE / 3;
+	normlise_DX_DY(data, &rectangle);
 	render_rect(data, rectangle);
 	return (0);
 }
 
-void	draw_minimap(t_raycast *data, char **map)
+void draw_minimap(t_raycast *data, char **map)
 {
+	set_minimap_field(data);
+	get_scalling_unites(data);
 	int	i;
 	int	j;
 	int	x_start;
@@ -83,17 +87,12 @@ void	draw_minimap(t_raycast *data, char **map)
 		while (map[i][j])
 		{
 			x_start = j * (CUB_SIZE);
-			if (map[i][j] == '0')
-			{
-				render(data, x_start, y_start, 0xFFFFFF);
-			}
+			if (map[i][j] == '0' || map[i][j] == ' ')
+					;
 			else if (map[i][j] == '1')
-				render(data, x_start, y_start, 0xFF0000);
+				render(data, x_start, y_start, 0x808080);
 			else if (map[i][j] != ' ')
-			{
-				map[i][j] = '0';
-				render(data, x_start, y_start, 0xFFFFFF);
-			}
+				 map[i][j] = '0';
 			j++;
 		}
 		i++;
