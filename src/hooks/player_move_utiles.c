@@ -6,39 +6,39 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 11:47:25 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:23:41 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cube3d.h"
-# include "../../includes/structs.h"
+#include "../../includes/cube3d.h"
+#include "../../includes/structs.h"
 
 int	valid_move(t_raycast *raycast, int type)
 {
-	double x;
-	double y;
-	double x1;
-	double y1;
-	
+	double	x;
+	double	y;
+	double	x1;
+	double	y1;
+
 	if (type == 1)
 	{
-		x = ((raycast->player->map_pos.x + raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
-		y = ((raycast->player->map_pos.y + raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
+		x = ((raycast->player->minimap_pos.x + raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
+		y = ((raycast->player->minimap_pos.y + raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
 	}
 	else if (type == 2)
 	{
-		x = ((raycast->player->map_pos.x - raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
-		y = ((raycast->player->map_pos.y - raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
+		x = ((raycast->player->minimap_pos.x - raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
+		y = ((raycast->player->minimap_pos.y - raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
 	}
 	else if (type == 3)
 	{
-		x = ((raycast->player->map_pos.x - raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
-		y = ((raycast->player->map_pos.y + raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
+		x = ((raycast->player->minimap_pos.x - raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
+		y = ((raycast->player->minimap_pos.y + raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
 	}
 	else 
 	{
-		x = ((raycast->player->map_pos.x + raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
-		y = ((raycast->player->map_pos.y - raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
+		x = ((raycast->player->minimap_pos.x + raycast->player->speed * sin(raycast->player->angle)) / (CUB_SIZE));
+		y = ((raycast->player->minimap_pos.y - raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE));
 	}
 	x1 = x + 0.025;
 	y1 = y + 0.025;
@@ -48,17 +48,19 @@ int	valid_move(t_raycast *raycast, int type)
 	return(1);
 }
 
-int redraw(t_raycast *raycast)
+int	redraw(t_raycast *raycast)
 {
 	mlx_clear_window(raycast->data->mlx_ptr, raycast->data->win_ptr);
 	mlx_destroy_image(raycast->data->mlx_ptr, raycast->data->img.mlx_img);
-	raycast->data->img.mlx_img = mlx_new_image(raycast->data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
+	raycast->data->img.mlx_img = mlx_new_image(raycast->data->mlx_ptr, \
+	WIN_WIDTH, WIN_HEIGHT);
 	render_image_color(raycast, raycast->map->ceiling, 0);
 	render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 	ray_casting(raycast);
-	// draw_minimap(raycast, raycast->map->map);
-	// render_player(raycast, raycast->player->map_pos.x, raycast->player->map_pos.y, 0x00FF00);
-	// trace_rays(raycast);
-	mlx_put_image_to_window(raycast->data->mlx_ptr, raycast->data->win_ptr, raycast->data->img.mlx_img,0,0);
-	return(0);
+	draw_minimap(raycast, raycast->map->map);
+	render_player(raycast, raycast->player->minimap_pos.x, \
+	raycast->player->minimap_pos.y, 0x00FF00);
+	mlx_put_image_to_window(raycast->data->mlx_ptr, \
+	raycast->data->win_ptr, raycast->data->img.mlx_img, 0, 0);
+	return (0);
 }

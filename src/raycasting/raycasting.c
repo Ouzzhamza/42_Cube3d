@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/26 18:54:19 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/27 20:13:39 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int	ray_casting(t_raycast *raycast)
 
 	i = 0;
 	ray_angle = raycast->player->angle - (M_PI / 6);
+	raycast->player->map_pos.x = raycast->player->minimap_pos.x / CUB_SIZE;
+	raycast->player->map_pos.y = raycast->player->minimap_pos.y / CUB_SIZE;
 	while (i < WIN_WIDTH)
 	{
 		ray_angle = normlize_angle(ray_angle);

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 18:17:39 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:02:56 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,6 @@ int	a_wall(char *str, t_map *map)
 	if (map->longest < special_strlen(str))
 		map->longest = special_strlen(str);
 	return (1);
-}
-
-int	ft_grb(int t, int r, int g, int b)
-{
-	return (((t << 24) + (r << 16) + (g << 8) + b));
 }
 
 void	rgb_to_int(int *rgb, char *str, t_map *map)

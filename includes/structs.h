@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 09:55:39 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:35:36 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 
 # define WIN_WIDTH  850
 # define WIN_HEIGHT 600
-# define CUB_SIZE 8
+# define CUB_SIZE 20
+# define MINI_HEIGHT 150
+# define MINI_WIDTH 350
+# define MIMPH_CENTER 75
+# define MIMPW_CENTER 175
 # define NO 0
 # define SO 3
 # define WE 2
@@ -81,9 +85,16 @@ typedef struct s_point
 	double	y;
 }	t_point;
 
+typedef struct s_intpo
+{
+	int	x;
+	int	y;
+}	t_intpo;
+
 typedef struct s_player
 {
 	t_point	map_pos;
+	t_point	minimap_pos;
 	double	angle;
 	double	speed;
 	int		advance;
@@ -122,6 +133,8 @@ typedef struct s_raycast
 	t_player		*player;
 	t_map			*map;
 	double			*y;
+	double			dx;
+	double			dy;
 	double			*x;
 	double			dis_plane;
 	double			angle;
