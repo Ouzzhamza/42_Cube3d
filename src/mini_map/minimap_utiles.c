@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 09:39:34 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 20:38:01 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 07:25:12 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,33 @@ void set_minimap_field(t_raycast *raycast)
                 my_mlx_put_pixel(raycast, j, i, 0xFF0000);
 			else if (i < MINI_HEIGHT && j < MINI_WIDTH)
                 ;
-				//  my_mlx_put_pixel(raycast, j, i, 0x0000000);
+			j++;
+		}
+		i++;
+	}
+}
+
+void    draw_minimap_walls(t_raycast *raycast, char **map)
+{
+    int	i;
+	int	j;
+	int	x_start;
+	int	y_start;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		y_start = i * (CUB_SIZE);
+		while (map[i][j])
+		{
+			x_start = j * (CUB_SIZE);
+			if (map[i][j] == '0' || map[i][j] == ' ')
+					;
+			else if (map[i][j] == '1')
+				render(raycast, x_start, y_start, 0x808080);
+			else if (map[i][j] != ' ')
+				 map[i][j] = '0';
 			j++;
 		}
 		i++;

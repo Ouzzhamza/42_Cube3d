@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 06:53:13 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/27 20:13:02 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 08:28:46 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ int move_forward(t_raycast *raycast)
 {
 	if (valid_move(raycast, 1))
 	{
+		printf("==>%f\n", raycast->player->minimap_pos.x);
+		printf("==>%f\n", raycast->player->minimap_pos.y);
 		raycast->player->minimap_pos.x += raycast->player->speed * cos(raycast->player->angle);
 		raycast->player->minimap_pos.y += raycast->player->speed * sin(raycast->player->angle);
+		printf("==>%f\n", raycast->player->minimap_pos.x);
+		printf("==>%f\n", raycast->player->minimap_pos.y);
 	}
 	return 0;
 	

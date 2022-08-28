@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:54:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/27 20:17:34 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 08:32:45 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ t_point	minimap_player_pos(char **map)
 			if (map[i][j] == 'W' || map[i][j] == 'S'
 				|| map[i][j] == 'E' || map[i][j] == 'N')
 			{
-				player.x = j * CUB_SIZE;
-				player.y = i * CUB_SIZE;
+				player.x = (j * CUB_SIZE) + 2;
+				player.y = (i * CUB_SIZE) + 2;
 			}
 			j++;
 		}

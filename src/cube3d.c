@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 20:38:38 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 08:45:24 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,24 @@ void	mlx_data_init(t_data *data)
 	&data->img.bpp, &data->img.line_len, &data->img.endian);
 }
 
-int	trace_rays(t_raycast *raycast)
-{
-	int		i;
+// int	trace_rays(t_raycast *raycast)
+// {
+// 	int		i;
+// 	double	angle_iter;
+// 	t_point ray;
 
-	i = 0;
-	while (i < WIN_WIDTH)
-	{
-		drawline(raycast, raycast->player->minimap_pos.x, raycast->player->minimap_pos.y, raycast->x[i], raycast->y[i]);
-		i++;
-	}
-	return (1);
-}
+// 	i = 0;
+// 	angle_iter = raycast->player->angle - (M_PI / 6);
+// 	while (i < WIN_WIDTH)
+// 	{
+// 		ray.x = raycast->player->map_pos.x + 30 * cos(angle_iter);
+// 		ray.y = raycast->player->map_pos.y + 30 * sin(angle_iter);
+// 		drawline(raycast->data, raycast->player->map_pos.x, raycast->player->map_pos.y, ray.x, ray.y);
+// 		angle_iter += raycast->increment_angle;
+// 		i++;
+// 	}
+// 	return (1);
+// }
 
 int	main(int ac, char **av)
 {
@@ -104,16 +110,12 @@ int	main(int ac, char **av)
 	{
 		mlx_data_init(&data);
 		player = player_data_init(map);
-		printf("%f\n", player->minimap_pos.x + 1);
-		printf("%f\n", player->minimap_pos.y + 1);
 		raycast = raycast_data_init(&data, map, player);
-		my_mlx_put_pixel(raycast, player->minimap_pos.x + 1, player->minimap_pos.y + 1, 0x000000);
 		load_xpm_files(raycast);
 		render_image_color(raycast, raycast->map->ceiling, 0);
 		render_image_color(raycast, raycast->map->floor, WIN_HEIGHT / 2);
 		ray_casting(raycast);
 		draw_minimap(raycast, map->map);
-		render_player(raycast, raycast->player->minimap_pos.x, raycast->player->minimap_pos.y, 0x00FF00);
 		//trace_rays(raycast);
 		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
 		hooks(raycast);

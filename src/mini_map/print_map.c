@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/27 19:48:35 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 07:49:57 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ int	render_player(t_raycast *data, int x, int y, int color)
 	rectangle.color = color;
 	rectangle.x = x;
 	rectangle.y = y; 
-	rectangle.width = CUB_SIZE / 3;
-	rectangle.height = CUB_SIZE / 3;
+	rectangle.width = CUB_SIZE / 8;
+	rectangle.height = CUB_SIZE / 8;
 	normlise_DX_DY(data, &rectangle);
 	render_rect(data, rectangle);
+	my_mlx_put_pixel(data, rectangle.x, rectangle.y, 0x000000);
 	return (0);
 }
 
@@ -74,27 +75,6 @@ void draw_minimap(t_raycast *data, char **map)
 {
 	set_minimap_field(data);
 	get_scalling_unites(data);
-	int	i;
-	int	j;
-	int	x_start;
-	int	y_start;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		y_start = i * (CUB_SIZE);
-		while (map[i][j])
-		{
-			x_start = j * (CUB_SIZE);
-			if (map[i][j] == '0' || map[i][j] == ' ')
-					;
-			else if (map[i][j] == '1')
-				render(data, x_start, y_start, 0x808080);
-			else if (map[i][j] != ' ')
-				 map[i][j] = '0';
-			j++;
-		}
-		i++;
-	}
+	draw_minimap_walls(data, map);
+	render_player(data, data->player->minimap_pos.x, data->player->minimap_pos.y, 0);
 }
