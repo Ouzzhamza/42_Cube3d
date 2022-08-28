@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parcing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:12:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/27 15:46:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 13:34:56 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,18 @@ int	is_identifire(char *str, t_map *map)
 	{
 		map->floor = 0;
 		rgb_to_int(&map->floor, str, map);
+		free_table(line);
 	}
 	else if (!ft_strcmp(CEILING, line[0]) && map->ceiling == -1)
 	{
 		map->ceiling = 0;
 		rgb_to_int(&map->ceiling, str, map);
+		free_table(line);
 	}
 	else if (!valid_wall_image(line, map))
 		return (free_table(line), 0);
+	else if (ft_is_space(line[0]))
+		free_table(line);
 	free(str);
 	return (1);
 }

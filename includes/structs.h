@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 20:17:13 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:53:37 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH  850
-# define WIN_HEIGHT 600
+# define WIN_WIDTH  1920
+# define WIN_HEIGHT 1020
 # define CUB_SIZE 20
 # define MINI_HEIGHT 150
 # define MINI_WIDTH 350
@@ -33,12 +33,14 @@ typedef struct s_list
 {
 	char			*line;
 	struct s_list	*next;
+	struct s_list	*prev;
 }	t_list;
 
 typedef struct map
 {
 	char		**map;
 	char		*wall[5];
+	int			map_start;
 	char		player;
 	int			ceiling;
 	int			floor;
@@ -85,10 +87,16 @@ typedef struct s_point
 	double	y;
 }	t_point;
 
+typedef struct s_intpo
+{
+	int	x;
+	int	y;
+}	t_intpo;
+
 typedef struct s_player
 {
 	t_point	map_pos;
-	t_point minimap_pos;
+	t_point	minimap_pos;
 	double	angle;
 	double	speed;
 	int		advance;
@@ -126,10 +134,8 @@ typedef struct s_raycast
 	t_data			*data;
 	t_player		*player;
 	t_map			*map;
-	double			*y;
-	double			Dx;
-	double			Dy;
-	double			*x;
+	double			dx;
+	double			dy;
 	double			dis_plane;
 	double			angle;
 	double			increment_angle;
@@ -140,6 +146,5 @@ typedef struct s_raycast
 	double			wall_height;
 	t_img			textures[4];
 }	t_raycast;
-
 
 #endif

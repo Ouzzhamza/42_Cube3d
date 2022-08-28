@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 07:29:35 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:24:21 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,14 @@
 # define CEILING "C"
 
 //^ CUBE3D_UTILES
+int			ft_is_space(char *str);
 int			ft_atoi(const char *str);
 char		*get_next_line(int fd);
 int			ft_strlen(const char *str);
 char		*ft_strdup(const char *str);
 char		*ft_strchr(char *s, int c);
 char		*ft_strjoin(char *s1, char *s2);
-void		ft_error(char *str);
+void		ft_error(char *str, t_map *map);
 void		ft_putstr(char *str);
 char		**ft_split(char *s, char c);
 int			ft_lstsize(t_list *lst);
@@ -65,7 +66,7 @@ int			is_identifire(char *str, t_map *map);
 int			a_wall(char *str, t_map *map);
 void		free_table(char **table);
 void		free_all(t_map *map);
-void		set_to_zero(t_map *map, t_list *list);
+void		set_to_zero(t_map *map);
 int			empty_line(char *str);
 int			special_strlen(char *str);
 void		list_to_array(t_map *map);
@@ -73,43 +74,43 @@ char		*special_dupe(char *s1, int size);
 int			map_file_name(char *str);
 
 //^ MINIMAP 
-int     check_vertical(t_map *map, int x, int y);
-int     check_horizontal(t_map *map, int x, int y);
-int     check_item_valid(t_map *map, int x, int y);
-int     parse_map(t_map *map);
-int     render_player(t_raycast *data, int x, int y, int color);
-int	    render(t_raycast *data, int x, int y, int color);
-int     parse_minimap(t_map *map);
-void    draw_minimap(t_raycast *data, char **map);
-void    set_minimap_field(t_raycast *raycast);
-void    get_dimension_of_map(t_map *map, int *width, int *height);
-void    get_scalling_unites(t_raycast *raycast);
-void    normlise_DX_DY(t_raycast *data, t_rect *rectanle);
-void    draw_minimap_walls(t_raycast *data, char **map);
+int			check_vertical(t_map *map, int x, int y);
+int			check_horizontal(t_map *map, int x, int y);
+int			check_item_valid(t_map *map, int x, int y);
+int			parse_map(t_map *map);
+int			render_player(t_raycast *data, int x, int y, int color);
+int			parse_minimap(t_map *map);
+void		draw_minimap(t_raycast *data, char **map);
+void		set_minimap_field(t_raycast *raycast);
+void		get_dimension_of_map(t_map *map, int *width, int *height);
+void		get_scalling_unites(t_raycast *raycast);
+void		normlise_dx_dy(t_raycast *data, t_rect *rectanle);
+int			render(t_raycast *data, int x, int y, int color);
+void		draw_minimap_walls(t_raycast *data, char **map);
 
 //^ RAYCASTING
 t_point		get_player_pos(char **map);
 double		convert_degree_to_radian(double degree);
-void		drawline(t_raycast *data, int x0, int y0, int x1, int y1);
+void		drawline(t_raycast *data, t_intpo p0, t_intpo p1);
 void		my_mlx_put_pixel(t_raycast *raycast, int x, int y, int color);
 t_player	*player_data_init(t_map *map);
 double		player_angle(char direction);
 t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player);
 int			handle_player_move(int key, void *data);
-int			trace_rays(t_raycast *raycast);
+int			trace_rays(t_raycast *raycast, t_rect *rectangle);
 
 // ^Free Functions
 void		free_list(t_list *list);
-void		free_two_dim_arr(char **arr);
+void		free_two_dim_arr(void **arr);
 void		free_map(t_map *map);
 
 double		get_horizontal_intersection(t_raycast *raycast, double angle);
 double		get_vertical_intersection(t_raycast *raycast, double angle);
 double		get_intersection(t_raycast *raycast, double angle);
-int			ray_casting(t_raycast *raycast);
+void		ray_casting(t_raycast *raycast);
 void		init_tab(double *tab, int size);
 
-int			move_forward(t_raycast *raycast);
+void		move_forward(t_raycast *raycast);
 void		retreat(t_raycast *raycast);
 void		move_right(t_raycast *raycast);
 void		move_left(t_raycast *raycast);

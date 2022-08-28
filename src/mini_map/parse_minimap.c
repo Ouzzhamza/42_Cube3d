@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_minimap.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/19 16:52:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 09:41:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	parse_map(t_map *map)
 			{
 				validation = check_item_valid(map, j, i);
 				if (!validation)
-					ft_error(MAP);
+					ft_error(MAP, map);
 			}
 			j++;
 		}

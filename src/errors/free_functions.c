@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 08:29:23 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/18 09:07:05 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/28 14:53:21 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 void	free_map(t_map *map)
 {
-	free(map->map);
 	free_list(map->list);
+	free_two_dim_arr((void *)map->wall);
+	free_two_dim_arr((void *)map->map);
 }
 
-void	free_two_dim_arr(char **arr)
+void	free_two_dim_arr(void **arr)
 {
 	int	i;
 

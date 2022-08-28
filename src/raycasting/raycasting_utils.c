@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:54:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 08:32:45 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 10:07:22 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ t_player	*player_data_init(t_map *map)
 
 	player = (t_player *)malloc(sizeof(t_player));
 	if (!player)
-		ft_error("Malloc Error");
+		ft_error("Malloc Error", map);
 	ft_memset(player, 0, sizeof(t_player));
 	player->minimap_pos = minimap_player_pos(map->map);
 	player->angle = player_angle(map->player);
@@ -96,9 +96,7 @@ t_raycast	*raycast_data_init(t_data *data, t_map *map, t_player *player)
 
 	raycast = (t_raycast *)malloc(sizeof(t_raycast));
 	if (!raycast)
-		ft_error("Malloc Error");
-	raycast->x = (double *)malloc((WIN_WIDTH) * sizeof(double));
-	raycast->y = (double *)malloc((WIN_WIDTH) * sizeof(double));
+		ft_error("Malloc Error", map);
 	raycast->data = data;
 	raycast->map = map;
 	raycast->player = player;

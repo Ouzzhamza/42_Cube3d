@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:25:09 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 09:12:03 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 11:31:15 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*ptr;
-
-	ptr = lst;
 	if (!lst)
 		return (NULL);
-	while (ptr->next != NULL)
-	{
-		ptr = ptr->next;
-	}
-	return (ptr);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

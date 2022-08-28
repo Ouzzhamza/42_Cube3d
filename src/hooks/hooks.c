@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:25:12 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 20:17:49 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 14:49:35 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_exit(t_raycast *raycast)
 {
 	mlx_destroy_image(raycast->data->mlx_ptr, raycast->data->img.mlx_img);
 	mlx_destroy_window(raycast->data->mlx_ptr, raycast->data->win_ptr);
+	free(raycast->data->mlx_ptr);
+	free_raycast(raycast);
 	exit(0);
 }
 

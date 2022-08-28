@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:13:00 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 07:49:57 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:14:34 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	render(t_raycast *data, int x, int y, int color)
 	rectangle.y = y;
 	rectangle.width = CUB_SIZE;
 	rectangle.height = CUB_SIZE;
-	normlise_DX_DY(data, &rectangle);
+	normlise_dx_dy(data, &rectangle);
 	render_rect(data, rectangle);
 	return (0);
 }
@@ -62,19 +62,21 @@ int	render_player(t_raycast *data, int x, int y, int color)
 
 	rectangle.color = color;
 	rectangle.x = x;
-	rectangle.y = y; 
+	rectangle.y = y;
 	rectangle.width = CUB_SIZE / 8;
 	rectangle.height = CUB_SIZE / 8;
-	normlise_DX_DY(data, &rectangle);
+	normlise_dx_dy(data, &rectangle);
 	render_rect(data, rectangle);
 	my_mlx_put_pixel(data, rectangle.x, rectangle.y, 0x000000);
+	trace_rays(data, &rectangle);
 	return (0);
 }
 
-void draw_minimap(t_raycast *data, char **map)
+void	draw_minimap(t_raycast *data, char **map)
 {
 	set_minimap_field(data);
 	get_scalling_unites(data);
 	draw_minimap_walls(data, map);
-	render_player(data, data->player->minimap_pos.x, data->player->minimap_pos.y, 0);
+	render_player(data, data->player->minimap_pos.x, \
+	data->player->minimap_pos.y, 0);
 }

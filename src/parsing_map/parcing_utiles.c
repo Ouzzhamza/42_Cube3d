@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/27 20:13:19 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/28 14:27:49 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	rgb_to_int(int *rgb, char *str, t_map *map)
 	{
 		if (is_number(ptr[i]) || ft_atoi(ptr[i]) > 255
 			|| ft_atoi(ptr[i]) < 0)
-			ft_error(RGB);
+			ft_error(RGB, map);
 		else
 		{
 			*rgb = *rgb + ft_atoi(ptr[i]) * byte;
@@ -81,7 +81,7 @@ void	rgb_to_int(int *rgb, char *str, t_map *map)
 		}
 	}
 	if (i != 3)
-		ft_error(RGB);
+		ft_error(RGB, map);
 	map->identifier++;
 	free_table(ptr);
 	free_table(line);

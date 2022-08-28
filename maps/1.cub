@@ -1,14 +1,13 @@
 NO ./assets/brick.xpm
-F 0,0,0
 SO ./assets/eagle.xpm
 WE ./assets/mossy.xpm
 EA ./assets/barrel.xpm
-
+      
+F 0,0,0
 C 0,255,0
 
    11111111111111
    10000000001111
    10000000001111
-   1011000N111111
+   1011000W111111
    11111111111111
-   

@@ -1,10 +1,12 @@
-NO ./assets/eagle.xpm
-EA ./assets/brick.xpm
-SO ./assets/tree.xpm
-WE ./assets/mossy.xpm
+NO ./assets/ronaldo.xpm
+EA ./assets/ronaldo.xpm
+SO ./assets/ronaldo.xpm
+WE ./assets/ronaldo.xpm
+
+
 
 F 36,85,0
-C 255,153,51
+C 0,191,255
  
  
         1111111111111111111111111
@@ -21,3 +23,4 @@ C 255,153,51
 1100000111010101111101111000111
 11110111 1110101 100000010001
 11111111 1111111 111111111111
+1
