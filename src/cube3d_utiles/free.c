@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:52:07 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/05 13:14:03 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:56:27 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 void	free_table(char **table)
 {

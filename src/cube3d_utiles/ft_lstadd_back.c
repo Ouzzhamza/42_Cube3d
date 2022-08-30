@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:24:02 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 14:34:11 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:57:21 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 09:42:39 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 15:23:17 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:40 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 t_point	get_horiz_inters_point(t_raycast *raycast, double angle)

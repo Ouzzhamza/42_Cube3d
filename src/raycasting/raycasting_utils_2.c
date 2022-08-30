@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 10:39:35 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 15:21:07 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:10:58 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 double	calculate_wall_projection(double dist_wall)
 {

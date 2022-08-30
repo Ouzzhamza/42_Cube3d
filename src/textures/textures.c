@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:23:54 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 09:46:32 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:52 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 t_img	*get_texture_by_direc(t_raycast *raycast, double angle)

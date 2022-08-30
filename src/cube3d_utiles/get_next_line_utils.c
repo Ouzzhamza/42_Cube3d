@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:13:34 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/08 13:35:29 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/30 16:58:19 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 char	*ft_strdup(const char *s1)
 {

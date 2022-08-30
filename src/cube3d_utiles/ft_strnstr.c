@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                        :+:      :+:    :+:  */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:52:42 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/02 18:21:25 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:58:08 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

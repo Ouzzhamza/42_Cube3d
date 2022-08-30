@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:58:59 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/07/28 18:50:16 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:58:22 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 char	*read_line(char *static_buff, int fd)
 {

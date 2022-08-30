@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:25:12 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 14:49:35 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 22:58:15 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 int	ft_exit(t_raycast *raycast)
@@ -89,5 +89,6 @@ void	hooks(t_raycast *raycast)
 	mlx_hook(raycast->data->win_ptr, 17, 0, ft_exit, raycast);
 	mlx_hook(raycast->data->win_ptr, 3, 0, key_type_releas, raycast);
 	mlx_hook(raycast->data->win_ptr, 2, 0, key_type_pres, raycast);
+	mlx_hook(raycast->data->win_ptr, 6, 0, mouse_move, raycast);
 	mlx_loop_hook(raycast->data->mlx_ptr, handle_event, raycast);
 }

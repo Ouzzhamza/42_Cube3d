@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:47:35 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/04 18:09:24 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:57:40 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 static int	ft_words(char const *s, char c)
 {

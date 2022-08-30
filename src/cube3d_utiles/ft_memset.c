@@ -6,13 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 16:27:17 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/31 16:28:45 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:57:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
-
+#include "../../includes/cub3d.h"
 void	*ft_memset(void *b, int c, size_t n)
 {
 	unsigned char	*a;

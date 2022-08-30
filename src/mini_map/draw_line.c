@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:46:59 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 15:39:15 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:11 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 void	draw_loop(t_raycast *data, t_intpo p0, t_intpo p1, t_bresn *bre)
 {

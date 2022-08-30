@@ -6,36 +6,24 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 15:34:16 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 00:02:16 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/structs.h"
-#include "../includes/cube3d.h"
+#include "../includes/cub3d.h"
 
 int	cheack_line(char *line, t_map *map)
 {
-	int		i;
-	t_list	*new;
+	char	**ident;
 
-	i = 0;
 	line = ft_strtrim(line, "\n");
-	if (!is_identifire(line, map))
-	{
-		if (!a_wall(line, map))
-			ft_error(MAP, map);
-		if (map->longest)
-		{
-			map->map_start = 1;
-			new = ft_lstnew(line);
-			ft_lstadd_back(&(map->list), new);
-			if (ft_is_space(new->line) && !ft_is_space(new->prev->line))
-				ft_error(MAP, map);
-		}
-		if (!ft_is_space(line))
-			free(line);
-	}
-	return (1);
+	ident = ft_split(line, ' ');
+	ident = ft_split(line, ' ');
+	if (!color(ident, map) && !texture(ident, map) && !is_a_wall(line, map))
+		return(0);
+	else
+		return (1);
 }
 
 t_map	*read_map(int ac, char **av)
@@ -44,26 +32,25 @@ t_map	*read_map(int ac, char **av)
 	t_map		*map;
 	int			fd;
 
+	if (ac != 2)
+		ft_error(ARG, NULL);
+	fd = open(av[1], O_RDONLY);
+	if (fd == -1 || !(map_file_name(av[1])))
+		ft_error(av[1], NULL);
 	map = (t_map *) malloc (sizeof(t_map));
 	map->list = NULL;
 	set_to_zero(map);
-	if (ac != 2)
-		ft_error(ARG, map);
-	fd = open(av[1], O_RDONLY);
-	if (fd == -1 || !(map_file_name(av[1])))
-		ft_error(MAP, map);
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		cheack_line(ft_strdup(line), map);
+		if (!cheack_line(ft_strdup(line), map))
+			ft_error(line, map);
 		free(line);
 	}
-	if (map->identifier != 6)
-		ft_error(MAP, map);
 	list_to_array(map);
-	return (map);
+	return(map);
 }
 
 void	mlx_data_init(t_data *data, t_map *map)
@@ -118,6 +105,7 @@ int	main(int ac, char **av)
 		data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);
+	return(1);
 	}
 	return (0);
 }

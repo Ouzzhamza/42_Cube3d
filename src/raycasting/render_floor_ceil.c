@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   render_floor_ceil.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 18:29:16 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/21 20:18:20 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:47 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 void	render_image_color(t_raycast *raycast, int color, int y_start)

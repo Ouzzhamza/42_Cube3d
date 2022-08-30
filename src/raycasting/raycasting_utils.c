@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:54:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 10:07:22 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:38 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 double	player_angle(char direction)

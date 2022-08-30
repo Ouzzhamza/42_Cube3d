@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:43:43 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 15:32:08 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:43 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 double	calculate_ray_distance(t_point player_pos, t_point wall_pos)
 {

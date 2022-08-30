@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:00:15 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/28 20:01:44 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:57:46 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

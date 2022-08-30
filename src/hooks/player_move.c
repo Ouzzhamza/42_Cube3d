@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 06:53:13 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 15:13:30 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:01 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 void	move_forward(t_raycast *raycast)

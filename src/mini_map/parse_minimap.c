@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 09:41:33 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 23:46:35 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 int	check_vertical(t_map *map, int x, int y)
 {
@@ -76,7 +76,7 @@ int	parse_map(t_map *map)
 			{
 				validation = check_item_valid(map, j, i);
 				if (!validation)
-					ft_error(MAP, map);
+					return(0);
 			}
 			j++;
 		}

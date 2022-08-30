@@ -6,12 +6,22 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 14:27:49 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 23:52:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
+
+int	put_on_list(char *line, t_map *map)
+{
+	t_list *node;
+
+	node = ft_lstnew(line);
+	ft_lstadd_back(&map->list, node);
+	return(1);
+}
+
 
 void	list_to_array(t_map *map)
 {
@@ -22,7 +32,9 @@ void	list_to_array(t_map *map)
 	number = ft_lstsize(map->list);
 	ptr = map->list;
 	i = 0;
-	map->map = (char **) malloc (map->longest * sizeof(char *) + 1);
+	if (!map->player)
+		ft_error("Player does not exist on map", map);
+	map->map = (char **) malloc (number * sizeof(char *) + 1);
 	while (ptr)
 	{
 		map->map[i] = special_dupe(ptr->line, map->longest);
@@ -32,77 +44,35 @@ void	list_to_array(t_map *map)
 	map->map[i] = NULL;
 }
 
-int	a_wall(char *str, t_map *map)
+int rgb_value(char **ptr)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '1' || str[i] == '0' || str[i] == ' ')
-			;
-		else if (str[i] == 'N' || str[i] == 'S'
-			|| str[i] == 'W' || str[i] == 'E')
-		{
-			if (map->player == '\0')
-				map->player = str[i];
-			else
-				return (0);
-		}
-		else
-			return (0);
-		i++;
-	}
-	if (map->longest < special_strlen(str))
-		map->longest = special_strlen(str);
-	return (1);
-}
-
-void	rgb_to_int(int *rgb, char *str, t_map *map)
-{
-	char	**line;
-	char	**ptr;
-	int		byte;
-	int		i;
+	int i;
+	int	byte;
+	int rgb;
 
 	byte = 65536;
 	i = -1;
-	line = ft_split(str, ' ');
-	ptr = ft_split(line[1], ',');
+	rgb = 0;
 	while (ptr[++i])
 	{
-		if (is_number(ptr[i]) || ft_atoi(ptr[i]) > 255
-			|| ft_atoi(ptr[i]) < 0)
-			ft_error(RGB, map);
+		if (is_number(ptr[i]) || ft_atoi(ptr[i]) > 255 || ft_atoi(ptr[i]) < 0)
+			return(-2);
 		else
 		{
-			*rgb = *rgb + ft_atoi(ptr[i]) * byte;
+			rgb = rgb + ft_atoi(ptr[i]) * byte;
 			byte = byte / 256;
 		}
 	}
-	if (i != 3)
-		ft_error(RGB, map);
-	map->identifier++;
-	free_table(ptr);
-	free_table(line);
+	return(rgb);
 }
 
-int	valid_wall_image(char **line, t_map *map)
+
+int arlen(char **ident)
 {
-	if (open(line[1], O_RDONLY) == -1 || ft_strlen(ft_strnstr(line[1], \
-		".xpm", ft_strlen(line[1]))) != 4)
-		return (0);
-	else if (!ft_strcmp(NORTH, line[0]) && !map->wall[0])
-		map->wall[0] = ft_strdup(line[1]);
-	else if (!ft_strcmp(EAST, line[0]) && !map->wall[1])
-		map->wall[1] = ft_strdup(line[1]);
-	else if (!ft_strcmp(WEST, line[0]))
-		map->wall[2] = ft_strdup(line[1]);
-	else if (!ft_strcmp(SOUTH, line[0]) && !map->wall[3])
-		map->wall[3] = ft_strdup(line[1]);
-	else
-		return (0);
-	map->identifier++;
-	free_table(line);
-	return (1);
+	int i;
+
+	i = 0;
+	while (ident[i])
+		i++;
+	return(i);
 }

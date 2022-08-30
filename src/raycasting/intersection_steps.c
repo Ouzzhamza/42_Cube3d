@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   intersection_steps.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:23:31 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/25 10:48:10 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:33 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 t_point	first_intersec_horiz(t_raycast *raycast, double angle)

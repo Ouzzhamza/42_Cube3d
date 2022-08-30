@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "types.h": "c",
-        "structs.h": "c",
-        "cube3d.h": "c"
-    }
-}

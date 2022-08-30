@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:04:14 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 15:15:03 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:29 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 int	special_strlen(char *str)
 {

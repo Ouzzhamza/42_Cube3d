@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 09:39:34 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 15:14:12 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:06:13 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 void	normlise_dx_dy(t_raycast *data, t_rect *rectangle)
 {

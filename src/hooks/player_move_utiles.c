@@ -6,11 +6,11 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 15:09:59 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 22:46:02 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 t_point	check_up_down_move(t_raycast *raycast, int type)
@@ -69,10 +69,14 @@ int	valid_move(t_raycast *raycast, int type)
 		p = check_left_right_move(raycast, type);
 	x = p.x + 0.025;
 	y = p.y + 0.025;
-	if (raycast->map->map[(int)p.y][(int)p.x] == '1' || \
-	raycast->map->map[(int)y][(int)p.x] == '1' || \
-	raycast->map->map[(int)p.y][(int)x] == '1' || \
-	raycast->map->map[(int)y][(int)x] == '1')
+	if (raycast->map->map[(int)p.y][(int)p.x] == '1' \
+	|| raycast->map->map[(int)y][(int)p.x] == '1' \
+	|| raycast->map->map[(int)p.y][(int)x] == '1' \
+	|| raycast->map->map[(int)y][(int)x] == '1' \
+	|| raycast->map->map[(int)p.y][(int)p.x] == ' ' \
+	|| raycast->map->map[(int)y][(int)p.x] == ' ' \
+	|| raycast->map->map[(int)p.y][(int)x] == ' ' \
+	|| raycast->map->map[(int)y][(int)x] == ' ')
 		return (0);
 	return (1);
 }

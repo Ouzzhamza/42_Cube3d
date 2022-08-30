@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 15:53:37 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 23:03:07 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,8 @@ typedef struct s_raycast
 	double			half_width;
 	double			centre_height;
 	int				inters_type;
+	int 			x;
+	int 			y;
 	double			wall_height;
 	t_img			textures[4];
 }	t_raycast;

@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:02:58 by houazzan          #+#    #+#             */
-/*   Updated: 2022/07/28 20:07:16 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:57:49 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 int	ft_strlen(const char *str)
 {

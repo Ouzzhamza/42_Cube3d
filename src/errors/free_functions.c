@@ -6,18 +6,20 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 08:29:23 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/28 14:53:21 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:05:46 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 #include "../../includes/structs.h"
 
 void	free_map(t_map *map)
 {
-	free_list(map->list);
+	if (map->list)
+		free_list(map->list);
+	if (map->map)
+		free_two_dim_arr((void *)map->map);
 	free_two_dim_arr((void *)map->wall);
-	free_two_dim_arr((void *)map->map);
 }
 
 void	free_two_dim_arr(void **arr)

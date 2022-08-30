@@ -6,12 +6,12 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 09:58:48 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/28 14:25:56 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/30 16:58:11 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 char	*ft_ftrim(char *ptr1, char *ptr2, char *c_s1, char *set)
 {

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:18:28 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/01 18:58:11 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/08/30 20:47:07 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/structs.h"
-#include "../../includes/cube3d.h"
+#include "../../includes/cub3d.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -42,7 +42,7 @@ int	ft_strcmp(char *s1, char *s2)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while ((str1[i] != '\0' || str2[i] != '\0'))
+	while ((str1 && str2) && (str1[i] != '\0' || str2[i] != '\0'))
 	{
 		if (str1[i] != str2[i])
 		{
