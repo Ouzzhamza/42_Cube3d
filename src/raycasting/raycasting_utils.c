@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:54:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/30 17:06:38 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 10:06:42 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_player	*player_data_init(t_map *map)
 	ft_memset(player, 0, sizeof(t_player));
 	player->minimap_pos = minimap_player_pos(map->map);
 	player->angle = player_angle(map->player);
-	player->speed = 1;
+	player->speed = 0.9;
 	return (player);
 }
 

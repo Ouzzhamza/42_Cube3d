@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/31 00:02:16 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 22:42:09 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 int	cheack_line(char *line, t_map *map)
 {
 	char	**ident;
-
+	char	*ptr;
+	
+	ptr = line;
 	line = ft_strtrim(line, "\n");
-	ident = ft_split(line, ' ');
+	free(ptr);
 	ident = ft_split(line, ' ');
 	if (!color(ident, map) && !texture(ident, map) && !is_a_wall(line, map))
-		return(0);
-	else
-		return (1);
+		return(free(line), 0);
+	return (free(line), 1);
 }
 
 t_map	*read_map(int ac, char **av)
@@ -46,7 +47,10 @@ t_map	*read_map(int ac, char **av)
 		if (line == NULL)
 			break ;
 		if (!cheack_line(ft_strdup(line), map))
+		{
+			// while(1);
 			ft_error(line, map);
+		}
 		free(line);
 	}
 	list_to_array(map);
@@ -105,7 +109,6 @@ int	main(int ac, char **av)
 		data.img.mlx_img, 0, 0);
 		hooks(raycast);
 		mlx_loop(data.mlx_ptr);
-	return(1);
 	}
 	return (0);
 }

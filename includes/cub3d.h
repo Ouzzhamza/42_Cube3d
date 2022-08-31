@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/30 23:01:38 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 22:45:16 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 
 //^ MACROS 
 # define ARG "Wrong number of arguments\n"
-# define MAP "Invalid map\n"
 # define MAP_NAME "Invalid map name\n"
 # define RGB "Invalid color value\n"
 # define NORTH "NO"
@@ -62,10 +61,11 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_isprint(int c);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 
+
 //^ PARCING_UTILES
 // int	        ft_texture_color(char **line, t_map *map);
 int	        is_a_wall(char *line, t_map *map);
-int			color(char **ident, t_map *map);
+int	        color(char **ident, t_map *map);
 int         rgb_value(char **ptr);
 void		set_to_zero(t_map *map);
 int			texture(char **ident, t_map *map);
@@ -123,7 +123,7 @@ void		move_right(t_raycast *raycast);
 void		move_left(t_raycast *raycast);
 int			redraw(t_raycast *raycast);
 void		hooks(t_raycast *raycast);
-int			valid_move(t_raycast *raycast, int type);
+t_point	    valid_move(t_raycast *raycast, int type);
 int	        mouse_move(int x, int y, t_raycast *raycast);
 
 t_point		first_intersec_horiz(t_raycast *raycast, double angle);

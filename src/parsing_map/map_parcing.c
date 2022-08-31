@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:12:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/30 23:40:00 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 22:24:52 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,14 @@ int	is_a_wall(char *line, t_map *map)
 
 int	texture(char **ident, t_map *map)
 {
+	// printf("%s ==> %p\n", ident[0], ident);
 	if ((!ft_strcmp(ident[0], NORTH) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], SOUTH) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], WEST) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], EAST) && arlen(ident) != 2) \
 	|| open(ident[1], O_RDONLY) == -1 \
 	|| ft_strlen(ft_strnstr(ident[1],".xpm", ft_strlen(ident[1]))) != 4)
-		return (0);
+		return (free_table(ident), 0);
 	else if (!ft_strcmp(NORTH, ident[0]) && !map->wall[0])
 		map->wall[0] = ft_strdup(ident[1]);
 	else if (!ft_strcmp(EAST, ident[0]) && !map->wall[1])
@@ -99,6 +100,7 @@ int	texture(char **ident, t_map *map)
 		return (0);
 	map->identifier++;
 	free_table(ident);
+	// while(1);
 	return (1);
 }
 
@@ -106,12 +108,10 @@ int	color(char **ident, t_map *map)
 {
 	char	**ptr;
 
-	if ((!ft_strcmp(ident[0], CEILING) && arlen(ident) != 2) || \
-	(!ft_strcmp(ident[0], FLOOR) && arlen(ident) != 2) || arlen(ident) != 2)
-		return(0);
-	if (ident[1][0] < '0' ||  ident[1][0] > '9')
-		return(0);
-	if (ident[1][ft_strlen(ident[1]) - 1] < '0' || ident[1][ft_strlen(ident[1]) - 1] > '9')
+	if (arlen(ident) < 2  || (!ft_strcmp(ident[0], CEILING) \
+	&& !ft_strcmp(ident[0], FLOOR)) || ident[1][0] < '0' \
+	||  ident[1][0] > '9' || ident[1][ft_strlen(ident[1]) - 1] < '0' \
+	|| ident[1][ft_strlen(ident[1]) - 1] > '9')
 		return(0);
 	ptr = ft_split(ident[1], ',');
 	if (arlen(ptr) != 3)
@@ -123,6 +123,6 @@ int	color(char **ident, t_map *map)
 	map->identifier++;
 	if (map->ceiling == -2 || map->floor == -2)
 		return(free_table(ptr), 0);
-	free_table(ptr);
+	free_table(ident);
 	return(1);
 }

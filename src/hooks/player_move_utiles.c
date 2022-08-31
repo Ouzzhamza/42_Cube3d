@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/30 22:46:02 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:20:27 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_point	check_up_down_move(t_raycast *raycast, int type)
 		x = (((raycast->player->minimap_pos.x + \
 		raycast->player->speed * cos(raycast->player->angle)) / (CUB_SIZE)));
 		y = ((((raycast->player->minimap_pos.y + raycast->player->speed * \
-		sin(raycast->player->angle)) / (CUB_SIZE)))) - 0.01;
+		sin(raycast->player->angle)) / (CUB_SIZE))));
 	}
 	else
 	{
@@ -50,14 +50,14 @@ t_point	check_left_right_move(t_raycast *raycast, int type)
 	else
 	{
 		x = ((raycast->player->minimap_pos.x + raycast->player->speed * \
-		sin(raycast->player->angle)) / (CUB_SIZE)) - 0.01;
+		sin(raycast->player->angle)) / (CUB_SIZE));
 		y = ((raycast->player->minimap_pos.y - raycast->player->speed * \
 		cos(raycast->player->angle)) / (CUB_SIZE));
 	}
 	return ((t_point){x, y});
 }
 
-int	valid_move(t_raycast *raycast, int type)
+t_point	valid_move(t_raycast *raycast, int type)
 {
 	t_point	p;
 	double	x;
@@ -77,8 +77,10 @@ int	valid_move(t_raycast *raycast, int type)
 	|| raycast->map->map[(int)y][(int)p.x] == ' ' \
 	|| raycast->map->map[(int)p.y][(int)x] == ' ' \
 	|| raycast->map->map[(int)y][(int)x] == ' ')
-		return (0);
-	return (1);
+		return (raycast->player->minimap_pos);
+	p.x *= CUB_SIZE;
+	p.y *= CUB_SIZE;
+	return (p);
 }
 
 int	redraw(t_raycast *raycast)

@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:23:50 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/30 23:03:07 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:44:16 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH  1920
-# define WIN_HEIGHT 1020
+# define WIN_WIDTH  780
+# define WIN_HEIGHT 780
 # define CUB_SIZE 20
 # define MINI_HEIGHT 150
 # define MINI_WIDTH 350

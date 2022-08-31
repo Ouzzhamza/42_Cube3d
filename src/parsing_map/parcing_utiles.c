@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/30 23:52:33 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 21:03:00 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int	put_on_list(char *line, t_map *map)
 
 	node = ft_lstnew(line);
 	ft_lstadd_back(&map->list, node);
+	if (ft_is_space(ft_lstlast(map->list)->line) \
+	&& !ft_is_space(ft_lstlast(map->list)->prev->line))
+		return(0);
 	return(1);
 }
 
@@ -35,6 +38,8 @@ void	list_to_array(t_map *map)
 	if (!map->player)
 		ft_error("Player does not exist on map", map);
 	map->map = (char **) malloc (number * sizeof(char *) + 1);
+	if (!map->map)
+		exit(0);
 	while (ptr)
 	{
 		map->map[i] = special_dupe(ptr->line, map->longest);
@@ -63,7 +68,7 @@ int rgb_value(char **ptr)
 			byte = byte / 256;
 		}
 	}
-	return(rgb);
+	return(free_table(ptr), rgb);
 }
 
 

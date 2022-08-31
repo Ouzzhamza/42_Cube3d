@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 09:58:48 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/30 16:58:11 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/08/31 13:21:20 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ char	*ft_strtrim(char *s, char const *set)
 		return (NULL);
 	ptr1 = c_s1;
 	ptr2 = &c_s1[ft_strlen(c_s1)];
-	free(s);
+	//free(s);
 	return (ft_ftrim(ptr1, ptr2, c_s1, (char *)set));
 }
