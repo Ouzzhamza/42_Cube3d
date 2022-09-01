@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/31 22:42:09 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/01 19:38:13 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	cheack_line(char *line, t_map *map)
 {
 	char	**ident;
 	char	*ptr;
-	
+
 	ptr = line;
 	line = ft_strtrim(line, "\n");
 	free(ptr);
-	ident = ft_split(line, ' ');
+	ident = ft_fa_split(line, ' ');
 	if (!color(ident, map) && !texture(ident, map) && !is_a_wall(line, map))
 		return(free(line), 0);
 	return (free(line), 1);
@@ -47,10 +47,7 @@ t_map	*read_map(int ac, char **av)
 		if (line == NULL)
 			break ;
 		if (!cheack_line(ft_strdup(line), map))
-		{
-			// while(1);
 			ft_error(line, map);
-		}
 		free(line);
 	}
 	list_to_array(map);

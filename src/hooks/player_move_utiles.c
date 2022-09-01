@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 18:58:04 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/31 11:20:27 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/01 23:47:38 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_point	valid_move(t_raycast *raycast, int type)
 		p = check_left_right_move(raycast, type);
 	x = p.x + 0.025;
 	y = p.y + 0.025;
+	
 	if (raycast->map->map[(int)p.y][(int)p.x] == '1' \
 	|| raycast->map->map[(int)y][(int)p.x] == '1' \
 	|| raycast->map->map[(int)p.y][(int)x] == '1' \

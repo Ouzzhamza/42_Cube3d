@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:12:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/31 22:24:52 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/01 21:43:34 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	is_number(char *num)
 		i++;
 	while (num[i])
 	{
-		if ((num[i] < '0' || num[i] > '9') && num[i] != '\n')
+		if ((num[i] < '0' || num[i] > '9') && num[i] != '\n' && num[i] != ' ')
 			return (1);
 		i++;
 	}
@@ -52,10 +52,10 @@ int	is_a_wall(char *line, t_map *map)
 {
 	int	i;
 
-	i = 0;
 	if (!ft_is_space(line) && !map->list)
 		return(1);
-	while (line[i])
+	i = -1;
+	while (line[++i])
 	{
 		if (line[i] == '1' || line[i] == '0' || line[i] == ' ')
 			;
@@ -69,7 +69,6 @@ int	is_a_wall(char *line, t_map *map)
 		}
 		else
 			return (0);
-		i++;
 	}
 	if (map->longest < special_strlen(line))
 		map->longest = special_strlen(line);
@@ -80,38 +79,37 @@ int	is_a_wall(char *line, t_map *map)
 
 int	texture(char **ident, t_map *map)
 {
-	// printf("%s ==> %p\n", ident[0], ident);
+	char *str;
+
+	str = ft_strtrim(ident[1], " ");
 	if ((!ft_strcmp(ident[0], NORTH) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], SOUTH) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], WEST) && arlen(ident) != 2) \
 	|| (!ft_strcmp(ident[0], EAST) && arlen(ident) != 2) \
-	|| open(ident[1], O_RDONLY) == -1 \
-	|| ft_strlen(ft_strnstr(ident[1],".xpm", ft_strlen(ident[1]))) != 4)
-		return (free_table(ident), 0);
+	|| open(str, O_RDONLY) == -1 \
+	|| ft_strlen(ft_strnstr(str,".xpm", ft_strlen(str))) != 4)
+		return (free_table(ident),free(str), 0);
 	else if (!ft_strcmp(NORTH, ident[0]) && !map->wall[0])
-		map->wall[0] = ft_strdup(ident[1]);
+		map->wall[0] = ft_strdup(str);
 	else if (!ft_strcmp(EAST, ident[0]) && !map->wall[1])
-		map->wall[1] = ft_strdup(ident[1]);
+		map->wall[1] = ft_strdup(str);
 	else if (!ft_strcmp(WEST, ident[0]) && !map->wall[2])
-		map->wall[2] = ft_strdup(ident[1]);
+		map->wall[2] = ft_strdup(str);
 	else if (!ft_strcmp(SOUTH, ident[0]) && !map->wall[3])
-		map->wall[3] = ft_strdup(ident[1]);
+		map->wall[3] = ft_strdup(str);
 	else
 		return (0);
 	map->identifier++;
 	free_table(ident);
-	// while(1);
-	return (1);
+	return (free(str), 1);
 }
 
 int	color(char **ident, t_map *map)
 {
 	char	**ptr;
 
-	if (arlen(ident) < 2  || (!ft_strcmp(ident[0], CEILING) \
-	&& !ft_strcmp(ident[0], FLOOR)) || ident[1][0] < '0' \
-	||  ident[1][0] > '9' || ident[1][ft_strlen(ident[1]) - 1] < '0' \
-	|| ident[1][ft_strlen(ident[1]) - 1] > '9')
+	if (arlen(ident) < 2  || (ft_strcmp(ident[0], CEILING) != 0\
+	&& ft_strcmp(ident[0], FLOOR) != 0))
 		return(0);
 	ptr = ft_split(ident[1], ',');
 	if (arlen(ptr) != 3)

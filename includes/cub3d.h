@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/08/31 22:45:16 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/01 19:38:46 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 
 //^ CUBE3D_UTILES
 int			ft_is_space(char *str);
-int			ft_atoi(const char *str);
+int	        ft_atoi(char *str);
 char		*get_next_line(int fd);
 int			ft_strlen(const char *str);
 char		*ft_strdup(const char *str);
@@ -60,6 +60,7 @@ int			ft_strcmp(char *s1, char *s2);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_isprint(int c);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+char	    **ft_fa_split(char *s, char c);
 
 
 //^ PARCING_UTILES
