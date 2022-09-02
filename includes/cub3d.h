@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:03:44 by houazzan          #+#    #+#             */
-/*   Updated: 2022/09/01 19:38:46 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/02 15:57:17 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int			ft_strlen(const char *str);
 char		*ft_strdup(const char *str);
 char		*ft_strchr(char *s, int c);
 char		*ft_strjoin(char *s1, char *s2);
-void		ft_error(char *str, t_map *map);
+void	    ft_error(char *str, t_map *map, int type);
 void		ft_putstr(char *str);
 char		**ft_split(char *s, char c);
 int			ft_lstsize(t_list *lst);

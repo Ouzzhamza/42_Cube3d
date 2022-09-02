@@ -1,16 +1,19 @@
 C 255,255           ,   254
-F 1 ,0,0
 NO ./assets/m.xpm  
-SO ./assets/m.xpm
+SO ./assets/bri ck.xpm
 WE ./assets/m.xpm
-EA ./assets/m.xpm
+EA ./assets/ceiling.xpm
+
+F 50,50     ,  50
 
 11111111111111
 11110000000011
-10000010000011
+10000000000011
 10000000000011
 1011000N111011
 11111111111111
+
+
 
 
 

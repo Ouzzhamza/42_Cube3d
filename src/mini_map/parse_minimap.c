@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:10:41 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/30 23:46:35 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:56:30 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	parse_map(t_map *map)
 			{
 				validation = check_item_valid(map, j, i);
 				if (!validation)
-					return(0);
+					ft_error("Invlid map", map, 0);
 			}
 			j++;
 		}

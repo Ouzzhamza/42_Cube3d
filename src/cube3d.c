@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:02:31 by houazzan          #+#    #+#             */
-/*   Updated: 2022/09/01 19:38:13 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:14:56 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ t_map	*read_map(int ac, char **av)
 	int			fd;
 
 	if (ac != 2)
-		ft_error(ARG, NULL);
+		ft_error(ARG, NULL, 0);
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1 || !(map_file_name(av[1])))
-		ft_error(av[1], NULL);
+		ft_error(av[1], NULL, 0);
 	map = (t_map *) malloc (sizeof(t_map));
 	map->list = NULL;
 	set_to_zero(map);
@@ -47,7 +47,7 @@ t_map	*read_map(int ac, char **av)
 		if (line == NULL)
 			break ;
 		if (!cheack_line(ft_strdup(line), map))
-			ft_error(line, map);
+			ft_error(line, map, 1);
 		free(line);
 	}
 	list_to_array(map);
@@ -58,14 +58,14 @@ void	mlx_data_init(t_data *data, t_map *map)
 {
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
-		ft_error("mlx_ptre Error!\n", map);
+		ft_error("mlx_ptre Error!\n", map,0);
 	data->win_ptr = mlx_new_window(data->mlx_ptr, \
 	WIN_WIDTH, WIN_HEIGHT, "CUBE3D");
 	if (!data->win_ptr)
-		ft_error("mlx_win Error!\n", map);
+		ft_error("mlx_win Error!\n", map, 0);
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	if (!data->img.mlx_img)
-		ft_error("mlx_img Error!\n", map);
+		ft_error("mlx_img Error!\n", map, 0);
 	data->img.addr = (int *)mlx_get_data_addr(data->img.mlx_img, \
 	&data->img.bpp, &data->img.line_len, &data->img.endian);
 }

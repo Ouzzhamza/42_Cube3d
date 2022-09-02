@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:23:54 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/08/30 17:06:52 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:15:06 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	load_xpm_files(t_raycast *raycast)
 		raycast->data->mlx_ptr, raycast->map->wall[i], \
 		&raycast->textures[i].width, &raycast->textures[i].height);
 		if (raycast->textures[i].mlx_img == NULL)
-			ft_error("Mlx_Xpm_Error\n", raycast->map);
+			ft_error("Mlx_Xpm_Error\n", raycast->map, 0);
 		raycast->textures[i].addr = (int *)mlx_get_data_addr(\
 		raycast->textures[i].mlx_img, &raycast->textures[i].bpp, \
 		&raycast->textures[i].line_len, &raycast->textures[i].endian);

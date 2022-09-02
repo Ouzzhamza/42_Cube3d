@@ -6,7 +6,7 @@
 /*   By: houazzan <houazzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 08:21:30 by houazzan          #+#    #+#             */
-/*   Updated: 2022/09/01 17:59:40 by houazzan         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:54:18 by houazzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ void	list_to_array(t_map *map)
 	ptr = map->list;
 	i = 0;
 	if (!map->player)
-		ft_error("Player does not exist on map", map);
+		ft_error("Player does not exist on map", map, 0);
+	if (map->ceiling < 0 || map->floor < 0)
+		ft_error("Wrong number of identifires", map, 0);
 	map->map = (char **) malloc (number * sizeof(char *) + 1);
 	if (!map->map)
-		exit(0);
+		ft_error("Error at allocating" ,map, 0);
 	while (ptr)
 	{
 		map->map[i] = special_dupe(ptr->line, map->longest);
@@ -77,7 +79,7 @@ int arlen(char **ident)
 	int i;
 
 	i = 0;
-	while (ident[i])
+	while (ident[i] && ft_is_space(ident[i]))
 		i++;
 	return(i);
 }
