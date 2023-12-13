@@ -27,9 +27,3 @@ Observe the rendered 3D environment and interact with the game level.
 This repository contains a basic implementation of a raycasting-based 3D game engine and may be part of an educational course or programming project.
 Contributions, optimizations, or additional features to enhance the 3D engine are welcomed for further exploration and improvement
 
-
-## GAMEPLAY SCREENSHOT
-
-![image description](./images/image.png)
-
-![image description](./images/image2.png)
